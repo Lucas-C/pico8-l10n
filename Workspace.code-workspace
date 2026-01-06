@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "Game",
-      "path": "./game",
+      "name": "Application",
+      "path": "./app",
     },
     {
       "name": "Tools",

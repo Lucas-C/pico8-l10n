@@ -1,3 +1,5 @@
+From: https://github.com/Oval-Tutu/bootstrap-love2d-project
+
 # Development & Build Guide for LÖVE Game Template
 
 Everything you need to know about developing, debugging, building and deploying your LÖVE game using this template system - from local development workflows to automated multi-platform releases. This guide covers technical setup, IDE integration, build configurations, and deployment options.
@@ -15,14 +17,10 @@ Overview of the key files and directories in the template. The main components a
 │   ├── launch.json
 │   └── tasks.json
 ├── builds                    Game builds
-├── game
+├── cli
 │   ├── conf.lua              LÖVE configuration file
-│   ├── main.lua              main.lau with example "game" - you can delete this
-│   ├── main.template.lua     main.lua template - rename to main.lua
+│   ├── main.lua              entry point
 │   ├── product.env           Settings shared between the game and GitHub Actions
-│   ├── eyes                  Example "game" - you can delete this
-│   ├── lib                   Libraries
-│   └── runtime               Native libraries for HTTPS support
 ├── resources                 Resources use when building the game. Icons, shared libraries, etc.
 └── tools                     Tools for building and packaging the game
 ```
@@ -45,7 +43,7 @@ Secrets are stored in the GitHub repository settings and accessed by the GitHub 
 
 ## Configuring
 
-The game and build settings are configured using `game/product.env`.
+The game and build settings are configured using `app/product.env`.
 The most important settings to change for your game:
 
 - `PRODUCT_NAME` - The name of your game
@@ -53,7 +51,7 @@ The most important settings to change for your game:
 
 ### Save directory
 
-**`PRODUCT_ID` is always used by `t.identity` in `game/conf.lua` to determine the save directory for the game.** This is important to consider when changing the `PRODUCT_ID` after the game has been released.
+**`PRODUCT_ID` is always used by `t.identity` in `app/conf.lua` to determine the save directory for the game.** This is important to consider when changing the `PRODUCT_ID` after the game has been released.
 
 ### Platform-Specific Product IDs
 
@@ -68,8 +66,6 @@ If a platform-specific ID is empty or not set, the base `PRODUCT_ID` will be use
 PRODUCT_ID="com.oval-tutu.game"
 
 # Optional platform-specific overrides
-PRODUCT_ID_ANDROID="com.mygame.android"
-PRODUCT_ID_IOS="com.mygame.ios"
 PRODUCT_ID_LINUX="com.mygame.linux"
 PRODUCT_ID_MACOS="com.mygame.osx"
 PRODUCT_ID_WINDOWS="com.mygame.windows"
@@ -92,9 +88,6 @@ LOVE_VERSION="11.5"
 # Enable/disable microphone access
 AUDIO_MIC="false"
 
-# Android screen orientation (landscape/portrait)
-ANDROID_ORIENTATION="landscape"
-
 # Itch.io username for publishing
 ITCH_USER="ovaltutu"
 
@@ -111,12 +104,9 @@ PRODUCT_WEBSITE="https://oval-tutu.com"
 PRODUCT_UUID="3e64d17c-8797-4382-921f-cf488b22073f"
 
 # Enable/disable build targets
-TARGET_ANDROID="true"
-TARGET_IOS="true"
 TARGET_LINUX_APPIMAGE="true"
 TARGET_LINUX_TARBALL="true"
 TARGET_MACOS="true"
-TARGET_WEB="true"
 TARGET_WINDOWS_INSTALL="true"
 TARGET_WINDOWS_SFX="false"
 TARGET_WINDOWS_ZIP="true"
@@ -124,13 +114,8 @@ TARGET_WINDOWS_ZIP="true"
 
 ## GitHub Actions
 
-The GitHub Actions workflow will automatically build and package the game for all the supported platforms that are enabled in `game/product.env` and upload them as assets to the GitHub releases page.
+The GitHub Actions workflow will automatically build and package the game for all the supported platforms that are enabled in `app/product.env` and upload them as assets to the GitHub releases page.
 
-- Android
-  - `.apk` debug builds for testing and release builds for publishing to Itch.io
-  - `.aab` release build for publishing to the Play Store
-- HTML
-- iOS (*notarization is not yet implemented*)
 - Linux
   - AppImage
   - Tarball
@@ -154,17 +139,13 @@ The build process:
 2. Packages platform-specific builds for enabled targets
 3. Uploads artifacts to GitHub Actions
 
-Artifacts produced (if enabled in `game/product.env`):
+Artifacts produced (if enabled in `app/product.env`):
 - `{PRODUCT_NAME}.love` - Base LÖVE game package
-- `{PRODUCT_NAME}-debug-signed.apk` - Android debug build
-- `{PRODUCT_NAME}-release-signed.apk` - Android release build
 - `{PRODUCT_NAME}-installer.exe` - Windows installer
 - `{PRODUCT_NAME}.exe` - Windows self-extracting executable
 - `{PRODUCT_NAME}.zip` - Windows build
-- `{PRODUCT_NAME}-html` - HTML build
 - `{PRODUCT_NAME}.app` - macOS application bundle
 - `{PRODUCT_NAME}.dmg` - macOS disk image
-- `{PRODUCT_NAME}.ipa` - iOS package
 
 Access the builds:
 1. Go to your repository's Actions tab
@@ -201,144 +182,17 @@ But you can also automate this process for the following platforms:
 
 The GitHub Actions workflow will automatically publish the game artifacts for *enabled platforms* to Itch.io if `BUTLER_API_KEY` secret and `ITCH_USER` are set.
 Get your API key from [Itch.io account](https://itch.io/user/settings/api-keys).
-`ITCH_USER` from `game/product.env` will be used as the username, and `PRODUCT_NAME` from `game/product.env` (automatically converted to lowercase with spaces replaced with hyphens `-`) will be used as the game name.
+`ITCH_USER` from `app/product.env` will be used as the username, and `PRODUCT_NAME` from `app/product.env` (automatically converted to lowercase with spaces replaced with hyphens `-`) will be used as the game name.
 
 For example this template project would attempt to publish to `ovaltutu/template`.
 
 Not every artifact will be published to Itch.io, as some platforms are not supported, and some artifacts are unsuitable for distribution on Itch.io:
 
 - `.love` files will be published to Itch.io as it is a requirement for LÖVE jams, is a convenient format for testing and can be hidden if required.
-- Android .apk files will be published to Itch.io if `TARGET_ANDROID` is enabled.
 - Linux AppImage files will be published to Itch.io if `TARGET_LINUX_APPIMAGE` is enabled.
 - macOS .dmg files will be published to Itch.io if `TARGET_MACOS` is enabled.
 - Windows win64 self-extracting .exe files will be published (in a .zip) to Itch.io if `TARGET_WINDOWS_SFX` is enabled.
-- HTML artifacts will be published to Itch.io if `TARGET_HTML` is enabled.
-- Itch.io does not support iOS artifacts.
 
-### SteamOS DevKit
-
-If you're running Linux or macOS, have `act` installed and configured to run the GitHub Actions locally then you can use `./tools/build.sh linux` to automatically push new Linux builds directly to your Steam Deck using the [SteamOS DevKit Client Tool](https://gitlab.steamos.cloud/devkit/steamos-devkit).
-
-- **Install the SteamOS DevKit**: Follow the instructions in the [How to load and run games on Steam Deck](https://partner.steamgames.com/doc/steamdeck/loadgames) to install the SteamOS Devkit Client Tool and connect to your Steam Deck to your development machine.
-- Execute `./tools/build.sh linux` which will build the Linux tarball and notify the SteamOS DevKit Client API to automatically push the new build to the Steam Deck.
-- On your Steam Deck, navigate the library to find a new title named 'Devkit Game: YourGameName' and select it to run.
-
-## Android
-
-In order to sign the APKs and AABs, the [zipalign & Sign Android Release Action](https://github.com/kevin-david/zipalign-sign-android-release) is used. You'll need to create Debug and Release keystores and set the appropriate secrets in the GitHub repository settings.
-
-### Debug Keystore
-
-This creates a standard debug keystore matching Android Studio's defaults, except it is valid for 50 years.
-
-```shell
-keytool -genkey -v \
-  -keystore debug.keystore \
-  -alias androiddebugkey \
-  -keyalg RSA -keysize 2048 -validity 18250 \
-  -storepass android \
-  -keypass android \
-  -dname "CN=Android Debug,O=Android,C=US"
-```
-
-Create base64 encoded signing key to sign apps in GitHub CI.
-
-```shell
-openssl base64 < debug.keystore | tr -d '\n' | tee debug.keystore.base64.txt
-```
-
-Add these secrets to the GitHub repository settings:
-
-- `ANDROID_DEBUG_SIGNINGKEY_BASE64`
-- `ANDROID_DEBUG_ALIAS`
-- `ANDROID_DEBUG_KEYSTORE_PASSWORD`
-- `ANDROID_DEBUG_KEY_PASSWORD`
-
-### Release Keystore
-
-This creates a release keystore with a validity of 25 years.
-
-```shell
-keytool -genkey -v \
-  -keystore release-key.jks \
-  -alias release-key \
-  -keyalg RSA -keysize 2048 -validity 9125 \
-  -storepass [secure-password] \
-  -keypass [secure-password] \
-  -dname "CN=[your name],O=[your organisation],L=[your town/city],S=[your state/region/county],C=[your country code]"
-```
-
-Create base64 encoded signing key to sign apps in GitHub CI.
-
-```shell
-openssl base64 < release-key.jks | tr -d '\n' | tee release-key.jks.base64.txt
-```
-
-Add these secrets to the GitHub repository settings:
-
-- `ANDROID_RELEASE_SIGNINGKEY_BASE64`
-- `ANDROID_RELEASE_ALIAS`
-- `ANDROID_RELEASE_KEYSTORE_PASSWORD`
-- `ANDROID_RELEASE_KEY_PASSWORD`
-
-## HTML
-
-The HTML build use [love.js player](https://github.com/2dengine/love.js) from [2dengine](https://2dengine.com/).
-
-The love.js player needs to be delivered via a web server, **it will not work if you open `index.html` locally in a browser**.
-You need to set the correct [CORS policy via HTTP headers](https://developer.chrome.com/blog/enabling-shared-array-buffer/) for the game to work in the browser.
-Here are some examples of how to do that.
-
-### Local Testing
-
-Use [`miniserve`](https://github.com/svenstaro/miniserve) to serve the HTML build of the game using the correct CORS policy.
-`tools/test-html.sh` is a convenience script that does that. It looks for `builds/1/<PRODUCT_FILE>-html/<PRODUCT_FILE>-html.zip`, rewrites the `index.html` to bust the cache and adds the required CORS headers.
-
-```shell
-./tools/test-html.sh
-```
-
-Then open `http://localhost:1337` in your browser.
-
-### Self-Hosting
-
-#### apache
-
-```apache
-<IfModule mod_headers.c>
-  Header set Cross-Origin-Opener-Policy "same-origin"
-  Header set Cross-Origin-Embedder-Policy "require-corp"
-</IfModule>
-<IfModule mod_mime.c>
-  AddType application/wasm wasm
-</IfModule>
-```
-
-#### caddy
-
-```
-example.com {
-    header {
-        Cross-Origin-Opener-Policy "same-origin"
-        Cross-Origin-Embedder-Policy "require-corp"
-        Set-Cookie "Path=/; HttpOnly; Secure"
-    }
-    # ... rest of your site configuration
-}
-```
-
-#### nginx
-
-```nginx
-add_header Cross-Origin-Opener-Policy "same-origin";
-add_header Cross-Origin-Embedder-Policy "require-corp";
-add_header Set-Cookie "Path=/; HttpOnly; Secure";
-```
-
-### Itch.io Web Player
-
-On [itch.io](https://itch.io/), the required HTTP headers are disabled by default, but they provide experimental support for enabling them.
-Learn how to [enable SharedArrayBuffer support on Itch.io](https://itch.io/t/2025776/experimental-sharedarraybuffer-support).
 
 ## Local GitHub Actions via act
 
@@ -379,7 +233,7 @@ Create the secrets file at `~/.config/act/secrets` with your GitHub repository s
 
 - `act` will run all the GitHub Actions locally.
 - `act -l` will list all the available GitHub Actions.
-- `act -j <job>` will run a specific job.
+- `F<job>` will run a specific job.
 
 #### macOS
 
@@ -391,64 +245,3 @@ In order to run the macOS jobs you'll need to install the following:
 - Install [Podman Desktop](https://podman-desktop.io/) or [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 - Install [Xcode](https://developer.apple.com/xcode/): `xcode-select --install`
 - Install additional tools via [Homebrew](https://brew.sh/): `brew install act create-dmg tree`
-
-## HTTPS Support
-
-This project includes HTTPS support for LÖVE 11.5 via the [lua-https](https://github.com/love2d/lua-https) library, and also included an native library loader for easily enabling HTTPS support on supported platforms.
-
-- For LÖVE 12.0+: Uses the built-in `https` module
-- For LÖVE 11.5: Loads platform-specific native libraries
-- For HTML builds: No lua-https support is available.
-
-### Native Libraries
-
-The runtime loader (`game/runtime/loader.lua`) handles loading the appropriate platform-specific native library:
-
-```lua
-local https = require('runtime.loader').loadHTTPS()
-if https then
-  -- HTTPS is available
-  local code, body, headers = https.request("https://oval-tutu.com")
-else
-  -- HTTPS not available (Web platform or missing library)
-end
-```
-
-For more information on the `https` module, see the [lua-https documentation](https://www.love2d.org/wiki/lua-https).
-
-The loader expects native libraries to be organized in the following structure:
-
-```
-game/runtime/https/
-├── android/
-│   ├── arm64-v8a/
-│   │   └── https.so
-│   └── armeabi-v7a/
-│       └── https.so
-├── linux/
-│   └── x86_64/
-│       └── https.so
-├── osx/
-│   └── https.so
-└── windows/
-    └── win64/
-        └── https.dll
-```
-
-The template includes pre-built libraries for:
-- Windows (64-bit)
-- Linux (x86_64)
-- macOS (Universal)
-- Android (arm64-v8a, armeabi-v7a)
-
-**💡NOTE:** HTTPS is not available on iOS builds, *yet...*
-
-#### Requirements
-
-The native libraries have the following dependencies that must be available on the target system:
-
-- Linux: cURL or OpenSSL
-- Windows: No additional dependencies (libraries are statically linked)
-- macOS: No additional dependencies (uses native Security framework)
-- Android: No additional dependencies (included in Android system)
-  - *But does require your Android game is built with build system provided by this project.*

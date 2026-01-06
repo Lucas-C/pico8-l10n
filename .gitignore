@@ -1,3 +1,4 @@
 .direnv/
 .vscode/settings.json
-game/log.txt
+builds/pico8-l10n
+srlua*

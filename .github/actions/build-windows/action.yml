@@ -90,9 +90,6 @@ runs:
         curl -fsSL --retry 5 --retry-delay 15 --connect-timeout 30 --max-time 300 https://www.7-zip.org/a/lzma2409.7z -o ./tools/lzma-sdk.7z || exit 1
         mkdir -p ./tools/lzma-sdk
         7z x -o./tools/lzma-sdk/ ./tools/lzma-sdk.7z
-    - name: Create .ico icon
-      shell: bash
-      run: convert ./resources/icon.png -define icon:auto-resize="256,128,96,64,48,32,24,16" "${{ inputs.output_folder }}/icon.ico"
     - name: Resource patch love.exe
       env:
         BUILD_NUM: ${{ inputs.build_num }}

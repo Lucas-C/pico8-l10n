@@ -5,7 +5,7 @@ inputs:
     description: 'Butler API key'
     required: true
   channel:
-    description: 'itch.io channel name. For example: android, html, linux-appimage, osx or windows'
+    description: 'itch.io channel name. For example: linux-appimage, osx or windows'
     required: true
   itch_user:
     description: 'itch.io user name'
