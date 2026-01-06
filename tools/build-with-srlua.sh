@@ -9,13 +9,13 @@ if ! command -v srglue || ! command -v srlua; then
   exit 1
 fi
 
-source ./app/product.env
+source ./src/product.env
 # Check if PRODUCT_NAME was found
 if [ -z "${PRODUCT_NAME}" ]; then
-  echo "Error: Could not find PRODUCT_NAME in app/product.env"
+  echo "Error: Could not find PRODUCT_NAME in src/product.env"
   exit 1
 fi
 PRODUCT_FILE="$(echo "${PRODUCT_NAME}" | tr ' ' '-')"
 
-srglue $(command -v srlua) app/main.lua builds/${PRODUCT_FILE}
+srglue $(command -v srlua) src/main.lua builds/${PRODUCT_FILE}
 chmod a+x builds/${PRODUCT_FILE}

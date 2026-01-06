@@ -43,7 +43,7 @@ Secrets are stored in the GitHub repository settings and accessed by the GitHub 
 
 ## Configuring
 
-The game and build settings are configured using `app/product.env`.
+The game and build settings are configured using `src/product.env`.
 The most important settings to change for your game:
 
 - `PRODUCT_NAME` - The name of your game
@@ -51,7 +51,7 @@ The most important settings to change for your game:
 
 ### Save directory
 
-**`PRODUCT_ID` is always used by `t.identity` in `app/conf.lua` to determine the save directory for the game.** This is important to consider when changing the `PRODUCT_ID` after the game has been released.
+**`PRODUCT_ID` is always used by `t.identity` in `src/conf.lua` to determine the save directory for the game.** This is important to consider when changing the `PRODUCT_ID` after the game has been released.
 
 ### Platform-Specific Product IDs
 
@@ -115,7 +115,7 @@ TARGET_WINDOWS_ZIP="true"
 
 ## GitHub Actions
 
-The GitHub Actions workflow will automatically build and package the game for all the supported platforms that are enabled in `app/product.env` and upload them as assets to the GitHub releases page.
+The GitHub Actions workflow will automatically build and package the game for all the supported platforms that are enabled in `src/product.env` and upload them as assets to the GitHub releases page.
 
 - Linux
   - AppImage
@@ -140,7 +140,7 @@ The build process:
 2. Packages platform-specific builds for enabled targets
 3. Uploads artifacts to GitHub Actions
 
-Artifacts produced (if enabled in `app/product.env`):
+Artifacts produced (if enabled in `src/product.env`):
 - `{PRODUCT_NAME}.love` - Base LÖVE game package
 - `{PRODUCT_NAME}-installer.exe` - Windows installer
 - `{PRODUCT_NAME}.exe` - Windows self-extracting executable
@@ -183,7 +183,7 @@ But you can also automate this process for the following platforms:
 
 The GitHub Actions workflow will automatically publish the game artifacts for *enabled platforms* to Itch.io if `BUTLER_API_KEY` secret and `ITCH_USER` are set.
 Get your API key from [Itch.io account](https://itch.io/user/settings/api-keys).
-`ITCH_USER` from `app/product.env` will be used as the username, and `PRODUCT_NAME` from `app/product.env` (automatically converted to lowercase with spaces replaced with hyphens `-`) will be used as the game name.
+`ITCH_USER` from `src/product.env` will be used as the username, and `PRODUCT_NAME` from `src/product.env` (automatically converted to lowercase with spaces replaced with hyphens `-`) will be used as the game name.
 
 For example this template project would attempt to publish to `ovaltutu/template`.
 

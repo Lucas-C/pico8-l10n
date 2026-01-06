@@ -6,10 +6,10 @@ describe("Busted unit testing framework", function()
 
     it("should have lots of features", function()
       -- deep check comparisons!
-      assert.are.same({ table = "great"}, { table = "great" })
+      assert.are.same({ table = "great" }, { table = "great" })
 
       -- or check by reference!
-      assert.are_not.equal({ table = "great"}, { table = "great"})
+      assert.are_not.equal({ table = "great" }, { table = "great" })
 
       assert.truthy("this is a string") -- truthy: not false or nil
 
@@ -17,11 +17,13 @@ describe("Busted unit testing framework", function()
       assert.is_true(1 == 1)
 
       assert.falsy(nil)
-      assert.has_error(function() error("Wat") end, "Wat")
+      assert.has_error(function()
+        error("Wat")
+      end, "Wat")
     end)
 
     it("should provide some shortcuts to common functions", function()
-      assert.are.unique({{ thing = 1 }, { thing = 2 }, { thing = 3 }})
+      assert.are.unique({ { thing = 1 }, { thing = 2 }, { thing = 3 } })
     end)
   end)
 end)

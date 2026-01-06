@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "Application",
-      "path": "./app",
+      "name": "Source code",
+      "path": "./src",
     },
     {
       "name": "Tools",
