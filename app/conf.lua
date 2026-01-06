@@ -22,55 +22,22 @@ end
 
 -- https://love2d.org/wiki/Config_Files
 function love.conf(t)
-  t.identity              = product_config["PRODUCT_ID"]
-  t.appendidentity        = false
-  t.version               = product_config["LOVE_VERSION"]
-
-  -- If t.console is set to true, then the debugger won't work.
-  t.console               = false
-  t.accelerometerjoystick = false
-  t.externalstorage       = false
-  t.gammacorrect          = false
-
-  t.audio.mic             = product_config["AUDIO_MIC"]
-  t.audio.mixwithsystem   = false
-
-  t.window.title          = product_config["PRODUCT_NAME"]
-  t.window.icon           = nil
-  t.window.width          = 1920
-  t.window.height         = 1080
-  t.window.borderless     = false
-  t.window.resizable      = false
-  t.window.minwidth       = 1
-  t.window.minheight      = 1
-  t.window.fullscreen     = false
-  t.window.fullscreentype = "desktop"
-  t.window.vsync          = 1
-  t.window.msaa           = 0
-  t.window.depth          = nil
-  t.window.stencil        = nil
-  t.window.display        = 1
-  t.window.highdpi        = true
-  t.window.usedpiscale    = true
-  t.window.x              = nil
-  t.window.y              = nil
-
-  t.modules.audio         = true
-  t.modules.data          = true
-  t.modules.event         = true
-  t.modules.font          = true
-  t.modules.graphics      = true
-  t.modules.image         = true
-  t.modules.joystick      = true
-  t.modules.keyboard      = true
-  t.modules.math          = true
-  t.modules.mouse         = true
-  t.modules.physics       = true
-  t.modules.sound         = true
-  t.modules.system        = true
-  t.modules.thread        = true
-  t.modules.timer         = true
-  t.modules.touch         = true
-  t.modules.video         = true
-  t.modules.window        = true
+  t.modules.audio = false              -- Enable the audio module (boolean)
+  t.modules.data = false               -- Enable the data module (boolean)
+  t.modules.event = false              -- Enable the event module (boolean)
+  t.modules.font = false               -- Enable the font module (boolean)
+  t.modules.graphics = false           -- Enable the graphics module (boolean)
+  t.modules.image = false              -- Enable the image module (boolean)
+  t.modules.joystick = false           -- Enable the joystick module (boolean)
+  t.modules.keyboard = false           -- Enable the keyboard module (boolean)
+  t.modules.math = false               -- Enable the math module (boolean)
+  t.modules.mouse = false              -- Enable the mouse module (boolean)
+  t.modules.physics = false            -- Enable the physics module (boolean)
+  t.modules.sound = false              -- Enable the sound module (boolean)
+  t.modules.system = false             -- Enable the system module (boolean)
+  t.modules.thread = false             -- Enable the thread module (boolean)
+  t.modules.timer = false              -- Enable the timer module (boolean), Disabling it will result 0 delta time in love.update
+  t.modules.touch = false              -- Enable the touch module (boolean)
+  t.modules.video = false              -- Enable the video module (boolean)
+  t.modules.window = false             -- Enable the window module (boolean)
 end

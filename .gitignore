@@ -1,4 +1,4 @@
 .direnv/
+.luapak/
 .vscode/settings.json
-builds/pico8-l10n
-srlua*
+dist/

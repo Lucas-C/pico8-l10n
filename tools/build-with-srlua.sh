@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# The binary executable produced will only work under Linux
+
 # srlua can be downloaded from: https://web.tecgraf.puc-rio.br/~lhf/ftp/lua/#srlua
 
 if ! command -v srglue || ! command -v srlua; then

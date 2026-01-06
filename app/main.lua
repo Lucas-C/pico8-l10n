@@ -1,5 +1,7 @@
 #!/usr/local/bin/lua
 
+local argparse = require("argparse")
+
 print("This is",_VERSION,"running a script inside",arg[0])
 
 print("These are the arguments from varargs")

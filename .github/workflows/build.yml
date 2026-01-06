@@ -31,6 +31,7 @@ jobs:
       product_id_windows: ${{ env.PRODUCT_ID_WINDOWS || env.PRODUCT_ID }}
       target_linux_appimage: ${{ env.TARGET_LINUX_APPIMAGE }}
       target_linux_tarball: ${{ env.TARGET_LINUX_TARBALL }}
+      target_love: ${{ env.TARGET_LOVE }}
       target_macos: ${{ env.TARGET_MACOS }}
       target_windows_install: ${{ env.TARGET_WINDOWS_INSTALL }}
       target_windows_sfx: ${{ env.TARGET_WINDOWS_SFX }}
@@ -160,6 +161,7 @@ jobs:
           prerelease: false
 
   build-love:
+    if: ${{ needs.configure.outputs.target_love == 'true' }}
     runs-on: ubuntu-22.04
     needs: [configure]
     env:
@@ -192,6 +194,7 @@ jobs:
         with:
           name: ${{ env.PRODUCT_FILE }}
           path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
+          # ^ TODO: specify the arch (arm64?) & compress as tar.gz
       - name: Upload .love release
         if: ${{ needs.configure.outputs.build_type == 'release' }}
         uses: actions/upload-release-asset@v1
