@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -o pipefail -o errexit -o nounset -o xtrace
 
 # The binary executable produced will only work under Linux
 
