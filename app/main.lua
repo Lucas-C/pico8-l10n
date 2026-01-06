@@ -2,8 +2,6 @@
 
 local argparse = require("argparse")
 
-print("This is",_VERSION,"running a script inside",arg[0])
-
 print("These are the arguments from varargs")
 print(...)
 
@@ -17,5 +15,3 @@ for k,v in pairs(_G) do
 	if type(v)=="table" then io.write(k,',') end
 end
 io.write('\n')
-
-print("This is",_VERSION,"running a script inside",arg[0])

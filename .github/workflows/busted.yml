@@ -1,0 +1,12 @@
+name: Busted
+
+on: [push, pull_request]
+
+jobs:
+  sile:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Run Busted
+        uses: lunarmodules/busted@v2.2.0
