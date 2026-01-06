@@ -6,3 +6,7 @@ and use them to translate `.p8` or `.p8.png` game files.
 
 For some more context, check this PICO8 BBS thread:
 <https://www.lexaloffle.com/bbs/?tid=154035>
+
+# Installation
+
+    luarocks install --only-deps *.rockspec
