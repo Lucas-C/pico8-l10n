@@ -17,16 +17,21 @@ dependencies = {
   "inspect ~> 3.1.3",
   "lua ~> 5.3",
   "luacheck ~> 1.2.0",
+  "luafilesystem ~> 1.6.3", -- version used by luapak
   "luapak ~> 0.1.0",
   "luarocks ~> 2.4.4", -- luapak fails to install with LuaRocks 3
 }
 build = {
   type = "builtin",
   modules = {
-    ["cli"] = "src/cli.lua",
+    ["check"] = "src/check.lua",
+    ["cli_args"] = "src/cli_args.lua",
+    ["filepaths"] = "src/filepaths.lua",
     ["init"] = "src/init.lua",
+    ["io_utils"] = "src/io_utils.lua",
     ["main"] = "src/main.lua",
     ["p8"] = "src/p8.lua",
+    ["p8_png"] = "src/p8_png.lua",
     ["po"] = "src/po.lua",
     ["translate"] = "src/translate.lua",
   },

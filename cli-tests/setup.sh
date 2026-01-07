@@ -5,3 +5,5 @@ if ! command -v pico8-l10n; then
   fi
   PATH=$PATH:$TESTDIR/../builds/
 fi
+
+SAMPLE_DIR="$TESTDIR"/../tests/

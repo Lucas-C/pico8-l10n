@@ -3,8 +3,10 @@
 .vscode/settings.json
 dist/
 
-*.p8
 *.p8.png
 
-# Prysk:
+# busted tests:
+games/circle/
+
+# Prysk tests:
 *.t.err

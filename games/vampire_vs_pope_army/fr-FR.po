@@ -1,0 +1,84 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2025-01-06 00:00:00+0000\n"
+"PO-Revision-Date: 2025-01-06 00:00:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Last-Translator: Lucas-C\n"
+"Language: fr_FR\n"
+
+msgid "the ancient cathedral"
+msgstr "L'ancienne cathedrale"
+
+msgid "has a new master now."
+msgstr ""
+
+msgid "men of god know well"
+msgstr ""
+
+msgid "never to approach the"
+msgstr ""
+
+msgid "blasphemed sanctuary."
+msgstr ""
+
+msgid "still, there are tales."
+msgstr ""
+
+msgid "like that, it was gone."
+msgstr ""
+
+msgid "the prince of popes"
+msgstr ""
+
+msgid "denies the daywalker's"
+msgstr ""
+
+msgid "exodus. and existence."
+msgstr ""
+
+msgid "still, the reports we"
+msgstr ""
+
+msgid "receive are worrisome."
+msgstr ""
+
+msgid "\"no escaping allowed!\""
+msgstr "\"Vous ne vous evaderez jamais !\""
+
+msgid "\"blearggh...\""
+msgstr ""
+
+msgid "\"did you hear something?\""
+msgstr "\"Vous avez entendu ?\""
+
+msgid "\"hey! stop drinking popes!\""
+msgstr "\"Arretez de boire des papes !\""
+
+msgid "\"it found the blood talisman!\""
+msgstr "\"Il a trouve le talisman de sang !\""
+
+msgid "\"is it finally dead?\""
+msgstr "\"Est-il enfin mort ?\""
+
+msgid "\"it's hurt!\""
+msgstr "\"Il est blesse !\""
+
+msgid "adam atomic presents"
+msgstr "adam atomic presents"
+
+msgid "press any key to begin"
+msgstr "press any key to begin"
+
+msgid "popes drank"
+msgstr "popes drank"
+
+msgid "talismans"
+msgstr "talismans"
+
+msgid "vamp time"
+msgstr "vamp time"

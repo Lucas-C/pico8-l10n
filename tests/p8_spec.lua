@@ -1,28 +1,49 @@
 local p8 = require("p8")
 
 describe("p8", function()
-  describe(".png_to_p8()", function()
-    it("should convert a valid .p8.png file successfully", function()
-      p8.png_to_p8("dummy.p8.png")
+  describe(".extract_lua_code()", function()
+    it("should successfully extract Lua code from a .p8", function()
+      local expected = [[
+function _init()
+  print("Starting game...")
+  print("Hello world!")
+end
+
+x = 64  y = 64
+function _update()
+  if (btn(0)) then x=x-1 end
+  if (btn(1)) then x=x+1 end
+  if (btn(2)) then y=y-1 end
+  if (btn(3)) then y=y+1 end
+end
+
+function _draw()
+  cls(5)
+  circfill(x,y,7,14)
+end
+]]
+      assert.equal(expected, p8.extract_lua_code("tests/circle.p8"))
     end)
   end)
 
-  describe(".p8_to_png()", function()
-    it("should convert a valid .p8 file successfully", function()
-      p8.p8_to_png("dummy.p8")
-    end)
-  end)
-
-  describe(".with_png_converted()", function()
-    it("should raise an error unknown file extensions", function()
-      assert.has_error(function()
-        p8.with_png_converted("dummy.pico8", function () end)
-      end, "Unsupported file extension: dummy.pico8")
-    end)
-    it("should pass a .p8 file to the callback function when the input file is a PNG", function()
-      local callback = spy.new(function() end)
-      p8.with_png_converted("dummy.p8.png", spy)
-      assert.spy(callback).was_called_with("dummy.p8")
+  describe(".extract_strings_from_code()", function()
+    it("should successfully extract strings from Lua code", function()
+      local lua_code = [[
+print("UPDATED") -- string with double quotes
+print('press x to start', 7) -- string with single quotes
+print('') -- empty string
+print("'OK?'") -- single quote in between double quotes
+print('"yes!"') -- double quote in between single quotes
+alert("\"no escaping allowed!\"") -- escaped double quotes in between double quotes
+]]
+      local expected = {
+        "UPDATED",
+        "press x to start",
+        "'OK?'",
+        '"yes!"',
+        '\\"no escaping allowed!\\"',
+      }
+      assert.same(expected, p8.extract_strings_from_code(lua_code))
     end)
   end)
 end)
