@@ -10,17 +10,18 @@ For some more context, check this PICO8 BBS thread: <https://www.lexaloffle.com/
 # Usage
 Initialize a new localization `.po` file for a given `.p8` / `.p8.png` game file:
 
-    $ pico8-l10n init vampire_vs_pope_army.p8.png
+    $ wget https://www.lexaloffle.com/bbs/cposts/va/vampire_vs_pope_army-0.p8.png
+    $ pico8-l10n init vampire_vs_pope_army-0.p8.png fr-FR
     l10n/vampire_vs_pope_army/fr-FR.po successfully generated
 
 Generate a new `.p8` / `.p8.png` file from a given `.po` file:
 
-    $ pico8-l10n translate l10n/vampire_vs_pope_army/fr-FR.po vampire_vs_pope_army.p8.png
+    $ pico8-l10n translate l10n/vampire_vs_pope_army/fr-FR.po vampire_vs_pope_army-0.p8.png
     vampire_vs_pope_army-fr-FR.p8.png successfully generated
 
 Check if ALL "localizable" strings in a given `.p8` / `.p8.png` game file are translated in a `.po` file:
 
-    $ pico8-l10n check l10n/vampire_vs_pope_army/fr-FR.po vampire_vs_pope_army.p8.png
+    $ pico8-l10n check l10n/vampire_vs_pope_army/fr-FR.po vampire_vs_pope_army-0.p8.png
 
 
 # Development
@@ -36,10 +37,6 @@ it will install Lua & LuaRocks & Luapak once if need be:
 
     tools/build-with-luapak.sh
 
-## Run unit tests
-
-    busted
-
 ## Lint code
 
     luacheck src/*.lua
@@ -49,6 +46,16 @@ Using [StyLua](https://github.com/JohnnyMorganz/StyLua) & [`pre-commit`](https:/
 
     pre-commit install
     pre-commit run stylua --all-files
+
+## Run unit tests
+
+    pip install prysk  # you may want to use a virtualenv or else specify --user
+    cd cli-tests
+    prysk *.t
+
+## Run CLI tests
+
+    busted
 
 ## GitHub Actions pipelines
 They can be tested locally with [`act`](https://github.com/nektos/act):
