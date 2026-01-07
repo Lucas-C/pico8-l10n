@@ -6,11 +6,7 @@
     },
     {
       "name": "Tools",
-    "path": "./tools",
-    },
-    {
-      "name": "Resources",
-      "path": "./resources",
+      "path": "./tools",
     },
     {
       "name": "Builds",

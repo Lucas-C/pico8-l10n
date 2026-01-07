@@ -15,7 +15,6 @@
   "workspace.ignoreDir": [
       ".vscode",
       "builds",
-      "resources",
       "tools"
   ],
   "workspace.library": [

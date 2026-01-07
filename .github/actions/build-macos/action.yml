@@ -119,7 +119,6 @@ runs:
       if: runner.os == 'macOS'
       shell: bash
       run: |
-        #--background "./resources/background.png" \
         #--volicon ./tools/${{ inputs.product_file }}.icns \
         create-dmg \
           --volname "${{ inputs.product_file }}" \

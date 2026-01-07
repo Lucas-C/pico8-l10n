@@ -17,11 +17,10 @@ Overview of the key files and directories in the template. The main components a
 │   ├── launch.json
 │   └── tasks.json
 ├── builds                    Game builds
-├── cli
+├── src
 │   ├── conf.lua              LÖVE configuration file
 │   ├── main.lua              entry point
 │   ├── product.env           Settings shared between the game and GitHub Actions
-├── resources                 Resources use when building the game. Icons, shared libraries, etc.
 └── tools                     Tools for building and packaging the game
 ```
 
