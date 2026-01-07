@@ -2,3 +2,9 @@
 .luapak/
 .vscode/settings.json
 dist/
+
+*.p8
+*.p8.png
+
+# Prysk:
+*.t.err

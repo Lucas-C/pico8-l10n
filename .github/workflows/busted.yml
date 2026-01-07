@@ -1,6 +1,12 @@
 name: Busted
 
-on: [push, pull_request]
+on:  # cf. https://github.community/t/how-to-trigger-an-action-on-push-or-pull-request-but-not-both/16662
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
 
 jobs:
   sile:
