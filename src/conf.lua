@@ -1,3 +1,6 @@
+-- Configuration for LÖVE
+-- Note (Lucas): we should get rid of this if we do not use LÖVE packaging in the end
+
 local IS_DEBUG = os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1" and arg[2] == "debug"
 if IS_DEBUG then
   require("lldebugger").start()

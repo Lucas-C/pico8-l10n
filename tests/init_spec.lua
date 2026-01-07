@@ -1,9 +1,20 @@
 local init = require("init")
 
+local original_print = print
+local prints = {}
+function print_recorder(msg)
+  prints[#prints + 1] = msg
+end
+
 describe("init", function()
+  setup(function()
+    _G.print = print_recorder
+  end)
+  teardown(function()
+    _G.print = original_print
+  end)
   it("should initiate a .po file successfully", function()
-    assert.has_error(function()
-      init("dummy.p8", "fr-FR")
-    end, "WIP")
+    init("tests/circle.p8", "fr-FR")
+    assert.equal("games/circle/fr-FR.po successfully generated with 2 strings", prints[1])
   end)
 end)
