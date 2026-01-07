@@ -23,9 +23,12 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["pico8.l10n.cli"] = "src/cli.lua",
-    ["pico8.l10n.main"] = "src/main.lua",
-    ["pico8.l10n.translate"] = "src/translate.lua",
+    ["cli"] = "src/cli.lua",
+    ["init"] = "src/init.lua",
+    ["main"] = "src/main.lua",
+    ["p8"] = "src/p8.lua",
+    ["po"] = "src/po.lua",
+    ["translate"] = "src/translate.lua",
   },
   install = {
     bin = {

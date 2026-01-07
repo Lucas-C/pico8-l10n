@@ -1,4 +1,4 @@
-name: Build LÖVE 🩷💙
+name: Build pico8-l10n
 
 on:
   push:
@@ -32,6 +32,7 @@ jobs:
       target_linux_appimage: ${{ env.TARGET_LINUX_APPIMAGE }}
       target_linux_tarball: ${{ env.TARGET_LINUX_TARBALL }}
       target_love: ${{ env.TARGET_LOVE }}
+      target_luapak: ${{ env.TARGET_LUAPAK }}
       target_macos: ${{ env.TARGET_MACOS }}
       target_windows_install: ${{ env.TARGET_WINDOWS_INSTALL }}
       target_windows_sfx: ${{ env.TARGET_WINDOWS_SFX }}
@@ -215,6 +216,55 @@ jobs:
           itch_user: ${{ needs.configure.outputs.itch_user }}
           package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.love
           version: ${{ env.PRODUCT_VERSION }}
+
+  build-luapak:
+    if: ${{ needs.configure.outputs.target_luapak == 'true' }}
+    runs-on: ubuntu-22.04
+    needs: [configure]
+    env:
+      BUILD_NUM: ${{ needs.configure.outputs.build_num }}
+      PRODUCT_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || needs.configure.outputs.previous_tag }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          submodules: recursive
+      - name: Get product environment variables
+        uses: ./.github/actions/get-env
+        with:
+          env_file: src/product.env
+      - name: Build executable with Luapak
+        uses: ./.github/actions/build-luapak
+        with:
+          output_folder: ${{ env.OUTPUT_FOLDER }}
+          product_file: ${{ env.PRODUCT_FILE }}
+          product_name: ${{ env.PRODUCT_NAME }}
+      - name: Upload executable as artifact
+        if: ${{ needs.configure.outputs.build_type == 'dev' }}
+        uses: actions/upload-artifact@v6
+        with:
+          name: ${{ env.PRODUCT_FILE }}
+          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
+      - name: Upload executable as release asset
+        if: ${{ needs.configure.outputs.build_type == 'release' }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.configure.outputs.upload_url }}
+          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
+          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}
+          asset_content_type: application/octet-stream
+      # - name: Upload executable to itch.io
+      #   if: ${{ needs.configure.outputs.build_type == 'release' }}
+      #   uses: ./.github/actions/publish-itch
+      #   with:
+      #     api-key: ${{ secrets.BUTLER_API_KEY }}
+      #     channel: love -- FIXME
+      #     itch_game: ${{ needs.configure.outputs.itch_game }}
+      #     itch_user: ${{ needs.configure.outputs.itch_user }}
+      #     package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
+      #     version: ${{ env.PRODUCT_VERSION }}
 
   build-linux:
     if: ${{ needs.configure.outputs.target_linux_appimage == 'true' || needs.configure.outputs.target_linux_tarball == 'true' }}

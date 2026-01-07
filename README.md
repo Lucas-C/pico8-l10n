@@ -9,16 +9,21 @@ For some more context, check this PICO8 BBS thread:
 
 # Usage
 
-    $ pico8-l10n translate vampire_vs_pope_army/fr-FR.po vampire_vs_pope_army.p8
+    $ pico8-l10n translate l10n/vampire_vs_pope_army/fr-FR.po vampire_vs_pope_army.p8
     vampire_vs_pope_army-fr-FR.p8.png successfully generated
 
 
 # Development
 
-## Install dependencies
+## Install dependencies & build executable
 From inside the repository:
 
     luarocks install --only-deps *.rockspec
+    luapak make
+
+Alternatively, you can just use this script if you are using `apt` under Debian / Ubuntu:
+
+    tools/build-with-luapak.sh
 
 ## Run unit tests
 
@@ -34,10 +39,16 @@ Using [StyLua](https://github.com/JohnnyMorganz/StyLua) & [`pre-commit`](https:/
     pre-commit install
     pre-commit run stylua --all-files
 
+## GitHub Actions pipelines
+They can be tested locally with [`act`](https://github.com/nektos/act):
+
+    act -l
+    act -j build-luapak
+
 
 # Remains to do...
 * [ ] parse `.po` files, _cf._ <https://olivier.dossmann.net/wiki/developpement/lua_gettext/>
 * [ ] perform substitutions in the `.p8` file
 * [ ] handle `.p8.png` files
 * [ ] generate a static HTML page and host it on GitHub pages
-* [ ] publish on LuaRocks
+* [ ] make a release & publish on LuaRocks

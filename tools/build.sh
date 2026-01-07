@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -o pipefail -o errexit -o nounset -o xtrace
 
 # Wrapper around act to build and extract game packages
 

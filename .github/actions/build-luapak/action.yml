@@ -1,0 +1,19 @@
+name: Build executable with Luapak
+inputs:
+  output_folder:
+    description: The folder in which the generated executable file will be placed
+    required: true
+  product_file:
+    description: The basename of the file to be generated
+    required: true
+  product_name:
+    description: The name of the game
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Install tools
+      uses: ./.github/actions/install-tools
+    - name: Luapak make
+      shell: bash
+      run: tools/build-with-luapak.sh

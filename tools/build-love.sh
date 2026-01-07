@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -o pipefail -o errexit -o nounset -o xtrace
 
 if ! command -v 7z &>/dev/null; then
   echo 'ERROR! Command not found: `7z` is required to build the package.'

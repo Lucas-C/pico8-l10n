@@ -9,9 +9,17 @@ function cli.parse()
   )
   parser:command_target("command")
 
-  local translateCmd = parser:command("translate")
-  translateCmd:argument("po_file", "File path of a .po file")
-  translateCmd:argument("p8_file", "File path of a .p8 or .p8.png file")
+  local init_cmd = parser:command("init")
+  init_cmd:argument("p8_file", "File path of a .p8 or .p8.png file")
+  init_cmd:argument("language_locale", "E.g. fr-FR, en-US, etc. ISO 639-1 language code -DASH- ISO 3166-1 Alpha-2 code")
+
+  local translate_cmd = parser:command("translate")
+  translate_cmd:argument("po_file", "File path of a .po file")
+  translate_cmd:argument("p8_file", "File path of a .p8 or .p8.png file")
+
+  local check_cmd = parser:command("check")
+  check_cmd:argument("po_file", "File path of a .po file")
+  check_cmd:argument("p8_file", "File path of a .p8 or .p8.png file")
 
   return parser:parse()
 end
