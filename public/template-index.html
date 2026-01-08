@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>pico8-l10n</title>
+  <meta content="pico8-l10n" property="og:title">
+  <meta content="pico8-l10n is a CLI program to translate PICO-8 games" name="description">
+  <meta content="pico8-l10n is a CLI program to translate PICO-8 games" property="og:description">
+  <meta content="PICO-8, video game, localization, translation, Lua, l10n, i18n" name="keywords">
+  <meta content="https://lucas-c.github.io/pico8-l10n/" property="og:url">
+  <meta content="website" property="og:type">
+  <meta content="on" name="twitter:dnt">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img alt="PICO-8 icon" class="pico8-icon" width="110" height="110" src="icon-pico8.png">
+    <a href="https://github.com/Lucas-C/pico8-l10n"><h1>pico8-l10n</h1></a>
+    <p>A tool to translate <a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> games.</p>
+  </header>
+  <section>
+    <div class="breadcrumb">
+      <div class="breadcrumb-separator"> &gt; </div>
+      <h2 class="breadcrumb-tag text">What is this?</h2>
+    </div>
+    <div class="text">
+      <p><a href="https://www.lexaloffle.com/pico-8.php">PICO-8</a> is a virtual console for making, sharing and playing tiny games, that runs on Windows, Mac & Linux.
+         <br>It's truly wonderful, amazing game creators released amazing PICO-8 games, and many of them are even free.
+         <br>It currently does not allow to <b>translate</b> games though.</p>
+      <p><code>pico8-l10n</code> is a free &amp; open-source (<a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a>) tool aimed to feel this gap,
+         and allow anyone (game creators or players), to translate their favorite PICO-8 games into other languages.</p>
+      <p><code>pico8-l10n</code> is a <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> program written in <b>Lua</b>.
+         It currently has been only tested under <b>Linux</b> & <b>Windows</b>, but I'd be very happy to have Mac users test it and give some feedback 😊</p>
+    </div>
+  </section>
+  <section>
+    <div class="breadcrumb">
+      <div class="breadcrumb-separator"> &gt; </div>
+      <h2 class="breadcrumb-tag text">Hosted game translations</h2>
+    </div>
+    <div class="text">
+      <p>
+        In addition to hosting <a href="https://github.com/Lucas-C/pico8-l10n">the code for pico8-l10n</a>,
+        this repository also hosts some PICO-8 games translations,
+        contributed by volunteers, and placed under under the <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license</a>.
+      </p>
+      <p>
+        The <code>.p8.png</code> PICO-8 game files are only hosted if the author gave us permission to do so.
+      </p>
+      <p>
+        You can contribute your own translations for your favorite games
+        by following <a href="#contributing">the instructions below</a>.
+      </p>
+    </div>
+    <div class="grid">
+    {% for _, game in ipairs(games) do %}
+      <div class="game-card">
+        <a href="{{ game.bbs_url or game.itchio_url }}">
+          <div class="cartridge-img" style="background-image: url('https://www.lexaloffle.com/bbs/thumbs/pico8_{{ game.id }}-0.png')">
+          </div>
+        </a>
+        <div class="cartridge-info">
+          <div class="cartridge-right-column">
+            {% if game.bbs_url then %}
+            <a class="website-link" href="{{ game.bbs_url }}">
+              <img alt="PICO-8 icon" width="20" height="20" src="icon-pico8.png">
+            </a>
+            {% end %}
+            {% if game.itchio_url then %}
+            <a class="website-link" href="{{ game.itchio_url }}">
+              <img alt="itch.io icon" width="20" height="20" src="icon-itchio-white.svg">
+            </a>
+            {% end %}
+          </div>
+          <div class="cartridge-label">
+            <a class="game-name" href="{{ game.bbs_url or game.itchio_url }}">
+              {{ game.name }}
+            </a>
+            {% if game.bbs_author_id then %}
+            <a class="game-author-link" href="https://www.lexaloffle.com/bbs/?uid={{ game.bbs_author_id }}&mode=carts">
+            {% end %}
+				      <span class="game-author">by {{ game.author }}</span>
+            {% if game.bbs_author_id then %}
+            </a>
+            {% end %}
+          </div>
+          <br>
+          <div class="cartridge-label">
+            Translations:
+            <ul>
+              {% for lang_locale, translation in pairs(game.translations) do %}
+              <li>
+                <a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/{{ game.id }}/{{ lang_locale }}.po">{{ lang_locale }}.po</a>:
+                {{ ("%.0f"):format(translation.translated_percent) }}% translated
+                {% if translation.filename then %}
+                - Download:<br><a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/vampire_vs_pope_army/{{ translation.filename }}">{{ translation.filename }}</a>
+                {% end %}
+              </li>
+              {% end %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% end %}
+    </div>
+  </section>
+  <section>
+    <div class="breadcrumb">
+      <div class="breadcrumb-separator"> &gt; </div>
+      <h2 class="breadcrumb-tag text">How to play translated games?</h2>
+    </div>
+    <div class="text">
+      <p>
+        If you have the <b>translated</b> <code>.p8</code> or <code>.p8.png</code> PICO-8 game file,
+        you can simply add it at a PICO-8 cartridge and launch it:
+      </p>
+      <pre><code>
+  $ cp vampire_vs_pope_army-0-fr-FR.p8.png ~/.lexaloffle/pico-8/carts/
+  $ pico8 -run vampire_vs_pope_army-0-fr-FR.p8.png
+      </code></pre>
+      <p>
+        If you don't have a <b>translated</b> <code>.p8</code> or <code>.p8.png</code> game file,
+        you can generate it using the <code>pico-l10n</code> command, the <a href="https://en.wikipedia.org/wiki/Gettext">Gettext</a> <code>.po</code> file
+        corresponding to your language, and the original <code>.p8</code> or <code>.p8.png</code> game file:
+      </p>
+      <pre><code>
+  $ pico8-l10n translate vampire_vs_pope_army-0.p8.png fr-FR
+  vampire_vs_pope_army-0-fr-FR.p8.png successfully generated
+      </code></pre>
+    </div>
+  </section>
+  <section>
+    <div class="breadcrumb">
+      <div class="breadcrumb-separator"> &gt; </div>
+      <h2 class="breadcrumb-tag text">How does <code>pico8-l10n</code> game translation work?</h2>
+    </div>
+    <div class="text">
+      <p>
+        Translations are stored in standard <a href="https://en.wikipedia.org/wiki/Gettext">Gettext</a> <code>.po</code> files,
+        that have a very simple structure:
+      </p>
+      <pre><code>
+  msgid "original text in game"
+  msgstr "text translated"
+      </code></pre>
+      <p>
+        The <code>pico-l10n</code> then use this file to perform text replacements
+        in a given <code>.p8</code> or <code>.p8.png</code> PICO-8 game file.
+      </p>
+    </div>
+  </section>
+  <section id="contributing">
+    <div class="breadcrumb">
+      <div class="breadcrumb-separator"> &gt; </div>
+      <h2 class="breadcrumb-tag text">How to translate a PICO-8 game?</h2>
+    </div>
+    <div class="text">
+      <p><u>Requirement:</u>
+        <br>You must either have the PICO-8 game file in <code>.p8</code> format,
+        <br>or the game file in <code>.p8.png</code> format
+        <b>if</b> you have <a href="https://www.lexaloffle.com/pico-8.php?#getpico8">bought PICO-8</a>
+        and hence access to the <code>pico8</code> command.
+      </p>
+      <p>
+        Then, you can initiate a <code>.po</code> file for this game file using <code>pico8-l10n</code>:
+      </p>
+      <pre><code>
+  $ pico8-l10n init vampire_vs_pope_army-0.p8.png fr-FR
+  games/vampire_vs_pope_army/fr-FR.po successfully generated
+      </code></pre>
+      <p>
+        Now you can edit this newly created <code>.po</code> file with your favorite text editor to translate all the text in it.
+      </p>
+      <hr>
+      <p>
+        Once you have translated a PICO-8 file, you
+        can submit it as a <b>GitHub Pull Request</b>
+        so that your translation is published on this website.
+      </p>
+      <hr>
+      <p>
+        If you do not know how to use all those tools,
+        or you haven't <a href="https://www.lexaloffle.com/pico-8.php?#getpico8">bought PICO-8</a>,
+        you can still <b>help translating games using only GitHub</b>.
+      </p>
+      <p>
+        To do so, start by <a href="https://github.com/Lucas-C/pico8-l10n/issues/new">opening a GitHub issue</a>
+        requesting for a <code>.po</code> translation file to be initiated for a game you love.
+      </p>
+      <p>
+        Once the <code>.po</code> is created, you will be able to translate all the text in it
+        (you can use GitHub online editor for that if you want),
+        and then submit a <b>Pull Request</b> so that your translation is published on this website.
+      </p>
+    </div>
+  </section>
+  <section>
+    <div class="breadcrumb">
+      <div class="breadcrumb-separator"> &gt; </div>
+      <h2 class="breadcrumb-tag text">Q &amp; A</h2>
+    </div>
+    <div class="text">
+      <p>
+        <b>Where to get the <code>pico8</code> command?</b>
+        <br>You need to <a href="https://www.lexaloffle.com/pico-8.php?#getpico8">buy PICO-8</a>,
+        and then you will get access to the <code>pico8</code> command for Linux, Windows & Mac.
+      </p>
+      <p>
+        <b>What does <em>l10n</em> means in <code>pico8-l10n</code>?</b>
+        <br><em>l10n</em> is the abbreviation for "localization": the letter "L" followed by 10 letters then the letter "N"
+        (<em>cf.</em><a href="https://en.wikipedia.org/w/index.php?title=L10n">Wikipedia page</a>).
+      </p>
+      <p>
+        <b>Who made this?</b>
+        <br>Lucas Cimon in January of 2026.
+        <br>I'm a French software engineer, libre software enthusiast, especially around the Lua &amp; Python languages.
+        <br>I also love games, and I even sometime create some.
+        <br>There is my blog: <a href="https://chezsoi.org/lucas/blog/">Ludochaordic</a>.
+      </p>
+      <p>
+        <b>I have another question</b>
+        <br>You can <a href="https://github.com/Lucas-C/pico8-l10n/discussions/new/choose">open a GitHub discussion</a> to ask it 😊.
+      </p>
+    </div>
+  </section>
+  <footer>
+    Source code repository: <a href="https://github.com/Lucas-C/pico8-l10n">github.com/Lucas-C/pico8-l10n</a>
+  </footer>
+</body>
+</html>

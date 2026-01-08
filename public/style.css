@@ -1,0 +1,135 @@
+@font-face {
+  font-family: 'ProggyVector';
+  src: url('proggyvec.woff') format('woff');
+}
+
+body {
+	font-size: 11pt;
+	font-family: 'ProggyVector';
+	line-height: 1.4;
+	color: #ccc;
+	background-color: #303030;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+  font-size: 16pt;
+  margin: 0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a { color: #fab; }
+a:hover { cursor: pointer; }
+
+ul { padding-left: 16px; }
+
+code {
+	padding: 2px 4px;
+	background-color: #ddd;
+	color:  #222;
+}
+
+pre {
+	background-color: #ddd;
+  overflow-x: scroll;
+}
+
+header, section {
+  padding: 16px;
+  background-color: #222;
+  margin: 16px;
+}
+
+header .pico8-icon {
+  float: right;
+  width: 110px;
+  height: 110px;
+}
+
+.text {
+  padding: 8px 18px;
+  background-color: #333;
+  margin-bottom: 16px;
+}
+
+.breadcrumb {
+  display: table;
+  font-size: 16pt;
+}
+
+.breadcrumb-tag {
+  float: left;
+  color: #fff;
+}
+
+.breadcrumb-separator {
+  float: left;
+  padding: 6px;
+  color: #666;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 4px;
+}
+
+.game-card {
+  padding: 2px;
+}
+
+.cartridge-img {
+  width: 320px;
+  height: 320px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cartridge-info {
+  position: relative;
+  padding: 8px 0;
+  top: -63px;
+  margin-bottom: -60px;
+  background-color: rgba(15, 10, 60, 0.7);
+  width: 320px;
+  overflow: hidden;
+  font-size: 10pt;
+}
+
+.cartridge-right-column {
+  float: right;
+  margin-top: -6px;
+}
+
+.website-link {
+  display: flex;
+  padding: 6px;
+}
+
+.cartridge-label { margin-left: 8px; }
+
+.game-name {
+  display: block;
+  padding-bottom: 3px;
+  padding-right: 4px;
+  color:#eee;
+  text-decoration: none;
+}
+
+.game-author-link { text-decoration: none; }
+.game-author {
+  font-size: 8pt;
+  color: #bbb;
+}
+
+footer {
+  text-align: center;
+  margin: 32px
+}

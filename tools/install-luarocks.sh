@@ -4,7 +4,10 @@ set -o pipefail -o errexit -o nounset -o xtrace
 LUA_VERSION=5.3
 LUAROCKS_VERSION=2.4.4
 
-if ! command -v luarocks; then
+SUDO=
+if command -v sudo >/dev/null; then SUDO=sudo; fi
+
+if ! command -v luarocks >/dev/null; then
   if ! command -v lua; then
     echo "Installing Lua $LUA_VERSION with apt..."
     sudo apt install -y lua$LUA_VERSION liblua$LUA_VERSION-dev
@@ -15,10 +18,10 @@ if ! command -v luarocks; then
   pushd luarocks-$LUAROCKS_VERSION
     ./configure
     make
-    sudo make install
+    $SUDO make install
   popd
   # Setting LuaRocks configuration:
-  cat <<EOF | sudo tee /usr/local/etc/luarocks/config-$LUA_VERSION.lua
+  cat <<EOF | $SUDO tee /usr/local/etc/luarocks/config-$LUA_VERSION.lua
 variables = {
   LUA_INCDIR = "/usr/include/lua$LUA_VERSION";
   LUA_LIBDIR = "/usr/lib/x86_64-linux-gnu/";

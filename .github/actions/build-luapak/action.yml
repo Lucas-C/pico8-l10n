@@ -12,8 +12,5 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Install tools
-      uses: ./.github/actions/install-tools
-    - name: Luapak make
-      shell: bash
+    - name: Build linux executable with Luapak
       run: tools/build-with-luapak.sh

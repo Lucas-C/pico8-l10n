@@ -1,0 +1,28 @@
+name: HTML website
+
+on:  # cf. https://github.community/t/how-to-trigger-an-action-on-push-or-pull-request-but-not-both/16662
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  pages:
+    runs-on: ubuntu-22.04
+    permissions:
+      # required to deploy doc, by pushing commits to branch gh-pages:
+      contents: write
+      pages: write
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v6
+      - name: Generate HTML website
+        run: tools/build-website.sh
+      - name: Deploy documentation 🚀
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public/

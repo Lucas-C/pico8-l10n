@@ -1,4 +1,4 @@
-local init = require("init")
+local init = require("cmd_init")
 
 local original_print = print
 local prints = {}
