@@ -1,49 +1,60 @@
 local p8 = require("p8")
 
-describe("p8", function()
-  describe(".extract_lua_code()", function()
-    it("should successfully extract Lua code from a .p8", function()
-      local expected = [[
-function _init()
-  print("Starting game...")
-  print("Hello world!")
-end
-
-x = 64  y = 64
-function _update()
-  if (btn(0)) then x=x-1 end
-  if (btn(1)) then x=x+1 end
-  if (btn(2)) then y=y-1 end
-  if (btn(3)) then y=y+1 end
-end
-
-function _draw()
-  cls(5)
-  circfill(x,y,7,14)
-end
-]]
-      assert.equal(expected, p8.extract_lua_code("tests/circle.p8"))
-    end)
-  end)
-
-  describe(".extract_strings_from_code()", function()
-    it("should successfully extract strings from Lua code", function()
-      local lua_code = [[
+local p8_content = [[
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
 print("UPDATED") -- string with double quotes
 print('press x to start', 7) -- string with single quotes
 print('') -- empty string
 print("'OK?'") -- single quote in between double quotes
 print('"yes!"') -- double quote in between single quotes
 alert("\"no escaping allowed!\"") -- escaped double quotes in between double quotes
+
+__gfx__
 ]]
+
+describe("p8", function()
+  describe(".extract_strings_p8_content()", function()
+    it("should successfully extract strings from some .p8 file content", function()
       local expected = {
-        "UPDATED",
-        "press x to start",
-        "'OK?'",
-        '"yes!"',
-        '\\"no escaping allowed!\\"',
+        [69] = "UPDATED",
+        [115] = "press x to start",
+        [199] = "'OK?'",
+        [255] = '"yes!"',
+        [312] = '\\"no escaping allowed!\\"',
       }
-      assert.same(expected, p8.extract_strings_from_code(lua_code))
+      assert.same(expected, p8.extract_strings_p8_content(p8_content))
+    end)
+  end)
+  describe(".subst_l10n_strings()", function()
+    it("should successfully substitute localized strings in .p8 file content", function()
+      local lua_strings = {
+        [69] = "UPDATED",
+        [115] = "press x to start",
+        [199] = "'OK?'",
+        [255] = '"yes!"',
+        [312] = '\\"no escaping allowed!\\"',
+      }
+      local l10n = {
+        ["UPDATED"] = "",
+        ["'OK?'"] = "'**KO**'",
+        ['"yes!"'] = '"_no_"',
+      }
+      local expected = [[
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
+print("") -- string with double quotes
+print('press x to start', 7) -- string with single quotes
+print('') -- empty string
+print("'**KO**'") -- single quote in between double quotes
+print('"_no_"') -- double quote in between single quotes
+alert("\"no escaping allowed!\"") -- escaped double quotes in between double quotes
+
+__gfx__
+]]
+      assert.equal(expected, p8.subst_l10n_strings(p8_content, lua_strings, l10n))
     end)
   end)
 end)
