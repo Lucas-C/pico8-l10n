@@ -3,6 +3,7 @@
 .vscode/settings.json
 dist/
 
+*.rock
 *.p8.png
 
 # busted tests:
