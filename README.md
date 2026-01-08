@@ -8,8 +8,6 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/Lucas-C/pico8-l10n)](https://github.com/Lucas-C/pico8-l10n/commits/main)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://makeapullrequest.com)
 
-🚧 Work in progress / not released yet 🚧
-
 `pico8-l10n` is a simple CLI program
 that reads [Gettext standard `.po` files](https://en.wikipedia.org/wiki/Gettext)
 and uses them to translate `.p8` or `.p8.png` [PICO8](https://www.lexaloffle.com/pico-8.php) game files.
@@ -51,12 +49,15 @@ The following options are currently available to install `pico8-l10n`:
 ## Install dependencies & build executable
 From inside the repository:
 
-    luarocks install --only-deps *.rockspec
-    luapak make
+    luarocks install --local *.rockspec
 
 If you want to install `pico8-l10n` in your `$PATH` (usually in `/usr/local/bin`):
 
     sudo luarocks make
+
+If you want to build the executable binary:
+
+    luapak make
 
 Alternatively, you can just run this script if you are using `apt` under Debian / Ubuntu / WSL2,
 it will install Lua & LuaRocks & Luapak once if need be:
@@ -97,14 +98,13 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 1. `version=1.X.Y`
 1. `tools/release.sh $version`
 1. Edit `CHANGELOG.md` to add the release date for `$version`
-1 `git commit -am "New release: $version" && git push`
-1. Perform a GitHub Release that creates a new tag `$version`
+1 `git commit -am "New release: $version" && git push && git tag $version && git push --tags`
 1. `tools/publish.sh` to upload on [LuaRocks](https://luarocks.org/)
+1. Check that a new GitHub release has been published: <https://github.com/Lucas-C/pico8-l10n/releases>
 
 
 # Work in progress: what remains to be done...
 * handle `.p8.png` files
 * generate a static HTML page and host it on GitHub Pages
-* make a Github release & publish on LuaRocks
 * [website/doc] add instructions in it on how to share a new translation
 * [website/doc] installation steps: test, improve & include in GitHub Pages website
