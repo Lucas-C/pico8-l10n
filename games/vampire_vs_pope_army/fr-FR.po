@@ -15,43 +15,43 @@ msgid "the ancient cathedral"
 msgstr "L'ancienne cathedrale"
 
 msgid "has a new master now."
-msgstr ""
+msgstr "has a new master now."
 
 msgid "men of god know well"
-msgstr ""
+msgstr "men of god know well"
 
 msgid "never to approach the"
-msgstr ""
+msgstr "never to approach the"
 
 msgid "blasphemed sanctuary."
-msgstr ""
+msgstr "blasphemed sanctuary."
 
 msgid "still, there are tales."
-msgstr ""
+msgstr "still, there are tales."
 
 msgid "like that, it was gone."
-msgstr ""
+msgstr "like that, it was gone."
 
 msgid "the prince of popes"
-msgstr ""
+msgstr "the prince of popes"
 
 msgid "denies the daywalker's"
-msgstr ""
+msgstr "denies the daywalker's"
 
 msgid "exodus. and existence."
-msgstr ""
+msgstr "exodus. and existence."
 
 msgid "still, the reports we"
-msgstr ""
+msgstr "still, the reports we"
 
 msgid "receive are worrisome."
-msgstr ""
+msgstr "receive are worrisome."
 
 msgid "\"no escaping allowed!\""
 msgstr "\"Vous ne vous evaderez jamais !\""
 
 msgid "\"blearggh...\""
-msgstr ""
+msgstr "\"blearggh...\""
 
 msgid "\"did you hear something?\""
 msgstr "\"Vous avez entendu ?\""

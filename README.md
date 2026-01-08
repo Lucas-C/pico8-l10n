@@ -1,3 +1,10 @@
+[![License: LGPL v3](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
+[![build status](https://github.com/Lucas-C/pico8-l10n/workflows/Busted/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions?query=branch%3Amain)
+[![checks: luacheck, stylua, busted, prysk](https://img.shields.io/badge/checks-luacheck,stylua,busted,prysk-green.svg)](https://github.com/Lucas-C/pico8-l10n/actions?query=branch%3Amain)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/Lucas-C/pico8-l10n)](https://github.com/Lucas-C/pico8-l10n/commits/main)
+[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://makeapullrequest.com)
+
 🚧 Work in progress 🚧
 
 The goal is to provide a `pico8-l10n` CLI program
@@ -17,7 +24,7 @@ Initialize a new localization `.po` file for a given `.p8` / `.p8.png` game file
 Generate a new `.p8` / `.p8.png` file from a given `.po` file:
 
     $ pico8-l10n translate vampire_vs_pope_army-0.p8.png fr-FR
-    vampire_vs_pope_army-fr-FR.p8.png successfully generated
+    vampire_vs_pope_army-0-fr-FR.p8.png successfully generated
 
 Check if ALL "localizable" strings in a given `.p8` / `.p8.png` game file are translated in a `.po` file:
 
@@ -68,7 +75,6 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 
 
 # Work in progress: what remains to be done...
-* parse `.po` files, _cf._ <https://olivier.dossmann.net/wiki/developpement/lua_gettext/>
 * handle `.p8.png` files
 * generate a static HTML page and host it on GitHub Pages, with instructions in it on how to share a new translation
 * make a Github release & publish on LuaRocks
