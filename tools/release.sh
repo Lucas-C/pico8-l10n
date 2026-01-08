@@ -14,7 +14,7 @@ function match() {
 
 ROCKSPEC=$(match pico8-l10n-*.rockspec)
 
-luarocks install --local $ROCKSPEC
+sudo luarocks install --only-deps *.rockspec
 
 # Not using `luarocks new_version` because it removes comments:
 sed -i "s/version = .*/version = \"$VERSION-1\"/" $ROCKSPEC
