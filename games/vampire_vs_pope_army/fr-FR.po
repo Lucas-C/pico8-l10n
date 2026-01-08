@@ -12,7 +12,7 @@ msgstr ""
 "Language: fr_FR\n"
 
 msgid "the ancient cathedral"
-msgstr "L'ancienne cathedrale"
+msgstr "l'ancienne cathedrale"
 
 msgid "has a new master now."
 msgstr ""
@@ -48,37 +48,37 @@ msgid "receive are worrisome."
 msgstr ""
 
 msgid "\"no escaping allowed!\""
-msgstr "\"Vous ne vous evaderez jamais !\""
+msgstr "\"vous ne vous evaderez jamais !\""
 
 msgid "\"blearggh...\""
 msgstr "\"blearggh...\""
 
 msgid "\"did you hear something?\""
-msgstr "\"Vous avez entendu ?\""
+msgstr "\"vous avez entendu ?\""
 
 msgid "\"hey! stop drinking popes!\""
-msgstr "\"Arretez de boire des papes !\""
+msgstr "\"arretez de boire des papes !\""
 
 msgid "\"it found the blood talisman!\""
-msgstr "\"Il a trouve le talisman de sang !\""
+msgstr "\"il a trouve le talisman de sang !\""
 
 msgid "\"is it finally dead?\""
-msgstr "\"Est-il enfin mort ?\""
+msgstr "\"est-il enfin mort ?\""
 
 msgid "\"it's hurt!\""
-msgstr "\"Il est blesse !\""
+msgstr "\"il est blesse !\""
 
 msgid "adam atomic presents"
-msgstr "adam atomic presents"
+msgstr "adam atomic presente"
 
 msgid "press any key to begin"
-msgstr "press any key to begin"
+msgstr "appuyez sur une touche"
 
 msgid "popes drank"
-msgstr "popes drank"
+msgstr ""
 
 msgid "talismans"
 msgstr "talismans"
 
 msgid "vamp time"
-msgstr "vamp time"
+msgstr ""

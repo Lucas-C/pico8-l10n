@@ -33,6 +33,7 @@ build = {
     main = "src/main.lua",
     p8 = "src/p8.lua",
     p8_png = "src/p8_png.lua",
+    pico8 = "src/pico8.lua",
     po = "src/po.lua",
     string_utils = "src/string_utils.lua",
     translate = "src/translate.lua",

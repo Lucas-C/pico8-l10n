@@ -54,12 +54,7 @@ function p8.substitute_strings(p8_filepath, lang_locale, l10n)
   local lua_strings = p8.extract_strings_p8_content(p8_content)
   local new_p8_content = p8.subst_l10n_strings(p8_content, lua_strings, l10n)
   local new_p8_filepath = p8_filepath:sub(0, #p8_filepath - 3) .. "-" .. lang_locale .. ".p8"
-  local file, err = io.open(new_p8_filepath, "w")
-  if err then
-    error("Could not open " .. new_p8_filepath .. ": " .. err)
-  end
-  file:write(new_p8_content)
-  file:close()
+  io2.create_file(new_p8_filepath, new_p8_content)
   return new_p8_filepath
 end
 

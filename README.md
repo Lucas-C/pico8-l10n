@@ -27,6 +27,13 @@ Generate a new `.p8` / `.p8.png` file from a given `.po` file:
     $ pico8-l10n translate vampire_vs_pope_army-0.p8.png fr-FR
     vampire_vs_pope_army-0-fr-FR.p8.png successfully generated
 
+⚠️ Translating `.p8.png` files require to have `pico8` installed in your `$PATH`.
+
+Play the translated game:
+
+    cp vampire_vs_pope_army-0-fr-FR.p8.png ~/.lexaloffle/pico-8/carts/
+    pico8 -run vampire_vs_pope_army-0-fr-FR.p8.png
+
 Check if ALL "localizable" strings in a given `.p8` / `.p8.png` game file are translated in a `.po` file:
 
     $ pico8-l10n check vampire_vs_pope_army-0.p8.png fr-FR
@@ -51,12 +58,13 @@ From inside the repository:
 
     luarocks install --local *.rockspec
 
-If you want to install `pico8-l10n` in your `$PATH` (usually in `/usr/local/bin`):
+To install `pico8-l10n` in your `$PATH` (usually in `/usr/local/bin`):
 
     sudo luarocks make
 
-If you want to build the executable binary:
+To build the executable binary:
 
+    sudo luarocks install --only-deps *.rockspec  # to install luapak in your $PATH
     luapak make
 
 Alternatively, you can just run this script if you are using `apt` under Debian / Ubuntu / WSL2,
@@ -80,6 +88,10 @@ Using [busted](https://lunarmodules.github.io/busted/):
 
     busted
 
+Example to select a single test to run:
+
+    busted tests/p8_png_spec.lua --filter p8_to_png
+
 ## Run CLI tests
 Using [Prysk](https://www.prysk.net/), _cf._ [end-to-end.t](https://github.com/Lucas-C/pico8-l10n/blob/main/cli-tests/end-to-end.t):
 
@@ -98,13 +110,11 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 1. `version=1.X.Y`
 1. `tools/release.sh $version`
 1. Edit `CHANGELOG.md` to add the release date for `$version`
-1 `git commit -am "New release: $version" && git push && git tag $version && git push --tags`
+1. `git commit -am "New release: $version" && git push && git tag $version && git push --tags`
 1. `tools/publish.sh` to upload on [LuaRocks](https://luarocks.org/)
-1. Check that a new GitHub release has been published: <https://github.com/Lucas-C/pico8-l10n/releases>
+1. Check that a new GitHub release has been published: [pico8-l10n GitHub Releases](https://github.com/Lucas-C/pico8-l10n/releases)
 
 
 # Work in progress: what remains to be done...
-* handle `.p8.png` files
 * generate a static HTML page and host it on GitHub Pages
-* [website/doc] add instructions in it on how to share a new translation
-* [website/doc] installation steps: test, improve & include in GitHub Pages website
+* [website/doc] add instructions in it on how to share a new translation, with a GitHub issue template

@@ -4,10 +4,7 @@ local po = {}
 
 function po.create_from_strings(strings, po_filepath)
   io2.create_parent_dir(po_filepath)
-  local file, err = io.open(po_filepath, "w")
-  if err then
-    error("Could not open " .. po_filepath .. ": " .. err)
-  end
+  local content = ""
   local count = 0
   -- Loop over strings, ordered by increasing indices:
   local ordered_indices = {}
@@ -17,12 +14,12 @@ function po.create_from_strings(strings, po_filepath)
   table.sort(ordered_indices)
   for _, i in ipairs(ordered_indices) do
     local str = strings[i]
-    file:write('msgid "' .. str .. '"\n')
-    file:write('msgstr ""\n')
-    file:write("\n")
+    content = content .. 'msgid "' .. str .. '"\n'
+    content = content .. 'msgstr ""\n'
+    content = content .. "\n"
     count = count + 1
   end
-  file:close()
+  io2.create_file(po_filepath, content)
   return count
 end
 

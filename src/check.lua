@@ -4,10 +4,13 @@ local p8_png = require("p8_png")
 local po = require("po")
 
 return function(p8_or_png_filepath, lang_locale_or_po_filepath)
-  local p8_filepath = p8_png.with_png_converted(p8_or_png_filepath)
+  local p8_filepath, is_png = p8_png.with_png_converted(p8_or_png_filepath)
   local po_filepath = fp.as_po_filepath(p8_filepath, lang_locale_or_po_filepath)
   local l10n = po.parse(po_filepath)
   local lua_strings = p8.extract_strings(p8_filepath)
+  if is_png then
+    assert(os.remove(p8_filepath))
+  end
   local missing_strings = 0
   local untranslated_strings = 0
   for _, str in pairs(lua_strings) do

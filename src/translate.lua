@@ -11,7 +11,10 @@ return function(p8_or_png_filepath, lang_locale_or_po_filepath)
   local l10n = po.parse(po_filepath)
   local new_p8_filepath = p8.substitute_strings(p8_filepath, lang_locale, l10n)
   if is_png then
-    new_p8_filepath = p8_png.p8_to_png(new_p8_filepath)
+    assert(os.remove(p8_filepath))
+    local p8_png_filepath = p8_png.p8_to_png(new_p8_filepath)
+    assert(os.remove(new_p8_filepath))
+    new_p8_filepath = p8_png_filepath
   end
   print(io2.basename(new_p8_filepath) .. " successfully generated")
 end
