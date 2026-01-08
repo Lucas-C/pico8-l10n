@@ -18,7 +18,7 @@ function po.create_from_strings(strings, po_filepath)
   for _, i in ipairs(ordered_indices) do
     local str = strings[i]
     file:write('msgid "' .. str .. '"\n')
-    file:write('msgstr "' .. str .. '"\n')
+    file:write('msgstr ""\n')
     file:write("\n")
     count = count + 1
   end

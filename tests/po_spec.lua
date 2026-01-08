@@ -13,19 +13,19 @@ describe("po", function()
       }
       local expected = [[
 msgid "UPDATED"
-msgstr "UPDATED"
+msgstr ""
 
 msgid "press x to start"
-msgstr "press x to start"
+msgstr ""
 
 msgid "'OK?'"
-msgstr "'OK?'"
+msgstr ""
 
 msgid ""yes!""
-msgstr ""yes!""
+msgstr ""
 
 msgid "\"no escaping allowed!\""
-msgstr "\"no escaping allowed!\""
+msgstr ""
 
 ]]
       local tmp_filename = os.tmpname()
