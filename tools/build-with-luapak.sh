@@ -6,7 +6,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 if ! command -v luapak; then
   $SCRIPT_DIR/install-luarocks.sh
   echo "Installing Luapak with LuaRocks..."
-  sudo luarocks install --local *.rockspec
+  sudo luarocks install --only-deps *.rockspec
 fi
 
 luapak make

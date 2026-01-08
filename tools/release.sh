@@ -25,3 +25,4 @@ git mv $ROCKSPEC $NEW_ROCKSPEC
 
 # Check that LuaRocks packing is OK:
 luarocks pack pico8-l10n
+rm *.rock
