@@ -5,7 +5,7 @@
 
 body {
 	font-size: 11pt;
-	font-family: 'ProggyVector';
+	font-family: 'ProggyVector', 'courier new', courier, monospace;
 	line-height: 1.4;
 	color: #ccc;
 	background-color: #303030;
