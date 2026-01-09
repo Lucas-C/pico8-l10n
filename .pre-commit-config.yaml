@@ -3,3 +3,11 @@ repos:
   rev: v2.3.1
   hooks:
   - id: stylua
+- repo: local
+  hooks:
+  - id: build-html-website
+    name: Build website and check HTML with v.Nu Checker
+    files: \.html$
+    language: script
+    entry: tools/build-website.sh
+    pass_filenames: false

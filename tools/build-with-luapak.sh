@@ -3,7 +3,7 @@ set -o pipefail -o errexit -o nounset -o xtrace
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-if ! command -v luapak; then
+if ! command -v luapak >/dev/null; then
   $SCRIPT_DIR/install-luarocks.sh
   echo "Installing Luapak with LuaRocks..."
   sudo luarocks install --only-deps *.rockspec

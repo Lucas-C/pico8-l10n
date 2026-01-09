@@ -13,6 +13,7 @@ function match() {
 }
 
 luarocks upload $(match pico8-l10n-*.rockspec) --api-key $LUAROCKS_API_KEY
+rm *.rock
 
 # Check that it worked:
 luarocks search pico8-l10n

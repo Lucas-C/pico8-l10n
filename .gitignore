@@ -1,9 +1,6 @@
-.direnv/
 .luapak/
 .vscode/settings.json
-dist/
 
-*.rock
 *.p8.png
 
 # busted tests:
@@ -11,3 +8,9 @@ games/circle/
 
 # Prysk tests:
 *.t.err
+
+# Website hosted on GitHub Pages:
+public/index.html
+
+# v.Nu HTML checker
+vnu-runtime-image/

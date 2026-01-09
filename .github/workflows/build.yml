@@ -16,7 +16,6 @@ jobs:
     name: Configure build
     runs-on: ubuntu-22.04
     outputs:
-      apple_version_code: ${{ steps.set_build.outputs.apple_version_code }}
       build_num: ${{ steps.set_build.outputs.num }}
       build_type: ${{ steps.set_build.outputs.type }}
       previous_tag: ${{ steps.set_build.outputs.previous_tag }}
@@ -25,18 +24,7 @@ jobs:
       itch_game: ${{ env.ITCH_GAME }}
       itch_user: ${{ env.ITCH_USER }}
       product_file: ${{ env.PRODUCT_FILE }}
-      product_id: ${{ env.PRODUCT_ID }}
-      product_id_linux: ${{ env.PRODUCT_ID_LINUX || env.PRODUCT_ID }}
-      product_id_macos: ${{ env.PRODUCT_ID_MACOS || env.PRODUCT_ID }}
-      product_id_windows: ${{ env.PRODUCT_ID_WINDOWS || env.PRODUCT_ID }}
-      target_linux_appimage: ${{ env.TARGET_LINUX_APPIMAGE }}
-      target_linux_tarball: ${{ env.TARGET_LINUX_TARBALL }}
-      target_love: ${{ env.TARGET_LOVE }}
       target_luapak: ${{ env.TARGET_LUAPAK }}
-      target_macos: ${{ env.TARGET_MACOS }}
-      target_windows_install: ${{ env.TARGET_WINDOWS_INSTALL }}
-      target_windows_sfx: ${{ env.TARGET_WINDOWS_SFX }}
-      target_windows_zip: ${{ env.TARGET_WINDOWS_ZIP }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -60,7 +48,6 @@ jobs:
           APPLE_VERSION_CODE=$(date +${CENTURY_CODE}%y.%j.%H)
           BUILD_NUM=$(date +${CENTURY_CODE}%y.%j.%H%M)
 
-          echo "apple_version_code=${APPLE_VERSION_CODE}" >> $GITHUB_OUTPUT
           echo "num=${BUILD_NUM}" >> $GITHUB_OUTPUT
           # Get the previous tag (most recent release) if any.
           previous_tag=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo '0.0.0')
@@ -159,62 +146,6 @@ jobs:
           draft: false
           prerelease: false
 
-  build-love:
-    if: ${{ needs.configure.outputs.target_love == 'true' }}
-    runs-on: ubuntu-22.04
-    needs: [configure]
-    env:
-      BUILD_NUM: ${{ needs.configure.outputs.build_num }}
-      PRODUCT_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || needs.configure.outputs.previous_tag }}
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-          submodules: recursive
-      - name: Get product environment variables
-        uses: ./.github/actions/get-env
-        with:
-          env_file: src/product.env
-      - name: Build LOVE package
-        uses: ./.github/actions/build-love
-        with:
-          output_folder: ${{ env.OUTPUT_FOLDER }}
-          product_file: ${{ env.PRODUCT_FILE }}
-          product_name: ${{ env.PRODUCT_NAME }}
-      - name: Upload .love artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.love
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.love
-      - name: Upload autonomous bundled executable
-        if: ${{ needs.configure.outputs.build_type == 'dev' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
-          # ^ TODO: specify the arch (arm64?) & compress as tar.gz
-      - name: Upload .love release
-        if: ${{ needs.configure.outputs.build_type == 'release' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.love
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.love
-          asset_content_type: application/x-love-game
-      - name: Upload .love to itch.io
-        if: ${{ needs.configure.outputs.build_type == 'release' }}
-        uses: ./.github/actions/publish-itch
-        with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          channel: love
-          itch_game: ${{ needs.configure.outputs.itch_game }}
-          itch_user: ${{ needs.configure.outputs.itch_user }}
-          package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.love
-          version: ${{ env.PRODUCT_VERSION }}
-
   build-luapak:
     if: ${{ needs.configure.outputs.target_luapak == 'true' }}
     runs-on: ubuntu-22.04
@@ -264,260 +195,6 @@ jobs:
       #     package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
       #     version: ${{ env.PRODUCT_VERSION }}
 
-  build-linux:
-    if: ${{ needs.configure.outputs.target_linux_appimage == 'true' || needs.configure.outputs.target_linux_tarball == 'true' }}
-    runs-on: ubuntu-22.04
-    needs: [configure]
-    continue-on-error: true
-    env:
-      BUILD_NUM: ${{ needs.configure.outputs.build_num }}
-      PRODUCT_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || needs.configure.outputs.previous_tag }}
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-          submodules: recursive
-      - name: Get product environment variables
-        uses: ./.github/actions/get-env
-        with:
-          env_file: src/product.env
-      - name: Create AppImage
-        uses: ./.github/actions/build-linux
-        with:
-          love_version: ${{ env.LOVE_VERSION }}
-          product_file: ${{ env.PRODUCT_FILE }}
-          product_name: ${{ env.PRODUCT_NAME }}
-          product_desc: ${{ env.PRODUCT_DESC }}
-          output_folder: ${{ env.OUTPUT_FOLDER }}
-      - name: Upload AppImage artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' && env.TARGET_LINUX_APPIMAGE == 'true' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.AppImage
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.AppImage
-      - name: Upload AppImage artifact for SteamOS Devkit Client
-        if: ${{ env.TARGET_LINUX_APPIMAGE == 'true' && env.ACT == 'true' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.AppImage
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.AppImage
-      - name: Upload Tarball artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' && env.TARGET_LINUX_TARBALL == 'true' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.tar.gz
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.tar.gz
-      - name: Upload AppImage release
-        if: ${{ needs.configure.outputs.build_type == 'release' && env.TARGET_LINUX_APPIMAGE == 'true' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.AppImage
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.AppImage
-          asset_content_type: application/x-executable
-      - name: Upload Tarball release
-        if: ${{ needs.configure.outputs.build_type == 'release' && env.TARGET_LINUX_TARBALL == 'true' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.tar.gz
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.tar.gz
-          asset_content_type: application/gzip
-      - name: Upload AppImage to itch.io
-        if: ${{ needs.configure.outputs.build_type == 'release' && needs.configure.outputs.target_linux_appimage == 'true' }}
-        uses: ./.github/actions/publish-itch
-        with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          channel: linux_appimage
-          itch_game: ${{ needs.configure.outputs.itch_game }}
-          itch_user: ${{ needs.configure.outputs.itch_user }}
-          package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.AppImage
-          version: ${{ env.PRODUCT_VERSION }}
-
-  build-windows:
-    if: ${{ needs.configure.outputs.target_windows_zip == 'true' || needs.configure.outputs.target_windows_install == 'true' || needs.configure.outputs.target_windows_sfx == 'true' }}
-    runs-on: ubuntu-22.04
-    needs: [configure]
-    continue-on-error: true
-    env:
-      BUILD_NUM: ${{ needs.configure.outputs.build_num }}
-      PRODUCT_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || needs.configure.outputs.previous_tag }}
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-          submodules: recursive
-      - name: Get product environment variables
-        uses: ./.github/actions/get-env
-        with:
-          env_file: src/product.env
-      - name: Build Windows
-        uses: ./.github/actions/build-windows
-        with:
-          build_num: ${{ env.BUILD_NUM }}
-          build_type: ${{ needs.configure.outputs.build_type }}
-          love_version: ${{ env.LOVE_VERSION }}
-          product_desc: ${{ env.PRODUCT_DESC }}
-          product_file: ${{ env.PRODUCT_FILE }}
-          product_name: ${{ env.PRODUCT_NAME }}
-          product_company: ${{ env.PRODUCT_COMPANY }}
-          product_copyright: ${{ env.PRODUCT_COPYRIGHT }}
-          product_uuid: ${{ env.PRODUCT_UUID }}
-          product_version: ${{ env.PRODUCT_VERSION }}
-          product_website: ${{ env.PRODUCT_WEBSITE }}
-          output_folder: ${{ env.OUTPUT_FOLDER }}
-          target_windows_install: ${{ needs.configure.outputs.target_windows_install }}
-          target_windows_sfx: ${{ needs.configure.outputs.target_windows_sfx }}
-          target_windows_zip: ${{ needs.configure.outputs.target_windows_zip }}
-      - name: Upload Windows .zip artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' && needs.configure.outputs.target_windows_zip == 'true' }}
-        uses: actions/upload-artifact@v6
-        with:
-          if-no-files-found: warn
-          include-hidden-files: false
-          compression-level: 9
-          name: ${{ env.PRODUCT_FILE }}
-          path: ./tools/build/win64/*
-      - name: Upload Windows SFX artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' && needs.configure.outputs.target_windows_sfx == 'true' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.exe
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.exe
-      - name: Upload Windows Install artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' && needs.configure.outputs.target_windows_install == 'true' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}-installer.exe
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}-installer.exe
-      - name: Upload Windows .zip release
-        if: ${{ needs.configure.outputs.build_type == 'release' && needs.configure.outputs.target_windows_zip == 'true' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.zip
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.zip
-          asset_content_type: application/zip
-      - name: Upload Windows Install release
-        if: ${{ needs.configure.outputs.build_type == 'release' && needs.configure.outputs.target_windows_install == 'true' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}-installer.exe
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}-installer.exe
-          asset_content_type: application/x-msdownload
-      - name: Upload Windows SFX release
-        if: ${{ needs.configure.outputs.build_type == 'release' && needs.configure.outputs.target_windows_sfx == 'true' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.exe
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.exe
-          asset_content_type: application/x-msdownload
-      - name: Upload Windows Install to itch.io
-        if: ${{ needs.configure.outputs.build_type == 'release' && needs.configure.outputs.target_windows_install == 'true' }}
-        uses: ./.github/actions/publish-itch
-        with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          channel: windows
-          itch_game: ${{ needs.configure.outputs.itch_game }}
-          itch_user: ${{ needs.configure.outputs.itch_user }}
-          package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}-installer.exe
-          version: ${{ env.PRODUCT_VERSION }}
-      - name: Upload Windows SFX to itch.io
-        if: ${{ needs.configure.outputs.build_type == 'release' && needs.configure.outputs.target_windows_sfx == 'true' }}
-        uses: ./.github/actions/publish-itch
-        with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          channel: windows
-          itch_game: ${{ needs.configure.outputs.itch_game }}
-          itch_user: ${{ needs.configure.outputs.itch_user }}
-          package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.exe
-          version: ${{ env.PRODUCT_VERSION }}
-
-  build-macos:
-    if: ${{ needs.configure.outputs.target_macos == 'true' }}
-    runs-on: macos-latest
-    needs: [configure]
-    continue-on-error: true
-    permissions:
-      contents: write
-    env:
-      BUILD_NUM: ${{ needs.configure.outputs.build_num }}
-      PRODUCT_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || needs.configure.outputs.previous_tag }}
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-          submodules: recursive
-      - name: Get product environment variables
-        uses: ./.github/actions/get-env
-        with:
-          env_file: src/product.env
-      - name: Build macOS
-        uses: ./.github/actions/build-macos
-        with:
-          apple_version_code: ${{ needs.configure.outputs.apple_version_code }}
-          love_version: ${{ env.LOVE_VERSION }}
-          product_copyright: ${{ env.PRODUCT_COPYRIGHT }}
-          product_file: ${{ env.PRODUCT_FILE }}
-          product_id: ${{ needs.configure.outputs.product_id_macos }}
-          product_name: ${{ env.PRODUCT_NAME }}
-          product_version: ${{ env.PRODUCT_VERSION }}
-          output_folder: ${{ env.OUTPUT_FOLDER }}
-      - name: Upload macOS .app artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.app
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.app.zip
-      - name: Upload macOS .dmg artifact
-        if: ${{ needs.configure.outputs.build_type == 'dev' && runner.os == 'macOS' }}
-        uses: actions/upload-artifact@v6
-        with:
-          name: ${{ env.PRODUCT_FILE }}.dmg
-          path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.dmg
-      - name: Upload macOS .app release
-        if: ${{ needs.configure.outputs.build_type == 'release' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.app.zip
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.app.zip
-          asset_content_type: application/zip
-      - name: Upload macOS .dmg release
-        if: ${{ needs.configure.outputs.build_type == 'release' }}
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.configure.outputs.upload_url }}
-          asset_name: ${{ env.PRODUCT_FILE }}-${{ env.PRODUCT_VERSION }}.dmg
-          asset_path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.dmg
-          asset_content_type: application/x-apple-diskimage
-      - name: Upload macOS .dmg to itch.io
-        if: ${{ needs.configure.outputs.build_type == 'release' }}
-        uses: ./.github/actions/publish-itch
-        with:
-          api-key: ${{ secrets.BUTLER_API_KEY }}
-          channel: osx
-          itch_game: ${{ needs.configure.outputs.itch_game }}
-          itch_user: ${{ needs.configure.outputs.itch_user }}
-          package: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}.dmg
-          version: ${{ env.PRODUCT_VERSION }}
-
   summary:
     name: Build parameters
     needs: [configure]
@@ -541,13 +218,6 @@ jobs:
           echo "- Build CI:         $([ "$ACT" = "true" ] && echo "act" || echo "GitHub")" >> $GITHUB_STEP_SUMMARY
           echo "- GitHub Run:       ${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
           echo "- Game Version:     ${{ env.PRODUCT_VERSION }}" >> $GITHUB_STEP_SUMMARY
-          echo "- LÖVE Version:     ${{ env.LOVE_VERSION }}" >> $GITHUB_STEP_SUMMARY
-          echo "- AppImage:         ${{ env.TARGET_LINUX_APPIMAGE == 'true' && '✅' || '❌' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- macOS:            ${{ env.TARGET_MACOS == 'true' && '✅' || '❌' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Tarball:          ${{ env.TARGET_LINUX_TARBALL == 'true' && '✅' || '❌' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Windows Installer ${{ env.TARGET_WINDOWS_INSTALL == 'true' && '✅' || '❌' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Windows SFX       ${{ env.TARGET_WINDOWS_SFX == 'true' && '✅' || '❌' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Windows:          ${{ env.TARGET_WINDOWS_ZIP == 'true' && '✅' || '❌' }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ needs.configure.outputs.build_type }}" == "release" ]; then
             echo "## Version information" >> $GITHUB_STEP_SUMMARY
           elif [ "${{ needs.configure.outputs.build_type }}" == "dev" ]; then
