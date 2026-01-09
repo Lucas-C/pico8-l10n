@@ -1,9 +1,9 @@
 ![LuaRocks](https://img.shields.io/luarocks/v/Lucas-C/pico8-l10n)
 [![License: LGPL v3](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
 
-[![Luacheck status](https://github.com/Lucas-C/pico8-l10n/workflows/luacheck.yml/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/luacheck.yml?query=branch%3Amain)
-[![Busted status](https://github.com/Lucas-C/pico8-l10n/workflows/busted.yml/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/busted.yml?query=branch%3Amain)
-[![Prysk status](https://github.com/Lucas-C/pico8-l10n/workflows/prysk.yml/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/prysk.yml?query=branch%3Amain)
+[![Luacheck status](https://github.com/Lucas-C/pico8-l10n/workflows/Luacheck/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/luacheck.yml?query=branch%3Amain)
+[![Busted status](https://github.com/Lucas-C/pico8-l10n/workflows/Busted/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/busted.yml?query=branch%3Amain)
+[![Prysk status](https://github.com/Lucas-C/pico8-l10n/workflows/Prysk/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/prysk.yml?query=branch%3Amain)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Lucas-C/pico8-l10n)](https://github.com/Lucas-C/pico8-l10n/commits/main)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://makeapullrequest.com)
@@ -127,7 +127,7 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 
 
 # What's next? Some ideas
-* setup GitHub issue & PR templates
 * finish translation of `vampire_vs_pope_army` & ping Adam "Atomic" Saltsman about this
 * ask for feedbacks on PICO8 BBS
 * publish this on itch.io
+* invoke `pico-l10n check` in the GA pipeline?
