@@ -1,6 +1,7 @@
 ---
 name: Bug report
 about: Report some unexpected behaviour to help us improve pico8-l10n
+title: "Bug: "
 labels: bug
 ---
 <!--

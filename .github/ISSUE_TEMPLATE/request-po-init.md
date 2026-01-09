@@ -1,5 +1,6 @@
 ---
-name: Request initialization of a translation for a new game
+name: Game translation request
+about: Request initialization of a translation for a new game in this repository
 title: "Please add this game: "
 labels: game-init
 ---
