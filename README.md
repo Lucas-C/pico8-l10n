@@ -1,4 +1,4 @@
-![LuaRocks](https://img.shields.io/luarocks/v/Lucas-C/pico8-l10n)
+[![LuaRocks](https://img.shields.io/luarocks/v/Lucas-C/pico8-l10n)](https://luarocks.org/modules/lucas-c/pico8-l10n)
 [![License: LGPL v3](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/license/mit)
 
 [![Luacheck status](https://github.com/Lucas-C/pico8-l10n/workflows/Luacheck/badge.svg)](https://github.com/Lucas-C/pico8-l10n/actions/workflows/luacheck.yml?query=branch%3Amain)
@@ -45,7 +45,7 @@ To check if ALL "localizable" strings in a given `.p8` / `.p8.png` game file are
 
 # Installation
 The following options are currently available to install `pico8-l10n`:
-* on Linux, you can simply download from the [latest GitHub release](https://github.com/Lucas-C/pico8-l10n/releases) the autonomous executable binary built with [Luapak](https://github.com/jirutka/luapak/):
+* on Linux, you can simply download the executable from the [latest GitHub release](https://github.com/Lucas-C/pico8-l10n/releases), built with [Luapak](https://github.com/jirutka/luapak/):
 ```
 version=1.1.0
 wget https://github.com/Lucas-C/pico8-l10n/releases/download/1.1.0/pico8-l10n-$version
@@ -63,7 +63,7 @@ _cf._ [CHANGELOG.md](./CHANGELOG.md)
 
 # Development
 
-## Install dependencies & build executable
+## Install dependencies & build the executable
 From inside the repository:
 
     luarocks install --local *.rockspec
@@ -127,6 +127,7 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 
 
 # What's next? Some ideas
+* test on Windows
 * finish translation of `vampire_vs_pope_army` & ping Adam "Atomic" Saltsman about this
 * publish this on itch.io
 * invoke `pico-l10n check` in the GA pipeline?
