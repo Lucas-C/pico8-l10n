@@ -128,6 +128,5 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 
 # What's next? Some ideas
 * finish translation of `vampire_vs_pope_army` & ping Adam "Atomic" Saltsman about this
-* ask for feedbacks on PICO8 BBS
 * publish this on itch.io
 * invoke `pico-l10n check` in the GA pipeline?

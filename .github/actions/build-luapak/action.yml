@@ -13,4 +13,5 @@ runs:
   using: composite
   steps:
     - name: Build linux executable with Luapak
+      shell: bash
       run: tools/build-with-luapak.sh
