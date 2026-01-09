@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'ProggyVector';
+  font-family: 'ProggyVector', 'courier new', courier, monospace;
   src: url('proggyvec.woff') format('woff');
 }
 
