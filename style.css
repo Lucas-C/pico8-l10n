@@ -4,7 +4,7 @@
 }
 
 body {
-	font-size: 11pt;
+	font-size: 1.1rem;
 	font-family: 'ProggyVector';
 	line-height: 1.4;
 	color: #ccc;
@@ -14,7 +14,7 @@ body {
 }
 
 h2 {
-  font-size: 16pt;
+  font-size: 1.6rem;
   margin: 0;
 }
 
@@ -57,9 +57,11 @@ header .pico8-icon {
   margin-bottom: 16px;
 }
 
+.red { color: #f79; }
+
 .breadcrumb {
   display: table;
-  font-size: 16pt;
+  font-size: 1.6rem;
 }
 
 .breadcrumb-tag {
@@ -100,7 +102,7 @@ header .pico8-icon {
   background-color: rgba(15, 10, 60, 0.7);
   width: 320px;
   overflow: hidden;
-  font-size: 10pt;
+  font-size: 1rem;
 }
 
 .cartridge-right-column {
@@ -125,7 +127,7 @@ header .pico8-icon {
 
 .game-author-link { text-decoration: none; }
 .game-author {
-  font-size: 8pt;
+  font-size: .8rem;
   color: #bbb;
 }
 
