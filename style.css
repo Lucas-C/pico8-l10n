@@ -37,7 +37,6 @@ code {
 pre {
 	background-color: #ddd;
   overflow-x: scroll;
-  white-space: pre-wrap; /* fix for font-size on mobile */
 }
 
 header, section {
