@@ -127,7 +127,8 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 
 
 # What's next? Some ideas
-* test on Windows
-* finish translation of `vampire_vs_pope_army` & ping Adam "Atomic" Saltsman about this
+* finish translation of `vampire_vs_pope_army` & other Adam "Atomic" Saltsman games & ping him about this
 * publish this on itch.io
+* switch to another binary packer than Luapak, in order to use LuaRocks 3 ?
+  -> new rockspec: https://github.com/luarocks/luarocks/blob/main/CHANGELOG.md#new-rockspec-format
 * invoke `pico-l10n check` in the GA pipeline?
