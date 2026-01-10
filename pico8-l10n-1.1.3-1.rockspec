@@ -1,8 +1,8 @@
 package = "pico8-l10n"
-version = "1.1.2-1"
+version = "1.1.3-1"
 source = {
   url = "git+https://github.com/Lucas-C/pico8-l10n.git",
-  tag = "1.1.2"
+  tag = "1.1.3"
 }
 description = {
   detailed = [[
@@ -16,7 +16,7 @@ dependencies = {
   "argparse ~> 0.7.1",
   "busted ~> 2.1.1",
   "inspect ~> 3.1.3",
-  "lua >= 5.3",
+  "lua >= 5.1",
   "lua-resty-template ~> 2.0-1",
   "luacheck ~> 1.2.0",
   "luafilesystem ~> 1.6.3", -- version used by luapak

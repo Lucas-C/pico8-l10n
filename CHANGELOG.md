@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.2] - 2026-01-10
+## [1.1.3] - 2026-01-10
 ### Fixed
 * allowed to install this package using LuaRocks with Lua versions greater than 5.1
 
