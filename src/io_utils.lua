@@ -41,7 +41,7 @@ function io2.create_parent_dir(filepath)
 end
 
 function io2.create_file(filepath, content)
-  local file, err = io.open(filepath, "w")
+  local file, err = io.open(filepath, "wb")
   if err then
     error("Could not write file " .. filepath .. ": " .. err)
   end

@@ -1,8 +1,8 @@
 package = "pico8-l10n"
-version = "1.1.6-1"
+version = "1.1.7-1"
 source = {
   url = "git+https://github.com/Lucas-C/pico8-l10n.git",
-  tag = "1.1.6"
+  tag = "1.1.7"
 }
 description = {
   detailed = [[

@@ -6,9 +6,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.7] - 2026-01-11
+### Fixed
+* a bug with file copy under Windows
+
 ## [1.1.6] - 2026-01-11
 ### Fixed
-* fix bug with missing path separator for PICO-8 game directory under Windows
+* a bug with missing path separator for PICO-8 game directory under Windows
 
 ## [1.1.5] - 2026-01-11
 ### Fixed
@@ -20,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.1.3] - 2026-01-10
 ### Fixed
-* allowed to install this package using LuaRocks with Lua versions greater than 5.1
+* allowed to install this package using LuaRocks with Lua versions 5.1 or 5.2
 
 ## [1.1.1] - 2026-01-09
 ### Added
