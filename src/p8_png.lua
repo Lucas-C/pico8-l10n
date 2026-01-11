@@ -6,11 +6,11 @@ local p8_png = {}
 local function cart_dir()
   local win_username = os.getenv("USERNAME")
   if win_username then
-    return "C:/Users/" .. win_username .. "/AppData/Roaming/pico-8/carts"
+    return "C:/Users/" .. win_username .. "/AppData/Roaming/pico-8/carts/"
   end
   local OSTYPE = os.getenv("OSTYPE")
   if OSTYPE == "Darwin" then
-    return os.getenv("HOME") .. "/Library/Application Support/pico-8/carts"
+    return os.getenv("HOME") .. "/Library/Application Support/pico-8/carts/"
   end
   return os.getenv("HOME") .. "/.lexaloffle/pico-8/carts/"
 end
