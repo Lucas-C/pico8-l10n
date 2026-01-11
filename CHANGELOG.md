@@ -6,9 +6,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.4] - 2026-01-10
+## [1.1.5] - 2026-01-11
 ### Fixed
-* now use the correct PICO-8 game directory: `C:/Users/%USERNAME%/AppData/Roaming/pico-8/carts`
+* `pico8_is_available()` now corrects detects PICO-8 under Windows
+
+## [1.1.4] - 2026-01-11
+### Fixed
+* now use the correct PICO-8 game directory under Windows: `C:/Users/%USERNAME%/AppData/Roaming/pico-8/carts`
 
 ## [1.1.3] - 2026-01-10
 ### Fixed

@@ -7,12 +7,9 @@ local IS_PICO_IN_PATH = nil -- cache to avoid repeated useless calls to io.popen
 -- Check if a program named `pico8` is in $PATH and is able to evaluate Lua code:
 function pico8.is_available()
   if IS_PICO_IN_PATH == nil then
-    if
-      not pcall(function()
-        local test_string = "pico8 command is available"
-        IS_PICO_IN_PATH = pico8.exec('printh("' .. test_string .. '")'):find(test_string)
-      end)
-    then
+    if pcall(pico8.exec) then
+      IS_PICO_IN_PATH = true
+    else
       IS_PICO_IN_PATH = false
     end
   end
@@ -21,7 +18,7 @@ end
 
 function pico8.exec(lua_code)
   local tmp_filename = os.tmpname()
-  io2.create_file(tmp_filename, "pico-8 cartridge\nversion 43\n__lua__\n" .. lua_code)
+  io2.create_file(tmp_filename, "pico-8 cartridge\nversion 43\n__lua__\n" .. (lua_code or ""))
   local output = io2.run("pico8 -x " .. tmp_filename)
   assert(os.remove(tmp_filename))
   return output

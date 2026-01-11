@@ -85,7 +85,7 @@ it will install Lua & LuaRocks & Luapak once if need be:
 ## Lint code
 Using [luacheck](https://github.com/lunarmodules/luacheck):
 
-    luacheck */*.lua *.lua
+    luacheck */*.lua
 
 ## Autoformat code
 Using [StyLua](https://github.com/JohnnyMorganz/StyLua) & [`pre-commit`](https://pre-commit.com/):

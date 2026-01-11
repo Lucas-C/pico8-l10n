@@ -9,7 +9,7 @@ if ! command -v luarocks >/dev/null; then
   sudo luarocks install --only-deps *.rockspec
 fi
 
-lua build_website.lua
+lua public/build_website.lua
 
 if ! [ -d vnu-runtime-image/ ]; then
   echo "Installing Lua v.Nu HTML checker with curl..."

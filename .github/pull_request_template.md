@@ -11,11 +11,12 @@ Please provide some context for your contribution.
 
 If you are contributing a game translation:
 * please review the `game_info.yaml` for your game, and add or update information in it
-* if you can, please run `pico-l10n check $p8_file $language_code` on your computer and insert the result here:
+* if you can, please run `pico-l10n check` in this repository root directory on your computer and insert the result here:
 ```
-$ pico-l10n check ...
+$ pico-l10n check
 games/...
 ```
+This command updates the `translated_percent` progress in `game_info.yaml` files.
 
 ## License
 By submitting this pull request, I confirm that my contribution is made under the terms:
