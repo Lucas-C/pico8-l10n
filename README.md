@@ -120,7 +120,8 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 1. `version=1.X.Y`
 1. `tools/release.sh $version`
 1. Edit `CHANGELOG.md` to add the release date for `$version`,
-   and `src/main.lua` to update the variable `version`
+   and `src/main.lua` and `public/template-index.html`
+   to update the `version` in them
 1. `git commit -am "New release: $version" && git push && git tag $version && git push --tags`
 1. `tools/publish.sh` to upload on [LuaRocks](https://luarocks.org/)
 1. Check that a new GitHub release has been published: [pico8-l10n GitHub Releases](https://github.com/Lucas-C/pico8-l10n/releases)
