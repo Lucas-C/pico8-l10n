@@ -4,9 +4,12 @@ itchio_url: https://adamatomic.itch.io/vampire-vs-pope-army
 author: Adam "Atomic" Saltsman
 bbs_author_id: 13953
 
+# Author approval to host translated game:
+# Lucas: received by email on 2026/01/12
+
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:
-  fr-FR: { translated_percent: 46 } #, filename: "vampire_vs_pope_army-0-fr-FR.p8.png" }
+  fr-FR: { translated_percent: 100, filename: "vampire_vs_pope_army-0-fr-FR.p8.png" }
 
 # Notes about the game code:
 # * `alert()`: the length of the provided string must not exceed 31 characters,

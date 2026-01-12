@@ -3,6 +3,7 @@
 .vscode/settings.json
 
 *.p8.png
+*-fr-FR.p8
 
 # Prysk tests:
 *.t.err

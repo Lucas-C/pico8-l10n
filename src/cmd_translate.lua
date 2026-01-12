@@ -1,5 +1,4 @@
 local fp = require("filepaths")
-local io2 = require("io_utils")
 local p8 = require("p8")
 local p8_png = require("p8_png")
 local po = require("po")
@@ -18,5 +17,5 @@ return function(opts)
     assert(os.remove(new_p8_filepath))
     new_p8_filepath = p8_png_filepath
   end
-  print(io2.basename(new_p8_filepath) .. " successfully generated")
+  print(new_p8_filepath .. " successfully generated")
 end

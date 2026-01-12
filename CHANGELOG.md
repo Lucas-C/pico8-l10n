@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.9] - Not released yet
+### Added
+* the `check` command now warns about non-ASCII characters in translated strings
+### Changed
+* the `translate` subcommand now prints the full file path of the generated game file
+
 ## [1.1.8] - 2026-01-12
 ### Fixed
 * a bug when quotes were present in PICO8 games Lua comments

@@ -1,138 +1,149 @@
+msgid "level "
+msgstr "niveau "
+
+
+# Level names:
 msgid "stranded"
-msgstr ""
+msgstr "bloques"
 
 msgid "high security"
-msgstr ""
+msgstr "haute securite"
 
 msgid "flow chamber"
-msgstr ""
+msgstr "chambre d'ecoulement"
 
 msgid "ventilation"
-msgstr ""
+msgstr "ventilation"
 
 msgid "the brig"
-msgstr ""
+msgstr "la prison"
 
 msgid "frozen vat"
-msgstr ""
+msgstr "cuve congelee"
 
 msgid "maintenance"
-msgstr ""
+msgstr "maintenance"
 
 msgid "the leak"
-msgstr ""
+msgstr "la fuite"
 
 msgid "cooling rods"
-msgstr ""
+msgstr "barres de refroidissement"
 
 msgid "corridor"
-msgstr ""
+msgstr "corridor"
 
 msgid "breakdown"
-msgstr ""
+msgstr "panne"
 
 msgid "access vent"
-msgstr ""
+msgstr "conduit d'acces"
 
 msgid "retrieval"
-msgstr ""
+msgstr "recuperation"
 
 msgid "filtration"
-msgstr ""
+msgstr "filtration"
 
 msgid "storage hatch"
-msgstr ""
+msgstr "trappe de rangement"
 
 msgid "hull access"
-msgstr ""
+msgstr "acces a la coque"
 
 msgid "heat sink"
-msgstr ""
+msgstr "dissipateur de chaleur"
 
 msgid "hydroponics"
-msgstr ""
+msgstr "hydroponique"
 
 msgid "pumping station"
-msgstr ""
+msgstr "station de pompage"
 
 msgid "frozen over"
-msgstr ""
+msgstr "congele"
 
 msgid "dock access"
-msgstr ""
+msgstr "acces au quai"
 
 msgid "hydrogen valve"
-msgstr ""
+msgstr "vanne a hydrogene"
 
 msgid "cargo bay"
-msgstr ""
+msgstr "soute"
 
 msgid "barracks"
-msgstr ""
+msgstr "caserne"
 
 msgid "engineering"
-msgstr ""
+msgstr "ingenierie"
 
 msgid "gymnasium"
-msgstr ""
+msgstr "gymnase"
 
 msgid "co2 exchange"
-msgstr ""
+msgstr "echange de co2"
 
 msgid "water supply"
-msgstr ""
+msgstr "alimentation en eau"
 
 msgid "control center"
-msgstr ""
+msgstr "centre de controle"
 
 msgid "escape pod"
-msgstr ""
+msgstr "capsule de sauvetage"
 
+
+# Ending screen:
 msgid "cryosleep: engaged"
-msgstr ""
+msgstr "cryosommeil : engage"
 
 msgid "   status: nominal"
-msgstr ""
+msgstr "     statut : nominal"
 
 msgid " duration: unknown"
-msgstr ""
+msgstr "      duree : inconnue"
 
 msgid "to be continued..."
-msgstr ""
+msgstr "a suivre..."
 
-msgid "spacecorgi2corgispace"
-msgstr ""
 
-msgid "switch to 2p"
-msgstr ""
-
-msgid "switch to 1p"
-msgstr ""
+# Main menu:
+msgid "new game"
+msgstr "debuter"
 
 msgid "continue"
-msgstr ""
-
-msgid "new game"
-msgstr ""
+msgstr "continuer"
 
 msgid "1 player"
-msgstr ""
+msgstr "1 joueur"
 
 msgid "2 player"
-msgstr ""
+msgstr "2 joueurs"
 
-msgid "level "
-msgstr ""
 
+# PICO-8 menu:
+msgid "switch to 2p"
+msgstr "en mode 2j"
+
+msgid "switch to 1p"
+msgstr "en mode 1j"
+
+
+# In-game banner messages:
 msgid " \f7winning!! \fdpress \fe❎ \fdto continue"
-msgstr ""
+msgstr " \f7victoire !! \fe❎ \fd= continuer"
 
 msgid " \f7winning!! \fdpress \f8❎ \fdto continue"
-msgstr ""
+msgstr " \f7victoire !! \f8❎ \fd= continuer"
 
 msgid "  \fdpress \fe❎ \fdto change character"
-msgstr ""
+msgstr "\fe❎ \fd= changer de personnage"
 
 msgid "p1 moves corgi, p2 moves pug"
-msgstr ""
+msgstr "j1 = corgi      j2 = carlin "
 
+
+# cartdata() ID:
+msgid "spacecorgi2corgispace"
+msgstr "spacecorgi2corgispace"

@@ -4,4 +4,4 @@ if ! [ -e $TESTDIR/../builds/pico8-l10n ]; then
 fi
 PATH=$TESTDIR/../builds/:$PATH
 
-SAMPLE_DIR="$TESTDIR"/../tests/
+SAMPLE_DIR="$TESTDIR"/../tests
