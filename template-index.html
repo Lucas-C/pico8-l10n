@@ -94,7 +94,7 @@
                 <a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/{{ game.id }}/{{ lang_locale }}.po">{{ lang_locale }}.po</a>:
                 {{ ("%.0f"):format(translation.translated_percent) }}% translated
                 {% if translation.filename then %}
-                - Download:<br><a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/vampire_vs_pope_army/{{ translation.filename }}">{{ translation.filename }}</a>
+                <br>Download translated game:<br><a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/vampire_vs_pope_army/{{ translation.filename }}">{{ translation.filename }}</a>
                 {% end %}
               </li>
               {% end %}
@@ -116,7 +116,6 @@
         you can simply add it at a PICO-8 cartridge and launch it:
       </p>
       <pre><code>
-  $ cp vampire_vs_pope_army-0-<span class="red">fr-FR</span>.p8.png ~/.lexaloffle/pico-8/carts/
   $ pico8 -run vampire_vs_pope_army-0-<span class="red">fr-FR</span>.p8.png
       </code></pre>
       <p>
