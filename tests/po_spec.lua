@@ -5,11 +5,11 @@ describe("po", function()
   describe(".create_from_strings()", function()
     it("should successfully create a .po file from Lua code", function()
       local strings = {
-        [15] = "UPDATED",
-        [70] = "press x to start",
-        [143] = "'OK?'",
-        [200] = '"yes!"',
-        [275] = '\\"no escaping allowed!\\"',
+        ["UPDATED"] = { 69 },
+        ["press x to start"] = { 115 },
+        ["'OK?'"] = { 199 },
+        ['"yes!"'] = { 255 },
+        ['\\"no escaping allowed!\\"'] = { 312 },
       }
       local expected = [[
 msgid "UPDATED"

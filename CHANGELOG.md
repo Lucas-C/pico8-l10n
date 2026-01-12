@@ -6,11 +6,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.1.9] - Not released yet
+## [1.1.9] - 2026-01-12
 ### Added
 * the `check` command now warns about non-ASCII characters in translated strings
 ### Changed
 * the `translate` subcommand now prints the full file path of the generated game file
+### Fixed
+* all subcommands now properly handle the case of string being present several times in Lua code
+* avoid creating duplicate `msgid` in `init` subcommand
 
 ## [1.1.8] - 2026-01-12
 ### Fixed

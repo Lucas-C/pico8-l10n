@@ -8,13 +8,16 @@ function p8.extract_strings(p8_filepath)
   return p8.extract_strings_p8_content(p8_content)
 end
 
+-- Return a table thats maps the strings
+-- to a list of indices, corresponding to
+-- their position in `p8_content`.
 function p8.extract_strings_p8_content(p8_content)
   local strings = {}
   local in_lua_code = false
   local in_comment = false
   local curr_string = ""
   local start_char = nil
-  local prev_char, prev_prev_char
+  local prev_char
   for i = 1, #p8_content do
     local char = p8_content:sub(i, i)
     if char == "_" then
@@ -23,32 +26,37 @@ function p8.extract_strings_p8_content(p8_content)
         in_lua_code = section_header == "lua"
       end
     elseif in_lua_code then
-      if prev_prev_char == "\n" then
-        if prev_char == "-" and char == "-" then
-          in_comment = true
-        else
-          in_comment = false
-        end
+      if prev_char == "-" and char == "-" then
+        in_comment = true
       end
-      if not in_comment and prev_char ~= "\\" and (char == '"' or char == "'") then
-        if char == start_char then
-          -- Ignore empty strings
-          -- and string without any alphabetical character:
-          if curr_string:match("[a-zA-Z]") then
-            strings[i - #curr_string] = curr_string
+      if char == "\n" then
+        in_comment = false
+      end
+      if not in_comment then
+        if prev_char ~= "\\" and (char == '"' or char == "'") then
+          if char == start_char then
+            -- Ignore empty strings
+            -- and string without any alphabetical character:
+            if curr_string:match("[a-zA-Z]") then
+              local indices = strings[curr_string]
+              if not indices then
+                indices = {}
+                strings[curr_string] = indices
+              end
+              table.insert(indices, i - #curr_string)
+            end
+            curr_string = ""
+            start_char = nil
+          elseif start_char then
+            curr_string = curr_string .. char
+          else
+            start_char = char
           end
-          curr_string = ""
-          start_char = nil
         elseif start_char then
           curr_string = curr_string .. char
-        else
-          start_char = char
         end
-      elseif start_char then
-        curr_string = curr_string .. char
       end
     end
-    prev_prev_char = prev_char
     prev_char = char
   end
   return strings
@@ -67,12 +75,16 @@ function p8.subst_l10n_strings(p8_content, strings, l10n)
   local shift = 0
   -- Loop over strings, ordered by increasing indices:
   local ordered_indices = {}
-  for i in pairs(strings) do
-    table.insert(ordered_indices, i)
+  local index2str = {}
+  for str, indices in pairs(strings) do
+    for _, i in pairs(indices) do
+      table.insert(ordered_indices, i)
+      index2str[i] = str
+    end
   end
   table.sort(ordered_indices)
   for _, i in ipairs(ordered_indices) do
-    local str = strings[i]
+    local str = index2str[i]
     local new_str = l10n[str]
     if new_str then
       p8_content = string2.subst(p8_content, i + shift, #str, new_str)

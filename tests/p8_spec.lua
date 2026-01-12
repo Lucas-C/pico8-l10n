@@ -14,15 +14,23 @@ alert("\"no escaping allowed!\"") -- escaped double quotes in between double quo
 __gfx__
 ]]
 
+local code_with_repeats = [[
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
+print("HELLO WORLD!")
+print("HELLO WORLD!")
+]]
+
 describe("p8", function()
   describe(".extract_strings_p8_content()", function()
     it("should successfully extract strings from some .p8 file content", function()
       local expected = {
-        [69] = "UPDATED",
-        [115] = "press x to start",
-        [199] = "'OK?'",
-        [255] = '"yes!"',
-        [312] = '\\"no escaping allowed!\\"',
+        ["UPDATED"] = { 69 },
+        ["press x to start"] = { 115 },
+        ["'OK?'"] = { 199 },
+        ['"yes!"'] = { 255 },
+        ['\\"no escaping allowed!\\"'] = { 312 },
       }
       assert.same(expected, p8.extract_strings_p8_content(p8_content))
     end)
@@ -33,18 +41,23 @@ version 43
 __lua__
 -- game's name
 -- by mike's friend
+
+  -- "a comment after some spaces"
 ]]
       assert.same({}, p8.extract_strings_p8_content(code))
+    end)
+    it("should only extract repeat strings once", function()
+      assert.same({ ["HELLO WORLD!"] = { 69, 91 } }, p8.extract_strings_p8_content(code_with_repeats))
     end)
   end)
   describe(".subst_l10n_strings()", function()
     it("should successfully substitute localized strings in .p8 file content", function()
       local lua_strings = {
-        [69] = "UPDATED",
-        [115] = "press x to start",
-        [199] = "'OK?'",
-        [255] = '"yes!"',
-        [312] = '\\"no escaping allowed!\\"',
+        ["UPDATED"] = { 69 },
+        ["press x to start"] = { 115 },
+        ["'OK?'"] = { 199 },
+        ['"yes!"'] = { 255 },
+        ['\\"no escaping allowed!\\"'] = { 312 },
       }
       local l10n = {
         ["UPDATED"] = "",
@@ -65,6 +78,22 @@ alert("\"no escaping allowed!\"") -- escaped double quotes in between double quo
 __gfx__
 ]]
       assert.equal(expected, p8.subst_l10n_strings(p8_content, lua_strings, l10n))
+    end)
+    it("should substitute repeated strings in .p8 file content", function()
+      local lua_strings = {
+        ["HELLO WORLD!"] = { 69, 91 },
+      }
+      local l10n = {
+        ["HELLO WORLD!"] = "Coucou",
+      }
+      local expected = [[
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
+print("Coucou")
+print("Coucou")
+]]
+      assert.equal(expected, p8.subst_l10n_strings(code_with_repeats, lua_strings, l10n))
     end)
   end)
 end)

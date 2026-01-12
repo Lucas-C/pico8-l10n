@@ -15,8 +15,9 @@ function translate() {
   rm "$1.p8.png"
 }
 
-translate big_stew-0.p8.png fr-FR
-translate molemole-1.p8.png fr-FR
+translate big_stew-0 fr-FR
+translate dino_sort-1 fr-FR
+translate molemole-1 fr-FR
 translate prince_of_prussia-0 fr-FR
-translate spacecorgi2-3.p8.png fr-FR
-translate vampire_vs_pope_army-0.p8.png fr-FR
+translate spacecorgi2-3 fr-FR
+translate vampire_vs_pope_army-0 fr-FR

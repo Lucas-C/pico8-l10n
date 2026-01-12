@@ -8,12 +8,16 @@ function po.create_from_strings(strings, po_filepath)
   local count = 0
   -- Loop over strings, ordered by increasing indices:
   local ordered_indices = {}
-  for i in pairs(strings) do
-    table.insert(ordered_indices, i)
+  local index2str = {}
+  for str, indices in pairs(strings) do
+    for _, i in pairs(indices) do
+      table.insert(ordered_indices, i)
+      index2str[i] = str
+    end
   end
   table.sort(ordered_indices)
   for _, i in ipairs(ordered_indices) do
-    local str = strings[i]
+    local str = index2str[i]
     content = content .. 'msgid "' .. str .. '"\n'
     content = content .. 'msgstr ""\n'
     content = content .. "\n"
