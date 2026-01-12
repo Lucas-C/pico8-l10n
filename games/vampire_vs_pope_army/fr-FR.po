@@ -1,38 +1,28 @@
 msgid "the ancient cathedral"
 msgstr "l'ancienne cathedrale"
-
 msgid "has a new master now."
-msgstr ""
-
+msgstr "a un nouveau maitre."
 msgid "men of god know well"
-msgstr ""
-
+msgstr "les hommes de dieu"
 msgid "never to approach the"
-msgstr ""
-
+msgstr "ne s'approchent jamais"
 msgid "blasphemed sanctuary."
-msgstr ""
-
+msgstr "du sanctuaire sacrilege."
 msgid "still, there are tales."
-msgstr ""
+msgstr "mais ils reste des legendes."
 
 msgid "like that, it was gone."
-msgstr ""
-
+msgstr "et soudain il disparut."
 msgid "the prince of popes"
-msgstr ""
-
+msgstr "le prince des papes"
 msgid "denies the daywalker's"
-msgstr ""
-
+msgstr "nie l'existence et l'exode"
 msgid "exodus. and existence."
-msgstr ""
-
+msgstr "du diurnambule."
 msgid "still, the reports we"
-msgstr ""
-
+msgstr "cependant les rumeurs qui"
 msgid "receive are worrisome."
-msgstr ""
+msgstr "circulent sont inquietantes."
 
 msgid "\"no escaping allowed!\""
 msgstr "\"vous ne vous evaderez jamais !\""
@@ -62,10 +52,10 @@ msgid "press any key to begin"
 msgstr "appuyez sur une touche"
 
 msgid "popes drank"
-msgstr ""
+msgstr "papes bus"
 
 msgid "talismans"
 msgstr "talismans"
 
 msgid "vamp time"
-msgstr ""
+msgstr "temps"

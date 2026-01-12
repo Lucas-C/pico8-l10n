@@ -2,17 +2,13 @@ msgid "\fe❎\f7 play"
 msgstr "\fe❎\f7 jouer"
 
 msgid "one last thing!"
-msgstr "une dernier chose !"
-
+msgstr "une derniere chose !"
 msgid "lil kobold's big stew"
 msgstr "lil kobold's big stew"
-
 msgid "takes about 45 minutes"
 msgstr "dure environ 45 minutes"
-
 msgid "to play and will not"
 msgstr "et ne sauvegardera pas"
-
 msgid "save your progress."
 msgstr "votre progression"
 
@@ -20,16 +16,12 @@ msgid "\fe❎\f7 ok"
 msgstr "\fe❎\f7 ok"
 
 msgid "thank you for helping"
-msgstr "merci d'avoir aide"
-
+msgstr "merci pour votre aide."
 msgid "lil kobold make stew!"
-msgstr "lil kobold a faire un ragout"
-
+msgstr "ptit kobold a fait son ragout."
 msgid "it was a lot of work"
 msgstr "c'etait beaucoup de boulot"
-
 msgid "but he couldn't have"
 msgstr "mais il n'aurait pas pu"
-
 msgid "done it without you."
-msgstr "le cuisiner sans vous"
+msgstr "le cuisiner sans vous !"

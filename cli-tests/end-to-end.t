@@ -6,7 +6,7 @@ Test all `pico8-l10n` subcommands on a "dummy" PICO8 game: tests/circle.p8
     circle-fr-FR.po successfully generated with 2 msgids
 
     $ pico8-l10n translate "$SAMPLE_DIR"/circle.p8 circle-fr-FR.po
-    circle-fr-FR.p8 successfully generated
+    .*/circle-fr-FR.p8 successfully generated (re)
 
     $ pico8-l10n check "$SAMPLE_DIR"/circle.p8 circle-fr-FR.po
     circle-fr-FR.po is missing 2 translations (0% translated)
