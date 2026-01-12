@@ -94,7 +94,7 @@
                 <a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/{{ game.id }}/{{ lang_locale }}.po">{{ lang_locale }}.po</a>:
                 {{ ("%.0f"):format(translation.translated_percent) }}% translated
                 {% if translation.filename then %}
-                <br>Download translated game:<br><a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/vampire_vs_pope_army/{{ translation.filename }}">{{ translation.filename }}</a>
+                <br>Download translated game:<br><a href="https://github.com/Lucas-C/pico8-l10n/raw/refs/heads/main/games/{{ game.id }}/{{ translation.filename }}">{{ translation.filename }}</a>
                 {% end %}
               </li>
               {% end %}
