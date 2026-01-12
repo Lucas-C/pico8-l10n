@@ -1,4 +1,4 @@
-name: HTML website
+name: HTML website & Prysk CLI tests
 
 on:  # cf. https://github.community/t/how-to-trigger-an-action-on-push-or-pull-request-but-not-both/16662
   push:
@@ -18,8 +18,18 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v6
+      - name: Set up Python 3.14 🔧
+        uses: actions/setup-python@v6.1.0
+        with:
+          python-version: 3.14
       - name: Generate HTML website
         run: tools/build-website.sh
+      - name: Install & run Prysk
+        run: |
+          tools/build-with-luapak.sh  # build pico-l10n
+          python -m pip install prysk
+          cd cli-tests
+          prysk *.t
       - name: Deploy documentation 🚀
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
