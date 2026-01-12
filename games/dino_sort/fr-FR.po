@@ -1,0 +1,138 @@
+msgid "stegosaurus"
+msgstr ""
+
+msgid "avoids other stegosaurs."
+msgstr ""
+
+msgid "always hungry for cycads."
+msgstr ""
+
+msgid "tyrannosaurus"
+msgstr ""
+
+msgid "avoids other tyrannosaurs."
+msgstr ""
+
+msgid "always hungry for prey."
+msgstr ""
+
+msgid "brachiosaurus"
+msgstr ""
+
+msgid "they do travel in herds."
+msgstr ""
+
+msgid "velociraptor"
+msgstr ""
+
+msgid "always hungry for prey."
+msgstr ""
+
+msgid "uses cycads for ambushes."
+msgstr ""
+
+msgid "gallimimus"
+msgstr ""
+
+msgid "always travel in herds."
+msgstr ""
+
+msgid "always avoid predators."
+msgstr ""
+
+msgid "compsognathus"
+msgstr ""
+
+msgid "try to avoid predators,"
+msgstr ""
+
+msgid "or hide by cycad patches."
+msgstr ""
+
+msgid "dinosaur egg"
+msgstr ""
+
+msgid "eggs are safest when no"
+msgstr ""
+
+msgid "other dinos are around."
+msgstr ""
+
+msgid "cycad"
+msgstr ""
+
+msgid "ancient fern-like plant."
+msgstr ""
+
+msgid "dinosort"
+msgstr ""
+
+msgid "@clip"
+msgstr ""
+
+msgid "Daily Dino Sort: "
+msgstr ""
+
+msgid " moves in "
+msgstr ""
+
+msgid " seconds!\n"
+msgstr ""
+
+msgid "https://adamatomic.itch.io/dino-sort"
+msgstr ""
+
+msgid "V1.1"
+msgstr ""
+
+msgid "new game"
+msgstr ""
+
+msgid "continue"
+msgstr ""
+
+msgid "infinite"
+msgstr ""
+
+msgid "daily"
+msgstr ""
+
+msgid "new daily in "
+msgstr ""
+
+msgid "niche "
+msgstr ""
+
+msgid " of 26"
+msgstr ""
+
+msgid "and that was that."
+msgstr ""
+
+msgid "daily dino sort"
+msgstr ""
+
+msgid " seconds"
+msgstr ""
+
+msgid " moves"
+msgstr ""
+
+msgid "(press up to copy)"
+msgstr ""
+
+msgid "copied!"
+msgstr ""
+
+msgid "advance to next niche"
+msgstr ""
+
+msgid "generate new niche"
+msgstr ""
+
+msgid "complete the daily"
+msgstr ""
+
+msgid "generating "
+msgstr ""
+

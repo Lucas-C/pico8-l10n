@@ -1,0 +1,69 @@
+msgid "princeofprussia"
+msgstr ""
+
+msgid "continue"
+msgstr ""
+
+msgid "new game"
+msgstr ""
+
+msgid "rated m for"
+msgstr ""
+
+msgid "nazi stabbin'"
+msgstr ""
+
+msgid "god damn nazis."
+msgstr ""
+
+msgid "you're in jail,"
+msgstr ""
+
+msgid "and they're alive."
+msgstr ""
+
+msgid "you can fix this."
+msgstr ""
+
+msgid "you leave the gun."
+msgstr ""
+
+msgid "this is personal."
+msgstr ""
+
+msgid "you find a scrap of metal."
+msgstr ""
+
+msgid "it's sharp. you tear off"
+msgstr ""
+
+msgid "a bit of your tunic and"
+msgstr ""
+
+msgid "wrap a makeshift grip."
+msgstr ""
+
+msgid "it'll have to do."
+msgstr ""
+
+msgid "it's done."
+msgstr ""
+
+msgid " less nazis"
+msgstr ""
+
+msgid "to worry about."
+msgstr ""
+
+msgid "nice work."
+msgstr ""
+
+msgid "you found him."
+msgstr ""
+
+msgid "the bastard in"
+msgstr ""
+
+msgid "charge of it all."
+msgstr ""
+

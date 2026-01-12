@@ -1,0 +1,117 @@
+msgid "UH OH"
+msgstr ""
+
+msgid "THAT IS NOT GOOD"
+msgstr ""
+
+msgid "OH DEAR"
+msgstr ""
+
+msgid "MOLEY WHAT HAVE YOU DONE"
+msgstr ""
+
+msgid "R.I.P. MOLEY"
+msgstr ""
+
+msgid "TRY AGAIN"
+msgstr ""
+
+msgid "YOU CAN DO IT MOLEY"
+msgstr ""
+
+msgid "THE NIGHT IS STILL YOUNG"
+msgstr ""
+
+msgid "LFG"
+msgstr ""
+
+msgid "OOPS"
+msgstr ""
+
+msgid "DEAD AGAIN, HUH"
+msgstr ""
+
+msgid "MY BAD"
+msgstr ""
+
+msgid "LET HIM COOK"
+msgstr ""
+
+msgid "GIVE IT ANOTHER SHOT"
+msgstr ""
+
+msgid "YOU GOT THIS"
+msgstr ""
+
+msgid "IS THIS THE END"
+msgstr ""
+
+msgid "NOOOOOO"
+msgstr ""
+
+msgid "HOW COULD YOU"
+msgstr ""
+
+msgid "ALMOST HAD IT THAT TIME"
+msgstr ""
+
+msgid "THAT IS UNFORTUNATE"
+msgstr ""
+
+msgid "EVERYTHING WILL BE OK"
+msgstr ""
+
+msgid "NO FASCISTS AT THIS PARTY"
+msgstr ""
+
+msgid "WAIT A SEC"
+msgstr ""
+
+msgid "ALL PART OF YOUR PLAN"
+msgstr ""
+
+msgid "REBOOTING MOLE.EXE"
+msgstr ""
+
+msgid "FEELS LIKE DEJA VU"
+msgstr ""
+
+msgid "CAPITALISM IS THE DEEP ROT"
+msgstr ""
+
+msgid "ALWAYS WEAR A HELMET"
+msgstr ""
+
+msgid "YIKES"
+msgstr ""
+
+msgid "MOLEY, WE HARDLY KNEW YE"
+msgstr ""
+
+msgid "NO NEW MESSAGES"
+msgstr ""
+
+msgid "THAT IS GONNA LEAVE A MARK"
+msgstr ""
+
+msgid "TRANS RIGHTS ARE HUMAN RIGHTS"
+msgstr ""
+
+msgid "EAT THE RICH"
+msgstr ""
+
+msgid "molemole"
+msgstr ""
+
+msgid "THE END"
+msgstr ""
+
+msgid "CONTINUE"
+msgstr ""
+
+msgid "NEW GAME"
+msgstr ""
+
+msgid "HOLD   TO RETRY"
+msgstr ""
+

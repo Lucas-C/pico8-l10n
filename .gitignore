@@ -1,10 +1,8 @@
+.lua/
 .luapak/
 .vscode/settings.json
 
 *.p8.png
-
-# busted tests:
-games/circle/
 
 # Prysk tests:
 *.t.err

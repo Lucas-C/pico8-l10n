@@ -15,6 +15,10 @@ for dir_name in lfs.dir("./games") do
   end
 end
 
+table.sort(games, function(a, b)
+  return a.name < b.name
+end)
+
 local html = template.process(io2.read_all("./public/template-index.html"), { games = games })
 
 local out_html_filepath = "./public/index.html"
