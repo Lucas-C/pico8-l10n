@@ -9,4 +9,11 @@ bbs_author_id: 13953
 
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:
-  fr-FR: { translated_percent: 0 } #, filename: "dino_sort-1-fr-FR.p8.png" }
+  fr-FR: { translated_percent: 100, filename: "dino_sort-1-fr-FR.p8.png" }
+
+# Notes about the game code:
+# * the length of the dino details strings must not exceed 28 characters
+# * modes:
+# 	+ 0 = classic
+# 	+ 1 = infinite
+# 	+ 2 = daily

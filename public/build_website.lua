@@ -12,7 +12,7 @@ for dir_name in lfs.dir("./games") do
     local game = game_info.parse(dir_name)
     game.id = dir_name
     games[#games + 1] = game
-    for lang_locale, translation in pairs(game.translations) do
+    for _, translation in pairs(game.translations) do
       if translation.filename then
         local po_filepath = "games/" .. game.id .. "/" .. translation.filename
         local po_file = io.open(po_filepath, "r")

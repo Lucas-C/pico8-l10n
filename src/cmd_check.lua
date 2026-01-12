@@ -17,14 +17,14 @@ local function check_game(opts)
   local missing_strings = 0
   local untranslated_strings = 0
   local unprintable_chars = 0
-  for _, str in pairs(lua_strings) do
+  for str in pairs(lua_strings) do
     local localized_str = l10n[str]
     if not localized_str then
       missing_strings = missing_strings + 1
     elseif localized_str == "" then
       untranslated_strings = untranslated_strings + 1
     else
-      local forbidden_chars = localized_str:match("[^a-zA-Z 0-9,.!?:='\\\"❎-]+")
+      local forbidden_chars = localized_str:match("[^a-zA-Z 0-9,.!?:='/\\\"❎-]+")
       if forbidden_chars then
         print("WARN: unprintable chars detected: " .. forbidden_chars)
         unprintable_chars = unprintable_chars + #forbidden_chars
@@ -59,7 +59,7 @@ local function check_all_games(p8_or_png_filepath)
   local game_dirs = {}
   for dir_name in lfs.dir("games") do
     if dir_name:sub(1, 1) ~= "." then
-      game_dirs[#game_dirs + 1] = dir_name
+      table.insert(game_dirs, dir_name)
     end
   end
   table.sort(game_dirs)

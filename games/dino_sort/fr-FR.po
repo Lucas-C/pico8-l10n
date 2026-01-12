@@ -1,138 +1,137 @@
+# Main menu:
+msgid "V1.1"
+msgstr "V1.1"
+
+msgid "new game"
+msgstr "debuter"
+
+msgid "continue"
+msgstr "continuer"
+
+msgid "infinite"
+msgstr "infini"
+
+msgid "daily"
+msgstr "du jour"
+
+msgid "new daily in "
+msgstr "prochain dans "
+
+
+# Dino details & rules:
+msgid "cycad"
+msgstr "cycadale"
+
+msgid "ancient fern-like plant."
+msgstr "fougere prehistorique."
+
 msgid "stegosaurus"
 msgstr "stegosaure"
 
 msgid "avoids other stegosaurs."
-msgstr ""
+msgstr "evite ses semblables."
 
 msgid "always hungry for cycads."
-msgstr ""
+msgstr "mange des cycadales."
 
 msgid "tyrannosaurus"
-msgstr ""
+msgstr "tyrannosaure"
 
 msgid "avoids other tyrannosaurs."
-msgstr ""
+msgstr "evite ses semblables."
 
 msgid "always hungry for prey."
-msgstr ""
+msgstr "mange des proies."
 
 msgid "brachiosaurus"
-msgstr ""
+msgstr "brachiosaure"
 
 msgid "they do travel in herds."
-msgstr ""
+msgstr "se deplace en horde."
 
 msgid "velociraptor"
-msgstr ""
-
-msgid "always hungry for prey."
-msgstr ""
+msgstr "velociraptor"
 
 msgid "uses cycads for ambushes."
-msgstr ""
+msgstr "tapi dans les cycadales."
 
 msgid "gallimimus"
-msgstr ""
+msgstr "gallimimus"
 
 msgid "always travel in herds."
-msgstr ""
+msgstr "se deplace en horde."
 
 msgid "always avoid predators."
-msgstr ""
+msgstr "evite les predateurs."
 
 msgid "compsognathus"
-msgstr ""
+msgstr "compsognathus"
 
 msgid "try to avoid predators,"
-msgstr ""
+msgstr "evite les predateurs ou"
 
 msgid "or hide by cycad patches."
-msgstr ""
+msgstr "tapi dans les cycadales."
 
 msgid "dinosaur egg"
-msgstr ""
+msgstr "oeuf de dinosaure"
 
 msgid "eggs are safest when no"
-msgstr ""
+msgstr "doit rester loin"
 
 msgid "other dinos are around."
-msgstr ""
+msgstr "de tout dino."
 
-msgid "cycad"
-msgstr ""
 
-msgid "ancient fern-like plant."
-msgstr ""
-
-msgid "dinosort"
-msgstr ""
-
-msgid "@clip"
-msgstr ""
-
-msgid "Daily Dino Sort: "
-msgstr ""
-
-msgid " moves in "
-msgstr ""
-
-msgid " seconds!\n"
-msgstr ""
-
-msgid "https://adamatomic.itch.io/dino-sort"
-msgstr ""
-
-msgid "V1.1"
-msgstr ""
-
-msgid "new game"
-msgstr ""
-
-msgid "continue"
-msgstr ""
-
-msgid "infinite"
-msgstr ""
-
-msgid "daily"
-msgstr ""
-
-msgid "new daily in "
-msgstr ""
-
+# Intro screen:
 msgid "niche "
-msgstr ""
+msgstr "niche "
 
 msgid " of 26"
-msgstr ""
+msgstr " sur 26"
 
 msgid "and that was that."
-msgstr ""
+msgstr "et ce fut la fin."
 
-msgid "daily dino sort"
-msgstr ""
 
-msgid " seconds"
-msgstr ""
-
-msgid " moves"
-msgstr ""
-
-msgid "(press up to copy)"
-msgstr ""
-
-msgid "copied!"
-msgstr ""
-
+# Endlevel message:
 msgid "advance to next niche"
-msgstr ""
+msgstr "niche suivante"
 
 msgid "generate new niche"
-msgstr ""
+msgstr "nouvelle niche"
 
 msgid "complete the daily"
-msgstr ""
+msgstr "dinopuzzle du jour"
 
+
+# Infinite mode - generation loader:
 msgid "generating "
-msgstr ""
+msgstr "generation "
 
+
+# Daily dino sort:
+msgid "daily dino sort"
+msgstr "Dinopuzzle du jour"
+
+msgid " seconds"
+msgstr " secondes"
+
+msgid " moves"
+msgstr " deplacements"
+
+
+# Daily map (unused):
+msgid "Daily Dino Sort: "
+msgstr "Daily Dino Sort: "
+msgid " moves in "
+msgstr " moves in "
+msgid " seconds!\n"
+msgstr " seconds!\n"
+msgid "https://adamatomic.itch.io/dino-sort"
+msgstr "https://adamatomic.itch.io/dino-sort"
+
+
+# cartdata() ID:
+msgid "dinosort"
+msgstr "dinosort"
