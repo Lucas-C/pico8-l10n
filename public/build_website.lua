@@ -12,6 +12,17 @@ for dir_name in lfs.dir("./games") do
     local game = game_info.parse(dir_name)
     game.id = dir_name
     games[#games + 1] = game
+    for lang_locale, translation in pairs(game.translations) do
+      if translation.filename then
+        local po_filepath = "games/" .. game.id .. "/" .. translation.filename
+        local po_file = io.open(po_filepath, "r")
+        if po_file then
+          po_file:close()
+        else
+          error(po_filepath .. ' is listed as "filename" in game_info.yaml but does not exist')
+        end
+      end
+    end
   end
 end
 

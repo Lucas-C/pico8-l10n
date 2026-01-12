@@ -24,7 +24,7 @@ local function check_game(opts)
     elseif localized_str == "" then
       untranslated_strings = untranslated_strings + 1
     else
-      local forbidden_chars = localized_str:match("[^a-zA-Z 0-9.!?:='\\\"❎-]+")
+      local forbidden_chars = localized_str:match("[^a-zA-Z 0-9,.!?:='\\\"❎-]+")
       if forbidden_chars then
         print("WARN: unprintable chars detected: " .. forbidden_chars)
         unprintable_chars = unprintable_chars + #forbidden_chars

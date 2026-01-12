@@ -1,69 +1,60 @@
-msgid "princeofprussia"
-msgstr ""
-
-msgid "continue"
-msgstr ""
+# Intraduisible avec si peu de caracteres :
+msgid "rated m for"
+msgstr "rated m for"
+msgid "nazi stabbin'"
+msgstr "nazi stabbin'"
 
 msgid "new game"
-msgstr ""
+msgstr "debuter"
 
-msgid "rated m for"
-msgstr ""
-
-msgid "nazi stabbin'"
-msgstr ""
+msgid "continue"
+msgstr "continuer"
 
 msgid "god damn nazis."
-msgstr ""
+msgstr "satane nazis."
 
+# Intro:
 msgid "you're in jail,"
-msgstr ""
-
+msgstr "vous etes en prison,"
 msgid "and they're alive."
-msgstr ""
-
+msgstr "et ils sont en vie."
 msgid "you can fix this."
-msgstr ""
-
-msgid "you leave the gun."
-msgstr ""
-
-msgid "this is personal."
-msgstr ""
+msgstr "vous pouvez arranger ca."
 
 msgid "you find a scrap of metal."
-msgstr ""
-
+msgstr "vous trouvez un bout de metal"
 msgid "it's sharp. you tear off"
-msgstr ""
-
+msgstr "il est pointu. vous enlevez"
 msgid "a bit of your tunic and"
-msgstr ""
-
+msgstr "un bout de votre tunique"
 msgid "wrap a makeshift grip."
-msgstr ""
-
+msgstr "et bricolez un manche."
 msgid "it'll have to do."
-msgstr ""
+msgstr "ca devrait faire l'affaire."
 
-msgid "it's done."
-msgstr ""
-
-msgid " less nazis"
-msgstr ""
-
-msgid "to worry about."
-msgstr ""
-
-msgid "nice work."
-msgstr ""
+# After killing the very 1st nazi:
+msgid "you leave the gun."
+msgstr "vous laissez le flingue."
+msgid "this is personal."
+msgstr "c'est personnel."
 
 msgid "you found him."
-msgstr ""
-
+msgstr "vous l'avez trouve."
 msgid "the bastard in"
-msgstr ""
-
+msgstr "le batard"
 msgid "charge of it all."
-msgstr ""
+msgstr "en charge de tout ca"
 
+msgid "it's done."
+msgstr "c'est fait."
+msgid " less nazis"
+msgstr " nazis en moins."
+msgid "to worry about."
+msgstr " "
+msgid "nice work."
+msgstr "beau boulot."
+
+
+# cartdata() ID:
+msgid "princeofprussia"
+msgstr "princeofprussia"

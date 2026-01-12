@@ -1,5 +1,5 @@
 msgid "stegosaurus"
-msgstr ""
+msgstr "stegosaure"
 
 msgid "avoids other stegosaurs."
 msgstr ""

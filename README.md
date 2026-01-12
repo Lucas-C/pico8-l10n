@@ -132,4 +132,4 @@ They can be tested locally with [`act`](https://github.com/nektos/act):
 * switch to another binary packer than Luapak, in order to use LuaRocks 3 ?
   -> new rockspec: https://github.com/luarocks/luarocks/blob/main/CHANGELOG.md#new-rockspec-format
 * build a Windows executable in a GA pipeline?
-* invoke `pico-l10n check` in the GA pipeline?
+* cache Lua dependencies in GA pipeline?

@@ -9,4 +9,4 @@ bbs_author_id: 13953
 
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:
-  fr-FR: { translated_percent: 0 } #, filename: "prince_of_prussia-0-fr-FR.p8.png" }
+  fr-FR: { translated_percent: 100, filename: "prince_of_prussia-0-fr-FR.p8.png" }
