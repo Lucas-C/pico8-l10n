@@ -5,12 +5,12 @@ local p8 = require("p8")
 local p8_png = require("p8_png")
 local po = require("po")
 
-local function check_game(p8_or_png_filepath, lang_locale_or_po_filepath)
-  local p8_filepath, is_png = p8_png.with_png_converted(p8_or_png_filepath)
-  local po_filepath = fp.as_po_filepath(p8_filepath, lang_locale_or_po_filepath)
+local function check_game(opts)
+  local p8_filepath, is_png = p8_png.with_png_converted(opts.p8_or_png_filepath)
+  local po_filepath = fp.as_po_filepath(p8_filepath, opts.lang_locale_or_po_filepath)
   local l10n = po.parse(po_filepath)
   local lua_strings = p8.extract_strings(p8_filepath)
-  if is_png then
+  if is_png and not opts.keep_p8_file then
     assert(os.remove(p8_filepath))
   end
   local strings_count = 0
@@ -51,41 +51,40 @@ local function check_all_games(p8_or_png_filepath)
   local ok = true
   for dir_name in lfs.dir("./games") do
     if dir_name:sub(1, 1) ~= "." then
-      if not p8_or_png_filepath then
-        for file_name in lfs.dir("./games/" .. dir_name) do
-          if file_name:match(".p8") then
-            p8_or_png_filepath = "./games/" .. dir_name .. "/" .. file_name
-          end
+      local dir_p8_or_png_filepath
+      for file_name in lfs.dir("./games/" .. dir_name) do
+        if file_name:match(".p8") then
+          dir_p8_or_png_filepath = "./games/" .. dir_name .. "/" .. file_name
         end
       end
-      if p8_or_png_filepath then
+      if not dir_p8_or_png_filepath then
+        print("Skipping games/" .. dir_name .. ": no .p8 or .p8.png found in directory")
+        ok = false
+      elseif not p8_or_png_filepath or p8_or_png_filepath == dir_p8_or_png_filepath then
         for file_name in lfs.dir("./games/" .. dir_name) do
           local lang_locale = file_name:match("(.+)%.po$")
           if lang_locale then
             local po_filepath = "./games/" .. dir_name .. "/" .. file_name
             local missing_strings, untranslated_strings, translated_percent =
-              check_game(p8_or_png_filepath, po_filepath)
+              check_game({ p8_or_png_filepath = dir_p8_or_png_filepath, lang_locale_or_po_filepath = po_filepath })
             game_info.set_translation_progress(dir_name, lang_locale, translated_percent)
             if missing_strings or untranslated_strings then
               ok = false
             end
           end
         end
-      else
-        print("Skipping games/" .. dir_name .. ": no .p8 or .p8.png found in directory")
-        ok = false
       end
     end
   end
   return ok
 end
 
-return function(p8_or_png_filepath, lang_locale_or_po_filepath)
-  if p8_or_png_filepath and lang_locale_or_po_filepath then
-    local missing_strings, untranslated_strings = check_game(p8_or_png_filepath, lang_locale_or_po_filepath)
+return function(opts)
+  if opts.p8_or_png_filepath and opts.lang_locale_or_po_filepath then
+    local missing_strings, untranslated_strings = check_game(opts)
     os.exit(math.min(missing_strings + untranslated_strings, 255))
   end
-  if not check_all_games(p8_or_png_filepath) then
+  if not check_all_games(opts.p8_or_png_filepath) then
     os.exit(2)
   end
 end

@@ -11,27 +11,30 @@ function cli.parse()
   parser:command_target("command")
 
   local init_cmd = parser:command("init")
-  init_cmd:argument("p8_file", "File path of a .p8 or .p8.png file")
+  init_cmd:argument("p8_or_png_filepath", "File path of a .p8 or .p8.png file")
   init_cmd:argument(
-    "po_file",
+    "lang_locale_or_po_filepath",
     ".po file path or language locale, e.g. fr-FR, en-US, etc. = ISO 639-1 language code -DASH- ISO 3166-1 Alpha-2 code"
   )
+  init_cmd:option("--keep-p8-file", "When a .p8.png file is provided, preserve the converted .p8 file"):args("?")
 
   local translate_cmd = parser:command("translate")
-  translate_cmd:argument("p8_file", "File path of a .p8 or .p8.png file")
+  translate_cmd:argument("p8_or_png_filepath", "File path of a .p8 or .p8.png file")
   translate_cmd:argument(
-    "po_file",
+    "lang_locale_or_po_filepath",
     ".po file path or language locale, e.g. fr-FR, en-US, etc. = ISO 639-1 language code -DASH- ISO 3166-1 Alpha-2 code"
   )
+  translate_cmd:option("--keep-p8-file", "When a .p8.png file is provided, preserve the converted .p8 file"):args("?")
 
   local check_cmd = parser:command("check")
-  check_cmd:argument("p8_file", "File path of a .p8 or .p8.png file"):args("?")
+  check_cmd:argument("p8_or_png_filepath", "File path of a .p8 or .p8.png file"):args("?")
   check_cmd
     :argument(
-      "po_file",
+      "lang_locale_or_po_filepath",
       ".po file path or language locale, e.g. fr-FR, en-US, etc. = ISO 639-1 language code -DASH- ISO 3166-1 Alpha-2 code"
     )
     :args("?")
+  check_cmd:option("--keep-p8-file", "When a .p8.png file is provided, preserve the converted .p8 file"):args("?")
 
   local opts = parser:parse()
   if not opts.command and not opts.version then

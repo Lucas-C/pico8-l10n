@@ -84,6 +84,7 @@ header .pico8-icon {
 
 .game-card {
   padding: 2px;
+  margin: 8px;
 }
 
 .cartridge-img {

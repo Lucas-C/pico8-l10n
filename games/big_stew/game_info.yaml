@@ -1,0 +1,9 @@
+name: Lil Kobold's Big Stew
+bbs_url: https://www.lexaloffle.com/bbs/?pid=176646
+itchio_url: https://adamatomic.itch.io/lil-kobolds-big-stew
+author: Adam "Atomic" Saltsman
+bbs_author_id: 13953
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 100 } #, filename: "big_stew-0-fr-FR.p8.png" }

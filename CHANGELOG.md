@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.8] - 2026-01-12
+### Fixed
+* a bug when quotes were present in PICO8 games Lua comments
+* a bug in `check` command, when invoked without argument
+
+### Added
+* new `--keep-p8-file` option in all subcommands
+
 ## [1.1.7] - 2026-01-11
 ### Fixed
 * a bug with file copy under Windows

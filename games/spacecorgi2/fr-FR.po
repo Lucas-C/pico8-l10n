@@ -1,0 +1,138 @@
+msgid "stranded"
+msgstr ""
+
+msgid "high security"
+msgstr ""
+
+msgid "flow chamber"
+msgstr ""
+
+msgid "ventilation"
+msgstr ""
+
+msgid "the brig"
+msgstr ""
+
+msgid "frozen vat"
+msgstr ""
+
+msgid "maintenance"
+msgstr ""
+
+msgid "the leak"
+msgstr ""
+
+msgid "cooling rods"
+msgstr ""
+
+msgid "corridor"
+msgstr ""
+
+msgid "breakdown"
+msgstr ""
+
+msgid "access vent"
+msgstr ""
+
+msgid "retrieval"
+msgstr ""
+
+msgid "filtration"
+msgstr ""
+
+msgid "storage hatch"
+msgstr ""
+
+msgid "hull access"
+msgstr ""
+
+msgid "heat sink"
+msgstr ""
+
+msgid "hydroponics"
+msgstr ""
+
+msgid "pumping station"
+msgstr ""
+
+msgid "frozen over"
+msgstr ""
+
+msgid "dock access"
+msgstr ""
+
+msgid "hydrogen valve"
+msgstr ""
+
+msgid "cargo bay"
+msgstr ""
+
+msgid "barracks"
+msgstr ""
+
+msgid "engineering"
+msgstr ""
+
+msgid "gymnasium"
+msgstr ""
+
+msgid "co2 exchange"
+msgstr ""
+
+msgid "water supply"
+msgstr ""
+
+msgid "control center"
+msgstr ""
+
+msgid "escape pod"
+msgstr ""
+
+msgid "cryosleep: engaged"
+msgstr ""
+
+msgid "   status: nominal"
+msgstr ""
+
+msgid " duration: unknown"
+msgstr ""
+
+msgid "to be continued..."
+msgstr ""
+
+msgid "spacecorgi2corgispace"
+msgstr ""
+
+msgid "switch to 2p"
+msgstr ""
+
+msgid "switch to 1p"
+msgstr ""
+
+msgid "continue"
+msgstr ""
+
+msgid "new game"
+msgstr ""
+
+msgid "1 player"
+msgstr ""
+
+msgid "2 player"
+msgstr ""
+
+msgid "level "
+msgstr ""
+
+msgid " \f7winning!! \fdpress \fe❎ \fdto continue"
+msgstr ""
+
+msgid " \f7winning!! \fdpress \f8❎ \fdto continue"
+msgstr ""
+
+msgid "  \fdpress \fe❎ \fdto change character"
+msgstr ""
+
+msgid "p1 moves corgi, p2 moves pug"
+msgstr ""
+

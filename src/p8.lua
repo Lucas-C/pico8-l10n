@@ -9,11 +9,12 @@ function p8.extract_strings(p8_filepath)
 end
 
 function p8.extract_strings_p8_content(p8_content)
-  local in_lua_code = false
   local strings = {}
+  local in_lua_code = false
+  local in_comment = false
   local curr_string = ""
   local start_char = nil
-  local escaped = false
+  local prev_char, prev_prev_char
   for i = 1, #p8_content do
     local char = p8_content:sub(i, i)
     if char == "_" then
@@ -22,10 +23,14 @@ function p8.extract_strings_p8_content(p8_content)
         in_lua_code = section_header == "lua"
       end
     elseif in_lua_code then
-      if char == "\\" then
-        curr_string = curr_string .. "\\"
-        escaped = true
-      elseif (char == '"' or char == "'") and not escaped then
+      if prev_prev_char == "\n" then
+        if prev_char == "-" and char == "-" then
+          in_comment = true
+        else
+          in_comment = false
+        end
+      end
+      if not in_comment and prev_char ~= "\\" and (char == '"' or char == "'") then
         if char == start_char then
           -- Ignore empty strings
           -- and string without any alphabetical character:
@@ -39,12 +44,12 @@ function p8.extract_strings_p8_content(p8_content)
         else
           start_char = char
         end
-        escaped = false
       elseif start_char then
         curr_string = curr_string .. char
-        escaped = false
       end
     end
+    prev_prev_char = prev_char
+    prev_char = char
   end
   return strings
 end

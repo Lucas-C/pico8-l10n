@@ -1,0 +1,9 @@
+name: Dino Sort
+bbs_url: https://www.lexaloffle.com/bbs/?pid=168994
+itchio_url: https://adamatomic.itch.io/dino-sort
+author: Adam "Atomic" Saltsman
+bbs_author_id: 13953
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "dino_sort-1-fr-FR.p8.png" }
