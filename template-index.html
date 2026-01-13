@@ -46,7 +46,7 @@
         contributed by volunteers, and placed under under the <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY license</a>.
       </p>
       <p>
-        The <code>.p8.png</code> PICO-8 game files are only hosted if the author gave us permission to do so.
+        The translated PICO-8 game files are only hosted if the author gave us permission to do so.
       </p>
       <p>
         You can contribute your own translations for your favorite games
@@ -95,7 +95,7 @@
                 {{ ("%.0f"):format(translation.translated_percent) }}% translated
                 {% if translation.filename then %}
                 <br><a href="./{{ game.id }}/{{ translation.filename:sub(0, #translation.filename - 7) .. '.html' }}">Play game online</a>
-                <br>Download translated game:<br><a href="https://github.com/Lucas-C/pico8-l10n/raw/refs/heads/main/games/{{ game.id }}/{{ translation.filename }}">{{ translation.filename }}</a>
+                <br>Download translated game:<br><a href="./{{ game.id }}/{{ translation.filename }}">{{ translation.filename }}</a>
                 {% end %}
               </li>
               {% end %}

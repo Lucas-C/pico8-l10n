@@ -14,7 +14,7 @@ for dir_name in lfs.dir("./games") do
     games[#games + 1] = game
     for _, translation in pairs(game.translations) do
       if translation.filename then
-        local po_filepath = "games/" .. game.id .. "/" .. translation.filename
+        local po_filepath = "public/" .. game.id .. "/" .. translation.filename
         local po_file = io.open(po_filepath, "r")
         if po_file then
           po_file:close()
