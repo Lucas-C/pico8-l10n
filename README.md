@@ -100,7 +100,7 @@ Using [busted](https://lunarmodules.github.io/busted/):
 
 Example to select a single test to run:
 
-    busted tests/p8_png_spec.lua --filter p8_to_png
+    busted tests/p8_convert_spec.lua --filter p8_to_png
 
 ## Run CLI tests
 Using [Prysk](https://www.prysk.net/), _cf._ [end-to-end.t](https://github.com/Lucas-C/pico8-l10n/blob/main/cli-tests/end-to-end.t):

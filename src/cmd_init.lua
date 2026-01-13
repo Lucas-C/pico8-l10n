@@ -1,10 +1,10 @@
 local fp = require("filepaths")
 local p8 = require("p8")
-local p8_png = require("p8_png")
+local p8c = require("p8_convert")
 local po = require("po")
 
 return function(opts)
-  local p8_filepath, is_png = p8_png.with_png_converted(opts.p8_or_png_filepath)
+  local p8_filepath, is_png = p8c.with_png_converted(opts.p8_or_png_filepath)
   local lua_strings = p8.extract_strings(p8_filepath)
   local po_filepath = fp.as_po_filepath(p8_filepath, opts.lang_locale_or_po_filepath)
   if is_png and not opts.keep_p8_file then
