@@ -15,4 +15,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Run Busted
-        uses: lunarmodules/busted@v2.2.0
+        uses: lunarmodules/busted@v2.3.0
