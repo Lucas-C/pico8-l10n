@@ -9,9 +9,13 @@ $SCRIPT_DIR/build-with-luapak.sh
 function translate() {
   local filename="$1"
   local local_lang="$2"
+  local game_id=$(echo "$1" | sed "s/-.*$//")
   wget --quiet "https://www.lexaloffle.com/bbs/cposts/${1:0:2}/$1.p8.png"
-  builds/pico8-l10n translate "$1.p8.png" "$2"
-  mv "$1-$2.p8.png" games/$(echo "$1" | sed "s/-.*$//")/
+  builds/pico8-l10n translate "$1.p8.png" "$2" --html-export
+  mv "$1-$2.p8.png" games/$game_id/
+  mkdir -p public/$game_id
+  mv "$1-$2.html" public/$game_id/
+  mv "$1-$2.js" public/$game_id/
   rm "$1.p8.png"
 }
 

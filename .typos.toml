@@ -1,4 +1,6 @@
 [files]
 extend-exclude = [
     "games/*",
+    "public/*/*.html",
+    "public/*/*.js",
 ]

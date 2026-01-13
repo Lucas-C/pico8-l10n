@@ -25,6 +25,7 @@ function cli.parse()
     ".po file path or language locale, e.g. fr-FR, en-US, etc. = ISO 639-1 language code -DASH- ISO 3166-1 Alpha-2 code"
   )
   translate_cmd:option("--keep-p8-file", "When a .p8.png file is provided, preserve the converted .p8 file"):args("?")
+  translate_cmd:option("--html-export", "Also generate a HTML export file"):args("?")
 
   local check_cmd = parser:command("check")
   check_cmd:argument("p8_or_png_filepath", "File path of a .p8 or .p8.png file"):args("?")
