@@ -1,0 +1,9 @@
+name: X-Zero
+bbs_url: https://www.lexaloffle.com/bbs/?pid=70362
+itchio_url: https://paranoidcactus.itch.io/x-zero
+author: Paranoid Cactus
+bbs_author_id: 29414
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "xzero-3-fr-FR.p8.png" }

@@ -1,0 +1,30 @@
+msgid "bcount"
+msgstr ""
+
+msgid "maxbullets"
+msgstr ""
+
+msgid "hp"
+msgstr ""
+
+msgid "maxhp"
+msgstr ""
+
+msgid "swap controls"
+msgstr ""
+
+msgid "end game"
+msgstr ""
+
+msgid "press 🅾️ or ❎ to start"
+msgstr ""
+
+msgid "hacking"
+msgstr ""
+
+msgid "success"
+msgstr ""
+
+msgid "hack"
+msgstr ""
+

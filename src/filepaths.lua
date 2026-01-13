@@ -17,7 +17,7 @@ end
 
 function fp.game_dirname(p8_or_png_filepath)
   local game_base_name = fp.base_game_name(p8_or_png_filepath)
-  local match_iterator = game_base_name:gmatch("[^-]+")
+  local match_iterator = game_base_name:gmatch("(.+)-.+")
   local match = match_iterator()
   if match then
     return match

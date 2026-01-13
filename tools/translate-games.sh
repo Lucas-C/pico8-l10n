@@ -12,8 +12,8 @@ function translate() {
   local game_id=$(echo "$1" | sed "s/-.*$//")
   wget --quiet "https://www.lexaloffle.com/bbs/cposts/${1:0:2}/$1.p8.png"
   builds/pico8-l10n translate "$1.p8.png" "$2" --html-export
-  mv "$1-$2.p8.png" games/$game_id/
   mkdir -p public/$game_id
+  mv "$1-$2.p8.png" public/$game_id/
   mv "$1-$2.html" public/$game_id/
   mv "$1-$2.js" public/$game_id/
   rm "$1.p8.png"

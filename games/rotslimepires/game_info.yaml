@@ -1,0 +1,9 @@
+name: Return of the SLIMEPIRES!
+bbs_url: https://www.lexaloffle.com/bbs/?tid=47392
+itchio_url: https://sophieh.itch.io/return-of-the-slimepires
+author: Sophie Houlden
+bbs_author_id: 10355
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "rotslimepires_1_1-0-fr-FR.p8.png" }

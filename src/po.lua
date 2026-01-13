@@ -10,9 +10,10 @@ function po.create_from_strings(strings, po_filepath)
   local ordered_indices = {}
   local index2str = {}
   for str, indices in pairs(strings) do
-    for _, i in pairs(indices) do
+    for _, i in pairs(indices) do -- luacheck: ignore 512
       table.insert(ordered_indices, i)
       index2str[i] = str
+      break
     end
   end
   table.sort(ordered_indices)

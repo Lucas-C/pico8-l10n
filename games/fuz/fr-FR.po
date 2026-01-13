@@ -1,0 +1,51 @@
+msgid "jusiv"
+msgstr ""
+
+msgid "anti-cube"
+msgstr ""
+
+msgid "abcdefghijklmnopqrstuvwxyz /"
+msgstr ""
+
+msgid "gomez...,something went wrong.,the warp gate broke!,we're stranded here!,maybe you can find,some way to fix it?,(use ⬅️ and ➡️ to move)  ,(🅾️ to jump) ,(⬇️ to drop down) ,(and ⬆️ to interact) ,(oh and to rotate the world),(hold ❎ and use ⬅️ and ➡️!)   "
+msgstr ""
+
+msgid "looks like we'll need a cube,to get through here.,you can make one,if you find 8 cube bits.,now get going,it's gomez time!"
+msgstr ""
+
+msgid "you assembled a cube!,that should open,a door somewhere."
+msgstr ""
+
+msgid "excellent find!,that should fix,the warp gate!,now let's go home!"
+msgstr ""
+
+msgid "this door needs 4 cubes.,...are there even that many,around here?"
+msgstr ""
+
+msgid "woah nice!,you found an anti-cube!,i had no idea,any were out here!"
+msgstr ""
+
+msgid "um... congrats?,i don't know what,the point of that is,...but...,you sure did find it!"
+msgstr ""
+
+msgid "what even...,that is not supposed to,be here at all."
+msgstr ""
+
+msgid "iodbnuofs,pgffsdtzwse, aa/mhwsi,s/fsdnfvsnbogesn s/g,fvsneywsenapesdhsngemfaa,fvsmqvo psdmatmfvs,tslmiszqa semkagmm,fvjmtadmbzokw/u, orsmpkmxgewhmm,s/r"
+msgstr ""
+
+msgid "press any button"
+msgstr ""
+
+msgid "pico-8 0.1.12x"
+msgstr ""
+
+msgid "(c) 2014-xx lexaloffle games llp"
+msgstr ""
+
+msgid "type help for help"
+msgstr ""
+
+msgid "> run"
+msgstr ""
+

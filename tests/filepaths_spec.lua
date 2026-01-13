@@ -10,6 +10,12 @@ describe("fp", function()
     end)
   end)
 
+  describe(".game_dirname()", function()
+    it("should handle a .p8.png file name with several dashes", function()
+      assert.equal("dusk-child", fp.game_dirname("dusk-child-1.4.p8.png"))
+    end)
+  end)
+
   describe(".as_po_filepath()", function()
     it("should simply return the same string when a valid .po file path is provided", function()
       local valid_po_filepath = "games/vampire_vs_pope_army/fr-FR.po"

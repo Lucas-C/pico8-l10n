@@ -1,0 +1,9 @@
+name: PICOHOT
+bbs_url: https://www.lexaloffle.com/bbs/?pid=74385
+itchio_url: https://tarkovsky.itch.io/picohot
+author: Piotr Tarkovsky
+bbs_author_id: 42338
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "picohot-0-fr-FR.p8.png" }

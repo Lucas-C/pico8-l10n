@@ -1,0 +1,9 @@
+name: Cursed Flail
+bbs_url: https://www.lexaloffle.com/bbs/?pid=93435
+itchio_url: https://jusiv.itch.io/cursed-flail
+author: Jusiv
+bbs_author_id: 24585
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "cursedflail-0-fr-FR.p8.png" }

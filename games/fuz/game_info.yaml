@@ -1,0 +1,9 @@
+name: Fuz
+bbs_url: https://www.lexaloffle.com/bbs/?tid=34188
+itchio_url: https://jusiv.itch.io/fuz
+author: Jusiv
+bbs_author_id: 24585
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "fuz-v1.1-fr-FR.p8.png" }
