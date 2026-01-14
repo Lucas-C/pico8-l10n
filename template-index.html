@@ -37,7 +37,7 @@
   <section>
     <div class="breadcrumb">
       <div class="breadcrumb-separator"> &gt; </div>
-      <h2 class="breadcrumb-tag text">Hosted game translations</h2>
+      <h2 class="breadcrumb-tag text" id="hosted-game-translations">Hosted game translations</h2>
     </div>
     <div class="text">
       <p>
@@ -57,7 +57,7 @@
     {% for _, game in ipairs(games) do %}
       <div class="game-card">
         <a href="{{ game.bbs_url or game.itchio_url }}">
-          <div class="cartridge-img" style="background-image: url('https://www.lexaloffle.com/bbs/thumbs/pico8_{{ game.id }}-0.png')">
+          <div class="cartridge-img" style="background-image: url('https://www.lexaloffle.com/bbs/thumbs/{{ game.thumb_filename or ('pico8_' .. game.id .. '-0.png') }}')">
           </div>
         </a>
         <div class="cartridge-info">
