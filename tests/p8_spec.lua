@@ -46,6 +46,14 @@ __lua__
 ]]
       assert.same({}, p8.extract_strings_p8_content(code))
     end)
+    it("should handle quotes in block comments", function()
+      local code = [[
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
+]] .. "--[[\na block comment with 'two single quotes'\n]]"
+      assert.same({}, p8.extract_strings_p8_content(code))
+    end)
     it("should only extract repeat strings once", function()
       assert.same({ ["HELLO WORLD!"] = { 69, 91 } }, p8.extract_strings_p8_content(code_with_repeats))
     end)

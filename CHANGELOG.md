@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.2.0] - Not released yet
 ### Added
 * new `--html-export` option added to `translate` subcommand
+### Fixed
+* Lua block comments are now properly handled
 
 ## [1.1.9] - 2026-01-12
 ### Added

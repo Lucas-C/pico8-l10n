@@ -3,6 +3,7 @@ bbs_url: https://www.lexaloffle.com/bbs/?pid=12682
 itchio_url: https://sophieh.itch.io/dusk-child
 author: Sophie Houlden
 bbs_author_id: 10355
+thumb_filename: pico39705.png
 
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:

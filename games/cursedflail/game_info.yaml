@@ -3,6 +3,7 @@ bbs_url: https://www.lexaloffle.com/bbs/?pid=93435
 itchio_url: https://jusiv.itch.io/cursed-flail
 author: Jusiv
 bbs_author_id: 24585
+thumb_filename: pico8_jusiv_cursedflail-0.png
 
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:

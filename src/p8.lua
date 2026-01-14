@@ -15,6 +15,7 @@ function p8.extract_strings_p8_content(p8_content)
   local strings = {}
   local in_lua_code = false
   local in_comment = false
+  local in_block_comment = false
   local curr_string = ""
   local start_char = nil
   local prev_char
@@ -26,13 +27,25 @@ function p8.extract_strings_p8_content(p8_content)
         in_lua_code = section_header == "lua"
       end
     elseif in_lua_code then
-      if prev_char == "-" and char == "-" then
-        in_comment = true
+      if in_comment then
+        if char == "\n" then
+          in_comment = false
+        end
+      else
+        if prev_char == "-" and char == "-" then
+          in_comment = true
+        end
       end
-      if char == "\n" then
-        in_comment = false
+      if in_block_comment then
+        if prev_char == "]" and char == "]" then
+          in_block_comment = false
+        end
+      else
+        if p8_content:sub(i - 3, i):match("--%[%[") then
+          in_block_comment = true
+        end
       end
-      if not in_comment then
+      if not in_comment and not in_block_comment then
         if prev_char ~= "\\" and (char == '"' or char == "'") then
           if char == start_char then
             -- Ignore empty strings

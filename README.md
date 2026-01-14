@@ -34,7 +34,6 @@ This is not necessary for `.p8` game files.
 
 To play the translated game:
 
-    $ cp vampire_vs_pope_army-0-fr-FR.p8.png ~/.lexaloffle/pico-8/carts/
     $ pico8 -run vampire_vs_pope_army-0-fr-FR.p8.png
 
 To check if ALL "localizable" strings in a given `.p8` / `.p8.png` game file are translated in a `.po` file:

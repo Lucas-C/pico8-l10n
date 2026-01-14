@@ -1,0 +1,126 @@
+msgid "crubmlingstone"
+msgstr ""
+
+msgid "80,34,it's so far now|i will never get home"
+msgstr ""
+
+msgid "112,80,cold..."
+msgstr ""
+
+msgid "45,88,one rogue?|what can only one do?"
+msgstr ""
+
+msgid "36,42,is bingo night|on tuesday?"
+msgstr ""
+
+msgid "79,24,am i fractured|or is it the world?"
+msgstr ""
+
+msgid "80,34,maybe i can|buid a brige"
+msgstr ""
+
+msgid "112,80,warm!"
+msgstr ""
+
+msgid "45,88,hmmm|you did it!"
+msgstr ""
+
+msgid "36,42,there will be a tuesday"
+msgstr ""
+
+msgid "79,24,we will be ok|world will be ok"
+msgstr ""
+
+msgid "heart"
+msgstr ""
+
+msgid "speed"
+msgstr ""
+
+msgid "arrow"
+msgstr ""
+
+msgid "+1 life"
+msgstr ""
+
+msgid "speed increase +20%"
+msgstr ""
+
+msgid "additional arrow"
+msgstr ""
+
+msgid "intro"
+msgstr ""
+
+msgid "game"
+msgstr ""
+
+msgid "idle"
+msgstr ""
+
+msgid "on"
+msgstr ""
+
+msgid "e"
+msgstr ""
+
+msgid "enemycore"
+msgstr ""
+
+msgid "health,size,speed"
+msgstr ""
+
+msgid "enemy"
+msgstr ""
+
+msgid "enemyorbitor"
+msgstr ""
+
+msgid "t"
+msgstr ""
+
+msgid "health"
+msgstr ""
+
+msgid "size,speed,health"
+msgstr ""
+
+msgid "health,size"
+msgstr ""
+
+msgid "o"
+msgstr ""
+
+msgid "health,deadtmrec"
+msgstr ""
+
+msgid "n"
+msgstr ""
+
+msgid "s"
+msgstr ""
+
+msgid "speed,deadtmrec"
+msgstr ""
+
+msgid "clock"
+msgstr ""
+
+msgid "timer(on/off)"
+msgstr ""
+
+msgid "reset run"
+msgstr ""
+
+msgid "speedrun"
+msgstr ""
+
+msgid "deadwin"
+msgstr ""
+
+msgid "win"
+msgstr ""
+
+msgid "dead"
+msgstr ""
+

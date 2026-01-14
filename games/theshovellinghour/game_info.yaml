@@ -1,0 +1,9 @@
+name: The Shovelling Hour
+bbs_url: https://www.lexaloffle.com/bbs/?tid=154260
+itchio_url: https://sparsegamedev.itch.io/the-shovelling-hour
+author: Eric Billingsley
+bbs_author_id: 68442
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "theshovellinghour-1-fr-FR.p8.png" }
