@@ -21,6 +21,9 @@ function gi.parse(game_id)
   if not game_info.author then
     error('Field "author" is missing in ' .. filepath)
   end
+  if not game_info.translations then
+    error('Field "translations" is missing in ' .. filepath)
+  end
   return game_info
 end
 

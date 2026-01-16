@@ -4,7 +4,7 @@
 
 *.p8.png
 *-fr-FR.p8
-!games/*/*-fr-FR.p8.png
+!public/*/*-*-*.p8.png
 
 # Prysk tests:
 *.t.err

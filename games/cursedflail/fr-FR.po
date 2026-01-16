@@ -1,0 +1,47 @@
+# To jump over 7 levels straight to the boss fight:
+#   for i=1,7 do load_room(true) end
+# To hit the boss 3 times, in order to ease the final fight:
+#   a_enemies[#a_enemies].hits = 3
+
+msgid "a game by"
+msgstr "un jeu de"
+
+msgid "jusiv"
+msgstr "jusiv"
+
+msgid "move"
+msgstr "bouge"
+
+msgid "jump"
+msgstr "saut"
+
+msgid "arrows"
+msgstr "fleches"
+
+# "Cursed flail" is a sprite and not translatable there:
+msgid "you got the"
+msgstr "vous avez le"
+
+msgid "jump to dodge"
+msgstr "sauter ou esquiver"
+
+msgid "the flail can"
+msgstr "le fleau peut"
+
+msgid "break things"
+msgstr "casser des trucs"
+
+msgid "press any button"
+msgstr "appuyez sur une touche"
+
+msgid "★ thanks for playing! ★  "
+msgstr "★ merci d'avoir joue ! ★ "
+
+msgid "this was made in 48 hours"
+msgstr "ce jeu a ete cree en 48h"
+
+msgid "by henry "jusiv" stadolnik"
+msgstr "par henry "jusiv" stadolnik"
+
+msgid "for the 2021 gmtk game jam"
+msgstr "pour la game jam gmtk de 2021"

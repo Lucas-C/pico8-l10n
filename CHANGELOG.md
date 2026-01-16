@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.2.0] - Not released yet
 ### Added
 * new `--html-export` option added to `translate` subcommand
+### Changed
+* `pico8-l10n` now aborts if invalid lines are found in `.po` files
 ### Fixed
 * Lua block comments are now properly handled
 

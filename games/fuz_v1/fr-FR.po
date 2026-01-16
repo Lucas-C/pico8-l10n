@@ -1,51 +1,53 @@
-msgid "jusiv"
-msgstr ""
-
-msgid "anti-cube"
-msgstr ""
-
-msgid "abcdefghijklmnopqrstuvwxyz /"
-msgstr ""
+# Should not be more than 16 characters long:
+msgid "press any button"
+msgstr "demarrer"
 
 msgid "gomez...,something went wrong.,the warp gate broke!,we're stranded here!,maybe you can find,some way to fix it?,(use ⬅️ and ➡️ to move)  ,(🅾️ to jump) ,(⬇️ to drop down) ,(and ⬆️ to interact) ,(oh and to rotate the world),(hold ❎ and use ⬅️ and ➡️!)   "
-msgstr ""
+msgstr "gomez...,quelque chose a mal tourne.,le teleportail est casse !,nous sommes bloques ici !,peut-etre peux-tu trouver,un moyen de le reparer ?,(⬅️ et ➡️ pour se deplacer)  ,(🅾️ pour sauter) ,(⬇️ pour descendre) ,(et ⬆️ pour interagir) ,(pour faire pivoter le monde),(maintiens ❎ et ⬅️ ou ➡️)"
 
 msgid "looks like we'll need a cube,to get through here.,you can make one,if you find 8 cube bits.,now get going,it's gomez time!"
-msgstr ""
+msgstr "il nous faut un cube,pour passer ici.,tu peux en fabriquer un,en trouvant 8 morceaux de cube.,allez, au boulot,a toi de jouer gomez !"
 
 msgid "you assembled a cube!,that should open,a door somewhere."
-msgstr ""
+msgstr "tu as assemble un cube !,cela a du ouvrir une porte,quelque part."
 
 msgid "excellent find!,that should fix,the warp gate!,now let's go home!"
-msgstr ""
+msgstr "excellente trouvaille !,ca va reparer le teleportail !,allez, rentrons a la maison !"
 
 msgid "this door needs 4 cubes.,...are there even that many,around here?"
-msgstr ""
+msgstr "cette porte necessite 4 cubes.,est-ce qu'il en y en a assez, dans le coin ?"
 
 msgid "woah nice!,you found an anti-cube!,i had no idea,any were out here!"
-msgstr ""
+msgstr "waouh, genial !,tu as trouve un anti-cube !,je ne savais pas,qu'il y en avait un ici !"
 
 msgid "um... congrats?,i don't know what,the point of that is,...but...,you sure did find it!"
-msgstr ""
+msgstr "euh... bravo ?,je ne sais pas trop,ce que ca veut dire,...mais...,tu l'as trouve, c'est sur !"
 
 msgid "what even...,that is not supposed to,be here at all."
-msgstr ""
-
-msgid "iodbnuofs,pgffsdtzwse, aa/mhwsi,s/fsdnfvsnbogesn s/g,fvsneywsenapesdhsngemfaa,fvsmqvo psdmatmfvs,tslmiszqa semkagmm,fvjmtadmbzokw/u, orsmpkmxgewhmm,s/r"
-msgstr ""
-
-msgid "press any button"
-msgstr ""
-
-msgid "pico-8 0.1.12x"
-msgstr ""
-
-msgid "(c) 2014-xx lexaloffle games llp"
-msgstr ""
+msgstr "mais qu'est-ce que..., ce n'est pas cense,etre la du tout."
 
 msgid "type help for help"
-msgstr ""
+msgstr "tapez 'help' pour avoir de l'aide"
 
 msgid "> run"
-msgstr ""
+msgstr "> run"
 
+
+# Untranslatable:
+msgid "jusiv"
+msgstr "jusiv"
+
+msgid "anti-cube"
+msgstr "anti-cube"
+
+msgid "abcdefghijklmnopqrstuvwxyz /"
+msgstr "abcdefghijklmnopqrstuvwxyz /"
+
+msgid "pico-8 0.1.12x"
+msgstr "pico-8 0.1.12x"
+
+msgid "(c) 2014-xx lexaloffle games llp"
+msgstr "(c) 2014-xx lexaloffle games llp"
+
+msgid "iodbnuofs,pgffsdtzwse, aa/mhwsi,s/fsdnfvsnbogesn s/g,fvsneywsenapesdhsngemfaa,fvsmqvo psdmatmfvs,tslmiszqa semkagmm,fvjmtadmbzokw/u, orsmpkmxgewhmm,s/r"
+msgstr "iodbnuofs,pgffsdtzwse, aa/mhwsi,s/fsdnfvsnbogesn s/g,fvsneywsenapesdhsngemfaa,fvsmqvo psdmatmfvs,tslmiszqa semkagmm,fvjmtadmbzokw/u, orsmpkmxgewhmm,s/r"
