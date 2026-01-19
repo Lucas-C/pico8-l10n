@@ -1,12 +1,13 @@
 -- Module to read & write game_info.yml files
 
+local fp = require("filepaths")
 local io2 = require("io_utils")
 local yaml = require("yaml")
 
 local gi = {}
 
 function gi.parse(game_id)
-  local filepath = "./games/" .. game_id .. "/game_info.yaml"
+  local filepath = fp.game_info_yaml_filepath(game_id)
   local yaml_content = io2.read_all(filepath)
   if not yaml_content then
     error(filepath .. " is empty")
@@ -31,7 +32,7 @@ end
 -- cf. https://github.com/jirutka/luapak/issues/8#issuecomment-3729420856
 -- So for now, this is very hacky...
 function gi.set_translation_progress(game_id, lang_locale, translated_percent)
-  local filepath = "./games/" .. game_id .. "/game_info.yaml"
+  local filepath = fp.game_info_yaml_filepath(game_id)
   local yaml_content = io2.read_all(filepath)
   local dash_escaped_lang_locale = lang_locale:gsub("%-", "%%-")
   yaml_content =

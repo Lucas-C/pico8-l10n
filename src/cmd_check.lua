@@ -47,6 +47,7 @@ local function check_game(opts)
   return missing_strings, untranslated_strings, translated_percent, unprintable_chars
 end
 
+-- By default, check all subdirectories of games/:
 local function check_all_games(opts)
   local ok = true
   local game_dirs = {}

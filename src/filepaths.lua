@@ -42,4 +42,8 @@ function fp.as_lang_locale(lang_locale_or_po_filepath)
   return po_filename:sub(#po_filename - 7, #po_filename - 3)
 end
 
+function fp.game_info_yaml_filepath(game_id)
+  return "games/" .. game_id .. "/game_info.yaml"
+end
+
 return fp
