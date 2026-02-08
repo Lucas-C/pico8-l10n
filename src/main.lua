@@ -1,5 +1,5 @@
 #!/usr/local/bin/lua
-local version = "1.1.9"
+local version = "1.1.10"
 
 local cli_args = require("cli_args")
 local check = require("cmd_check")

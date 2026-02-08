@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.2.0] - Not released yet
+## [1.1.10] - 2026-02-08
 ### Added
 * new `--html-export` option added to `translate` subcommand
 * new `--show-missing-msgids` option added to `check` subcommand
