@@ -14,37 +14,42 @@ local function check_game(opts)
     assert(os.remove(p8_filepath))
   end
   local strings_count = 0
-  local missing_strings = 0
-  local untranslated_strings = 0
+  local missing_strings = {}
+  local untranslated_count = 0
   for str in pairs(lua_strings) do
     local localized_str = l10n[str]
     if not localized_str then
-      missing_strings = missing_strings + 1
+      table.insert(missing_strings, str)
     elseif localized_str == "" then
-      untranslated_strings = untranslated_strings + 1
+      untranslated_count = untranslated_count + 1
     end
     strings_count = strings_count + 1
   end
   local translated_percent = 100
   local msg = po_filepath
-  if missing_strings == 0 and untranslated_strings == 0 then
+  if #missing_strings == 0 and untranslated_count == 0 then
     msg = msg .. " is fully translated"
   else
-    if missing_strings > 0 then
-      msg = msg .. " misses " .. missing_strings .. " msgids"
+    if #missing_strings > 0 then
+      msg = msg .. " misses " .. #missing_strings .. " msgids"
     end
-    if missing_strings > 0 and untranslated_strings > 0 then
+    if #missing_strings > 0 and untranslated_count > 0 then
       msg = msg .. " and"
     end
-    if untranslated_strings > 0 then
-      msg = msg .. " is missing " .. untranslated_strings .. " translations"
+    if untranslated_count > 0 then
+      msg = msg .. " is missing " .. untranslated_count .. " translations"
     end
-    local translated_ratio = (strings_count - missing_strings - untranslated_strings) / strings_count
+    local translated_ratio = (strings_count - #missing_strings - untranslated_count) / strings_count
     translated_percent = ("%.0f"):format(translated_ratio * 100)
     msg = msg .. " (" .. translated_percent .. "% translated)"
   end
   print(msg)
-  return missing_strings, untranslated_strings, translated_percent, unprintable_chars
+  if opts.show_missing_msgids then
+    for _, str in ipairs(missing_strings) do
+      print("* " .. str)
+    end
+  end
+  return #missing_strings, untranslated_count, translated_percent, unprintable_chars
 end
 
 -- By default, check all subdirectories of games/:
@@ -57,6 +62,7 @@ local function check_all_games(opts)
     end
   end
   table.sort(game_dirs)
+  local matching_file_processed = false
   for _, dir_name in ipairs(game_dirs) do
     local dir_p8_or_png_filepath
     for file_name in lfs.dir("games/" .. dir_name) do
@@ -76,14 +82,20 @@ local function check_all_games(opts)
             p8_or_png_filepath = dir_p8_or_png_filepath,
             lang_locale_or_po_filepath = po_filepath,
             keep_p8_file = opts.keep_p8_file,
+            show_missing_msgids = opts.show_missing_msgids,
           })
           game_info.set_translation_progress(dir_name, lang_locale, translated_percent)
+          matching_file_processed = true
           if (missing_strings + untranslated_strings + unprintable_chars) > 0 then
             ok = false
           end
         end
       end
     end
+  end
+  if opts.p8_or_png_filepath and not matching_file_processed then
+    print("No .p8 or .p8.png translated game file found matching: " .. opts.p8_or_png_filepath)
+    return false
   end
   return ok
 end

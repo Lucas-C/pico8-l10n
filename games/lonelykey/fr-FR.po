@@ -1,0 +1,34 @@
+msgid "sarah and the lonely key"
+msgstr "sarah et la clef solitaire"
+
+msgid "press 🅾️ to start"
+msgstr "🅾️ pour demarrer"
+
+msgid "(KEYBOARD: z)"
+msgstr "(TOUCHE : w)"
+
+msgid "keys left: 1"
+msgstr "clefs : 1"
+
+msgid "keys left: "
+msgstr "clefs : "
+
+msgid "❎ undo"
+msgstr "❎ ret."
+
+msgid "thank you for playing!"
+msgstr "bravo et merci !"
+
+msgid "@tesselode"
+msgstr "@tesselode"
+
+
+# Untranslatable technical IDs:
+msgid "currentStep"
+msgstr "currentStep"
+
+msgid "key"
+msgstr "key"
+
+msgid "player"
+msgstr "player"

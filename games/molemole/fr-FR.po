@@ -116,5 +116,5 @@ msgstr "MANGEZ LES RICHES"
 
 
 # cartdata() ID:
-msgid "molemole"
-msgstr "molemole"
+msgid "mole_mole"
+msgstr "mole_mole"

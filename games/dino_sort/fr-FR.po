@@ -133,5 +133,5 @@ msgstr "https://adamatomic.itch.io/dino-sort"
 
 
 # cartdata() ID:
-msgid "dinosort"
-msgstr "dinosort"
+msgid "dino_sort"
+msgstr "dino_sort"

@@ -145,5 +145,5 @@ msgstr "j1 = corgi      j2 = carlin "
 
 
 # cartdata() ID:
-msgid "spacecorgi2corgispace"
-msgstr "spacecorgi2corgispace"
+msgid "spacecorgi2_corgispace"
+msgstr "spacecorgi2_corgispace"

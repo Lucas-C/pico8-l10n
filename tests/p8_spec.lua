@@ -57,6 +57,17 @@ __lua__
     it("should only extract repeat strings once", function()
       assert.same({ ["HELLO WORLD!"] = { 69, 91 } }, p8.extract_strings_p8_content(code_with_repeats))
     end)
+    it("should correctly extract strings with underscores", function()
+      local code = [[
+pico-8 cartridge // http://www.pico-8.com
+version 43
+__lua__
+function _init()
+	cartdata("picohot_v2")
+end
+]]
+      assert.same({ ["picohot_v2"] = { 90 } }, p8.extract_strings_p8_content(code))
+    end)
   end)
   describe(".subst_l10n_strings()", function()
     it("should successfully substitute localized strings in .p8 file content", function()
