@@ -56,5 +56,5 @@ msgstr "beau boulot."
 
 
 # cartdata() ID:
-msgid "princeofprussia"
-msgstr "princeofprussia"
+msgid "prince_of_prussia"
+msgstr "prince_of_prussia"

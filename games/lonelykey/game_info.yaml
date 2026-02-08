@@ -1,0 +1,9 @@
+name: Sarah and the Lonely Key
+bbs_url: https://www.lexaloffle.com/bbs/?pid=66365
+itchio_url: https://tesselode.itch.io/lonely-key
+author: tesselode
+bbs_author_id: 10162
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 100 } #, filename: "lonelykey-2-fr-FR.p8.png" }

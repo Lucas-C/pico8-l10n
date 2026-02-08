@@ -5,6 +5,11 @@ repos:
   - id: stylua
 - repo: local
   hooks:
+  - id: luacheck
+    name: Statically check Lua files
+    files: \.lua$
+    language: system
+    entry: luacheck
   - id: build-html-website
     name: Build website and check HTML with v.Nu Checker
     files: \.html$

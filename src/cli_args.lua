@@ -36,6 +36,7 @@ function cli.parse()
     )
     :args("?")
   check_cmd:option("--keep-p8-file", "When a .p8.png file is provided, preserve the converted .p8 file"):args("?")
+  check_cmd:option("--show-missing-msgids", "Display the strings missing from the .po file"):args("?")
 
   local opts = parser:parse()
   if not opts.command and not opts.version then

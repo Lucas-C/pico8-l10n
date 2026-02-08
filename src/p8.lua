@@ -25,6 +25,8 @@ function p8.extract_strings_p8_content(p8_content)
       local section_header = p8_content:sub(i - 8, i):match("__(.+)__$")
       if section_header then
         in_lua_code = section_header == "lua"
+      elseif in_lua_code and start_char and not in_comment and not in_block_comment then
+        curr_string = curr_string .. char
       end
     elseif in_lua_code then
       if in_comment then

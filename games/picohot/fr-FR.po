@@ -1,127 +1,87 @@
-msgid "number"
-msgstr ""
-
-msgid "shutdown"
-msgstr ""
-
 msgid "exit to menu"
-msgstr ""
+msgstr "retour au menu"
 
 msgid "pause"
-msgstr ""
+msgstr "pause"
 
 msgid "no ammo"
-msgstr ""
-
-msgid "rec"
-msgstr ""
+msgstr "plus de munition"
 
 msgid "f9 save replay"
-msgstr ""
+msgstr "f9 sauvegarde le replay"
 
 msgid "❎ hand over the control"
-msgstr ""
+msgstr "❎ continuer"
 
 msgid "the end"
-msgstr ""
-
-msgid "piotr kulla"
-msgstr ""
-
-msgid "wojciech dziedzic"
-msgstr ""
-
-msgid "mariusz tarkowski"
-msgstr ""
-
-msgid "superhot team"
-msgstr ""
+msgstr "la fin"
 
 msgid "thx to all backers"
-msgstr ""
+msgstr "merci a tous les backers"
 
 msgid "press ❎"
-msgstr ""
-
-msgid "ch"
-msgstr ""
-
-msgid "pnc"
-msgstr ""
-
-msgid "wt"
-msgstr ""
+msgstr "appuyez sur ❎"
 
 msgid "PICos"
-msgstr ""
+msgstr "PICos"
 
 msgid "/.. go back"
-msgstr ""
+msgstr "/.. retour en arriere"
 
 msgid "controls"
-msgstr ""
+msgstr "controles"
 
 msgid "⬆️     move forward\n⬇️     move backward\n⬅️     strafe left\n➡️     strafe right\n\n🅾️ (z) grab / throw\n❎ (x) attack\n\nf6     save screenshot\nf9     save replay"
-msgstr ""
+msgstr "⬆️     avancer\n⬇️     reculer\n⬅️     pas a gauche\n➡️     pas a droite\n\n🅾️ (w) attraper / lancer\n❎ (x) attaquer\n\nf6     capture d'ecran\nf9     garder le replay"
 
 msgid "press 🅾️ and ❎ to proceed"
-msgstr ""
+msgstr "pressez 🅾️ et ❎"
 
 msgid "os of the future (tm)"
-msgstr ""
+msgstr "os du futur (tm)"
 
 msgid "downloading"
-msgstr ""
+msgstr "telechargement..."
 
 msgid "hello, 웃sp33d"
-msgstr ""
+msgstr "salut, 웃sp33d"
 
 msgid "LOADING "
-msgstr ""
+msgstr "CHARGEMENT"
 
 msgid "super.exe"
-msgstr ""
+msgstr "super.exe"
 
 msgid "download"
-msgstr ""
+msgstr "telecharger"
 
 msgid "NO MORE NEW CHIRPS"
-msgstr ""
+msgstr "PLUS DE CUI-CUIS"
 
 msgid "aRE YOU LOOKING FOR SOMETHING?"
-msgstr ""
+msgstr "vOUS CHERCHEZ QUELQUE CHOSE ?"
 
 msgid "⬇️⬆️scroll 🅾️exit"
-msgstr ""
+msgstr "⬇️⬆️derouler 🅾️quitter"
 
 msgid " ❎download"
-msgstr ""
+msgstr " ❎telecharger"
 
 msgid "🅾️ grab "
-msgstr ""
+msgstr "🅾️ attraper "
 
-msgid "onyanth;this game is best|onyanth;i just kill red dudes|marxus001;how to play? 웃onyanth|johhnnny;this game sooo good!|onyanth;here is the game, just play;d"
-msgstr ""
+msgid "ony_anth;this game is best|ony_anth;i just kill red dudes|marxus_001;how to play? 웃ony_anth|johhnnny;this game sooo good!|ony_anth;here is the game, just play;d"
+msgstr "ony_anth;ce jeu est le meilleur|ony_anth;je butte plein de types rouges|marxus001;comment jouer ? 웃ony_anth|johhnnny;ce jeu est trop bon !|ony_anth;voici le jeu, teste un peu;d"
 
-
-# Untranslatable:
-msgid "⬆️⬆️⬆️⬇️⬆️⬇️*prg:2|lvl:1$⬅️⬅️⬅️⬅️⬅️⬆️*prg:10|m:we know:1|br|w:1|lvl:5$➡️⬅️⬅️⬆️⬆️⬆️*prg:16|m:again?:1|m:why are you here?:1|m:you are not enough:1|br|w:1|lvl:8$⬇️⬇️⬅️⬇️➡️⬅️*prg:24|m:your mind is weak|m:but here|m:indulge|br|w:1|lvl:12$⬆️⬅️⬆️⬇️➡️➡️*prg:32|m:give up|m:you won:1|m:it's pointless|m:you are not enough:1|m:you are not enough:1|m:you are not enough:1|br|w:1|lvl:16"
-msgstr "⬆️⬆️⬆️⬇️⬆️⬇️*prg:2|lvl:1$⬅️⬅️⬅️⬅️⬅️⬆️*prg:10|m:we know:1|br|w:1|lvl:5$➡️⬅️⬅️⬆️⬆️⬆️*prg:16|m:again?:1|m:why are you here?:1|m:you are not enough:1|br|w:1|lvl:8$⬇️⬇️⬅️⬇️➡️⬅️*prg:24|m:your mind is weak|m:but here|m:indulge|br|w:1|lvl:12$⬆️⬅️⬆️⬇️➡️➡️*prg:32|m:give up|m:you won:1|m:it's pointless|m:you are not enough:1|m:you are not enough:1|m:you are not enough:1|br|w:1|lvl:16"
-msgid "bottle,107,0,8,16|pistol,113,49,15,12,2,32,83,14,13,51|shotgun,0,24,48,11,2,32,67,14,16,76|pyramid,96,20,19,10,20|tv,96,112,16,16,3|flowers,117,30,10,19,3|flask,67,9,13,13|floppy,116,71,12,12|teapot,116,61,12,10,3|callum,116,0,12,16,3|mug,56,8,8,8,2.5|skull,87,21,9,11,3"
-msgstr "bottle,107,0,8,16|pistol,113,49,15,12,2,32,83,14,13,51|shotgun,0,24,48,11,2,32,67,14,16,76|pyramid,96,20,19,10,20|tv,96,112,16,16,3|flowers,117,30,10,19,3|flask,67,9,13,13|floppy,116,71,12,12|teapot,116,61,12,10,3|callum,116,0,12,16,3|mug,56,8,8,8,2.5|skull,87,21,9,11,3"
-msgid "serv,74,66,13,16,100,128|ac,91,9,16,11,128,80|monitor,80,9,11,12,44,48|ceillamp,92,10,1,1,128,8|door,74,81,11,15,100,128|cctv,48,16,17,13,68,52|heli,0,35,47,20,564,240|wnda,48,29,23,18,92,72|wndb,48,47,23,18,92,72|rock,88,32,24,63,720,1890"
-msgstr "serv,74,66,13,16,100,128|ac,91,9,16,11,128,80|monitor,80,9,11,12,44,48|ceillamp,92,10,1,1,128,8|door,74,81,11,15,100,128|cctv,48,16,17,13,68,52|heli,0,35,47,20,564,240|wnda,48,29,23,18,92,72|wndb,48,47,23,18,92,72|rock,88,32,24,63,720,1890"
-
-# Level definitions (also untranslatable):
 msgid "intro"
-msgstr ""
+msgstr "intro"
 msgid "p:5:1:9:6|i:0:3:2|wd|t:you|t:move:.6|t:time|t:moves|e:0:9:cp|e:3:9:cp|fin|prg:2|lvl:2"
-msgstr "p:5:1:9:6|i:0:3:2|wd|t:you|t:move:.6|t:time|t:moves|e:0:9:cp|e:3:9:cp|fin|prg:2|lvl:2"
+msgstr "p:5:1:9:6|i:0:3:2|wd|t:tu|t:avances:.6|t:le temps|t:avance|e:0:9:cp|e:3:9:cp|fin|prg:2|lvl:2"
 
-msgid "cagefight"
-msgstr "cagefight"
-msgid "p:2:1:13:2|wd|t:fight|e:0:3:m|cb|t:just|t:a|t:warm-up|e:-2:6:m|e:0:13:m|e:2:10:m|w:.5|despn:1|fin|prg:3|lvl:3"
-msgstr "p:2:1:13:2|wd|t:fight|e:0:3:m|cb|t:just|t:a|t:warm-up|e:-2:6:m|e:0:13:m|e:2:10:m|w:.5|despn:1|fin|prg:3|lvl:3"
+msgid "cage_fight"
+msgstr "cage_fight"
+msgid "p:2:1:13:2|wd|t:fight|e:0:3:m|cb|t:just|t:a|t:warm-up|e:-2:6:m|e:0:13:m|e:2:10:m|w:.5|des_pn:1|fin|prg:3|lvl:3"
+msgstr "p:2:1:13:2|wd|t:combat|e:0:3:m|cb|t:juste|t:pour|t:s'echauffer|e:-2:6:m|e:0:13:m|e:2:10:m|w:.5|des_pn:1|fin|prg:3|lvl:3"
 
 msgid "corridor"
 msgstr "corridor"
@@ -133,28 +93,57 @@ msgstr "blocks"
 msgid "p:2:3:39:2|p:1:0:35:1|p:-1:0:35:1|p:2.5:3:12.6:2|i:-1:15:1|i:1.2:10:1|i:1:7:1|wd|e:1:3:bp|cb|e:-1:7:m|cb|e:1:11:m|cb|e:-1:13:bp|fin|prg:5|lvl:5"
 msgstr "p:2:3:39:2|p:1:0:35:1|p:-1:0:35:1|p:2.5:3:12.6:2|i:-1:15:1|i:1.2:10:1|i:1:7:1|wd|e:1:3:bp|cb|e:-1:7:m|cb|e:1:11:m|cb|e:-1:13:bp|fin|prg:5|lvl:5"
 
-msgid "nextround"
-msgstr "nextround"
+msgid "next_round"
+msgstr "next_round"
 msgid "i:-2:6.5:7|i:-2.5:7:7|i:3:4:2|p:-2:0:9:1|p:0:0:9.5:5|p:2:0:9:1|wd|e:0:8:m|w:1|e:3:8:m|cb|w:.5|t:next|t:round|e:-3:8:cs|e:3:8:cs|w:.5|e:0:8:bp|cb|w:1|fin|prg:6|w:1|m:congrats|br|w:4|crd|w:1|m:you are free|m:to play forever|br|w:1|os"
-msgstr "i:-2:6.5:7|i:-2.5:7:7|i:3:4:2|p:-2:0:9:1|p:0:0:9.5:5|p:2:0:9:1|wd|e:0:8:m|w:1|e:3:8:m|cb|w:.5|t:next|t:round|e:-3:8:cs|e:3:8:cs|w:.5|e:0:8:bp|cb|w:1|fin|prg:6|w:1|m:congrats|br|w:4|crd|w:1|m:you are free|m:to play forever|br|w:1|os"
+msgstr "i:-2:6.5:7|i:-2.5:7:7|i:3:4:2|p:-2:0:9:1|p:0:0:9.5:5|p:2:0:9:1|wd|e:0:8:m|w:1|e:3:8:m|cb|w:.5|t:next|t:round|e:-3:8:cs|e:3:8:cs|w:.5|e:0:8:bp|cb|w:1|fin|prg:6|w:1|m:bravo|br|w:4|crd|w:1|m:vous etes libre|m:de jouer a l'infini|br|w:1|os"
 
 msgid "endless"
 msgstr "endless"
 msgid "i:3:6:3|i:-2:4:2|i:3:9:3|i:-1:8:2|wd|t:record|t:to|t:beat|w:.3|endl"
-msgstr "i:3:6:3|i:-2:4:2|i:3:9:3|i:-1:8:2|wd|t:record|t:to|t:beat|w:.3|endl"
+msgstr "i:3:6:3|i:-2:4:2|i:3:9:3|i:-1:8:2|wd|t:record|t:a|t:battre|w:.3|endl"
 
+msgid "⬆️⬆️⬆️⬇️⬆️⬇️*prg:2|lvl:1$⬅️⬅️⬅️⬅️⬅️⬆️*prg:10|m:we know:1|br|w:1|lvl:5$➡️⬅️⬅️⬆️⬆️⬆️*prg:16|m:again?:1|m:why are you here?:1|m:you are not enough:1|br|w:1|lvl:8$⬇️⬇️⬅️⬇️➡️⬅️*prg:24|m:your mind is weak|m:but here|m:indulge|br|w:1|lvl:12$⬆️⬅️⬆️⬇️➡️➡️*prg:32|m:give up|m:you won:1|m:it's pointless|m:you are not enough:1|m:you are not enough:1|m:you are not enough:1|br|w:1|lvl:16"
+msgstr "⬆️⬆️⬆️⬇️⬆️⬇️*prg:2|lvl:1$⬅️⬅️⬅️⬅️⬅️⬆️*prg:10|m:we know:1|br|w:1|lvl:5$➡️⬅️⬅️⬆️⬆️⬆️*prg:16|m:again?:1|m:why are you here?:1|m:you are not enough:1|br|w:1|lvl:8$⬇️⬇️⬅️⬇️➡️⬅️*prg:24|m:your mind is weak|m:but here|m:indulge|br|w:1|lvl:12$⬆️⬅️⬆️⬇️➡️➡️*prg:32|m:give up|m:you won:1|m:it's pointless|m:you are not enough:1|m:you are not enough:1|m:you are not enough:1|br|w:1|lvl:16"
+msgid "bottle,107,0,8,16|pistol,113,49,15,12,2,32,83,14,13,51|shotgun,0,24,48,11,2,32,67,14,16,76|pyramid,96,20,19,10,20|tv,96,112,16,16,3|flowers,117,30,10,19,3|flask,67,9,13,13|floppy,116,71,12,12|teapot,116,61,12,10,3|callum,116,0,12,16,3|mug,56,8,8,8,2.5|skull,87,21,9,11,3"
+msgstr "bouteille,107,0,8,16|pistolet,113,49,15,12,2,32,83,14,13,51|fusil,0,24,48,11,2,32,67,14,16,76|pyramide,96,20,19,10,20|tv,96,112,16,16,3|fleurs,117,30,10,19,3|flasque,67,9,13,13|disquette,116,71,12,12|theiere,116,61,12,10,3|callum,116,0,12,16,3|tasse,56,8,8,8,2.5|crane,87,21,9,11,3"
+msgid "serv,74,66,13,16,100,128|ac,91,9,16,11,128,80|monitor,80,9,11,12,44,48|ceil_lamp,92,10,1,1,128,8|door,74,81,11,15,100,128|cctv,48,16,17,13,68,52|heli,0,35,47,20,564,240|wnd_a,48,29,23,18,92,72|wnd_b,48,47,23,18,92,72|rock,88,32,24,63,720,1890"
+msgstr "serv,74,66,13,16,100,128|ac,91,9,16,11,128,80|monitor,80,9,11,12,44,48|ceil_lamp,92,10,1,1,128,8|door,74,81,11,15,100,128|cctv,48,16,17,13,68,52|heli,0,35,47,20,564,240|wnd_a,48,29,23,18,92,72|wnd_b,48,47,23,18,92,72|rock,88,32,24,63,720,1890"
 
 # Menu:
+msgid "chirp.exe"
+msgstr "cuicui.exe"
+msgid "quit"
+msgstr "quitter"
 msgid "picohot.exe"
 msgstr "picohot.exe"
 msgid "levels"
 msgstr "niveaux"
-msgid "chirp.exe"
-msgstr "chirp.exe"
-msgid "quit"
-msgstr "quitter"
 
+# Game authors:
+msgid "superhot team"
+msgstr "superhot team"
+msgid "piotr kulla"
+msgstr "piotr kulla"
+msgid "wojciech dziedzic"
+msgstr "wojciech dziedzic"
+msgid "mariusz tarkowski"
+msgstr "mariusz tarkowski"
+
+# Untranslatable technical IDs:
+msgid "number"
+msgstr "number"
+msgid "shutdown"
+msgstr "shutdown"
+msgid "rec"
+msgstr "rec"
+msgid "ch"
+msgstr "ch"
+msgid "pnc"
+msgstr "pnc"
+msgid "wt"
+msgstr "wt"
 
 # cartdata() ID:
-msgid "picohotv2"
-msgstr "picohotv2"
+msgid "picohot_v2"
+msgstr "picohot_v2"
