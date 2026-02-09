@@ -7,4 +7,4 @@ thumb_filename: pico39705.png
 
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:
-  fr-FR: { translated_percent: 0 } #, filename: "dusk-child-1.4-fr-FR.p8.png" }
+  fr-FR: { translated_percent: 0 } #, filename: "dusk-child-4-fr-FR.p8.png" }

@@ -1,30 +1,31 @@
-msgid "bcount"
-msgstr ""
-
-msgid "maxbullets"
-msgstr ""
-
-msgid "hp"
-msgstr ""
-
-msgid "maxhp"
-msgstr ""
-
-msgid "swap controls"
-msgstr ""
+msgid "press 🅾️ or ❎ to start"
+msgstr "🅾️ ou ❎ pour demarrer"
 
 msgid "end game"
-msgstr ""
+msgstr "arreter"
 
-msgid "press 🅾️ or ❎ to start"
-msgstr ""
+msgid "swap controls"
+msgstr "echanger les boutons"
 
 msgid "hacking"
-msgstr ""
+msgstr "piratage"
 
 msgid "success"
-msgstr ""
+msgstr "reussi"
 
 msgid "hack"
-msgstr ""
+msgstr "pirater"
 
+
+# Untranslatable technical IDs:
+msgid "bcount"
+msgstr "bcount"
+
+msgid "hp"
+msgstr "hp"
+
+msgid "maxbullets"
+msgstr "maxbullets"
+
+msgid "maxhp"
+msgstr "maxhp"

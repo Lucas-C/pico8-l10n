@@ -6,4 +6,4 @@ bbs_author_id: 29414
 
 # The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
 translations:
-  fr-FR: { translated_percent: 0 } #, filename: "xzero-3-fr-FR.p8.png" }
+  fr-FR: { translated_percent: 100 } #, filename: "xzero-3-fr-FR.p8.png" }

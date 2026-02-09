@@ -78,7 +78,7 @@
               {{ game.name }}
             </a>
             {% if game.bbs_author_id then %}
-            <a class="game-author-link" href="https://www.lexaloffle.com/bbs/?uid={{ game.bbs_author_id }}&mode=carts">
+            <a class="game-author-link" href="https://www.lexaloffle.com/bbs/?uid={{ string.format('%.0f', game.bbs_author_id) }}&mode=carts">
             {% end %}
 				      <span class="game-author">by {{ game.author }}</span>
             {% if game.bbs_author_id then %}
@@ -91,7 +91,11 @@
             <ul>
               {% for lang_locale, translation in pairs(game.translations) do %}
               <li>
-                <a href="https://github.com/Lucas-C/pico8-l10n/blob/main/games/{{ game.id }}/{{ lang_locale }}.po">{{ lang_locale }}.po</a>:
+                {% if game.po_filepath then %}
+                <a href="https://github.com/Lucas-C/pico8-l10n/blob/main/{{ game.po_filepath }}">
+                {% end %}
+                  {{ lang_locale }}.po
+                {% if game.po_filepath then %}</a>{% end %}:
                 {{ ("%.0f"):format(translation.translated_percent) }}% translated
                 {% if translation.filename then %}
                 <br><a href="./{{ game.id }}/{{ translation.filename:sub(0, #translation.filename - 7) .. '.html' }}">Play game online</a>
