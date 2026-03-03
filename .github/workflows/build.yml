@@ -170,7 +170,7 @@ jobs:
           product_name: ${{ env.PRODUCT_NAME }}
       - name: Upload executable as artifact
         if: ${{ needs.configure.outputs.build_type == 'dev' }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.PRODUCT_FILE }}
           path: ${{ env.OUTPUT_FOLDER }}/${{ env.PRODUCT_FILE }}
