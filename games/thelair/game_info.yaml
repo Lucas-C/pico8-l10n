@@ -1,0 +1,9 @@
+name: The Lair
+bbs_url: https://www.lexaloffle.com/bbs/?pid=26851
+itchio_url: https://krajzeg.itch.io/the-lair
+author: Jakub "krajzeg" Wasilewski
+bbs_author_id: 12861
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "thelair-0.p8-fr-FR.p8.png" }

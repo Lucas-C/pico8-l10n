@@ -22,7 +22,7 @@ function p8.extract_strings_p8_content(p8_content)
   for i = 1, #p8_content do
     local char = p8_content:sub(i, i)
     if char == "_" then
-      local section_header = p8_content:sub(i - 8, i):match("__(.+)__$")
+      local section_header = p8_content:sub(i - 9, i):match("\n__(.+)__$")
       if section_header then
         in_lua_code = section_header == "lua"
       elseif in_lua_code and start_char and not in_comment and not in_block_comment then
@@ -52,7 +52,7 @@ function p8.extract_strings_p8_content(p8_content)
           if char == start_char then
             -- Ignore empty strings
             -- and string without any alphabetical character:
-            if curr_string:match("[a-zA-Z]") then
+            if curr_string:match("[a-zA-Z]") and curr_string ~= "\\n" then
               local indices = strings[curr_string]
               if not indices then
                 indices = {}

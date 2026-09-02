@@ -1,126 +1,166 @@
-msgid "crubmlingstone"
-msgstr ""
+msgid "the god is ... dead\nthe world is ... crumbling\nthe very foundational stones,\nupon which it was build...\nscattered\n\n pick up your bow\n save us!"
+msgstr "dieu est ... mort\nle monde... s'effondre\nles fondations sur lesquelles\nil a ete bati... dispersees\n\n prenez votre arc\n sauvez-nous !"
 
 msgid "80,34,it's so far now|i will never get home"
-msgstr ""
+msgstr "80,34,c'est tellement loin...|je ne rentrerai jamais"
 
 msgid "112,80,cold..."
-msgstr ""
+msgstr "112,80,froid..."
 
 msgid "45,88,one rogue?|what can only one do?"
-msgstr ""
+msgstr "45,88,un aventurier ?|que peut faire un seul homme ?"
 
 msgid "36,42,is bingo night|on tuesday?"
-msgstr ""
+msgstr "36,42,la soire bingo|c'est le mardi ?"
 
 msgid "79,24,am i fractured|or is it the world?"
-msgstr ""
+msgstr "79,24,suis-je fracture|ou est-ce le monde ?"
 
 msgid "80,34,maybe i can|buid a brige"
-msgstr ""
+msgstr "80,34,peut-etre puis-je|construire un pont"
 
 msgid "112,80,warm!"
-msgstr ""
+msgstr "112,80,chaud !"
 
 msgid "45,88,hmmm|you did it!"
-msgstr ""
+msgstr "45,88,hmmm|vous avez reussi !"
 
 msgid "36,42,there will be a tuesday"
-msgstr ""
+msgstr "36,42,il y aura un mardi"
 
 msgid "79,24,we will be ok|world will be ok"
-msgstr ""
+msgstr "79,24,nous serons ok|le monde sera ok"
 
-msgid "heart"
-msgstr ""
-
-msgid "speed"
-msgstr ""
-
-msgid "arrow"
-msgstr ""
-
+# loot_txt:
 msgid "+1 life"
-msgstr ""
-
+msgstr "+1 vie"
 msgid "speed increase +20%"
-msgstr ""
-
+msgstr "vitesse +20%"
 msgid "additional arrow"
-msgstr ""
+msgstr "+1 fleche"
 
-msgid "intro"
-msgstr ""
-
-msgid "game"
-msgstr ""
-
-msgid "idle"
-msgstr ""
-
-msgid "on"
-msgstr ""
-
-msgid "e"
-msgstr ""
-
-msgid "enemycore"
-msgstr ""
-
-msgid "health,size,speed"
-msgstr ""
-
-msgid "enemy"
-msgstr ""
-
-msgid "enemyorbitor"
-msgstr ""
-
-msgid "t"
-msgstr ""
-
-msgid "health"
-msgstr ""
-
-msgid "size,speed,health"
-msgstr ""
-
-msgid "health,size"
-msgstr ""
-
-msgid "o"
-msgstr ""
-
-msgid "health,deadtmrec"
-msgstr ""
-
-msgid "n"
-msgstr ""
-
-msgid "s"
-msgstr ""
-
-msgid "speed,deadtmrec"
-msgstr ""
-
-msgid "clock"
-msgstr ""
-
+# Menu items:
 msgid "timer(on/off)"
-msgstr ""
+msgstr "chrono(on/off)"
 
 msgid "reset run"
-msgstr ""
+msgstr "redemarrer"
 
-msgid "speedrun"
-msgstr ""
+msgid "are you willing\nto mend the world?"
+msgstr "voulez-vous\nreparer le monde ?"
 
-msgid "deadwin"
-msgstr ""
+msgid "\^o1ff > yes"
+msgstr "\^o1ff > oui"
 
-msgid "win"
-msgstr ""
+msgid "\^o1ff > no"
+msgstr "\^o1ff > non"
 
+msgid "do you wish to try? ❎"
+msgstr "voulez-vous essayer ? ❎"
+
+msgid "\ndo you wish to try again?"
+msgstr "\nvoulez-vous reessayer ?"
+
+msgid "do you wish to go back ❎"
+msgstr "voulez-vous partir ?"
+
+msgid "you saved us!\n\nthe world is still brittle\nand the god is still dead.\n\nbut who needs gods\nwhen there are heroes\namong us?"
+msgstr "vous nous avez sauves !\n\nle monde est encore fragile\net dieu est toujours mort.\nmais qui a besoin de dieux\nquand il y a des heros\nparmi nous ?"
+
+msgid "you finished the game in\n"
+msgstr "vous avez fini le jeu en\n"
+
+
+# Untranslatable technical IDs:
+
+## cartdata() ID:
+msgid "crubmlingstone"
+msgstr "crubmlingstone"
+
+## state:
 msgid "dead"
-msgstr ""
+msgstr "dead"
+msgid "dead_win"
+msgstr "dead_win"
+msgid "intro"
+msgstr "intro"
+msgid "speedrun"
+msgstr "speedrun"
+msgid "game"
+msgstr "game"
+msgid "win"
+msgstr "win"
 
+## boss_char:
+msgid "stone"
+msgstr "stone"
+msgid "s"
+msgstr "s"
+msgid "t"
+msgstr "t"
+msgid "o"
+msgstr "o"
+msgid "n"
+msgstr "n"
+msgid "e"
+msgstr "e"
+
+## boss_loot:
+msgid "arrow"
+msgstr "arrow"
+msgid "heart"
+msgstr "heart"
+msgid "speed"
+msgstr "speed"
+
+## boss_state:
+msgid "idle"
+msgstr "idle"
+msgid "on"
+msgstr "on"
+
+## enemy char:
+msgid "O"
+msgstr "O"
+msgid "S"
+msgstr "S"
+
+## factory type:
+msgid "enemy"
+msgstr "enemy"
+msgid "enemy_core"
+msgstr "enemy_core"
+msgid "enemy_orbitor"
+msgstr "enemy_orbitor"
+
+## factory keys
+msgid "health"
+msgstr "health"
+msgid "health,size"
+msgstr "health,size"
+msgid "health,size,speed"
+msgstr "health,size,speed"
+msgid "health,dead_tm_rec"
+msgstr "health,dead_tm_rec"
+msgid "size,speed,health"
+msgstr "size,speed,health"
+msgid "speed,dead_tm_rec"
+msgstr "speed,dead_tm_rec"
+
+## npc type
+msgid "clock"
+msgstr "clock"
+msgid "npc"
+msgstr "npc"
+
+## object draw:
+msgid "x"
+msgstr "x"
+
+## color prefixes:
+msgid "\^o28a"
+msgstr "\^o28a"
+msgid "\^o0ff"
+msgstr "\^o0ff"
+msgid "\^o1ff"
+msgstr "\^o1ff"

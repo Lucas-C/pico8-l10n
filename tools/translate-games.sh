@@ -26,7 +26,7 @@ function translate() {
   rm "$1.p8.png"
 }
 
-if [ -n ${1:-} ]; then
+if [ -n "${1:-}" ]; then
   translate $1 ${2:-fr-FR}
 else
   translate big_stew-0 fr-FR
@@ -35,5 +35,7 @@ else
   translate molemole-1 fr-FR
   translate prince_of_prussia-0 fr-FR
   translate spacecorgi2-3 fr-FR
+  translate sundered_hope-1 fr-FR
   translate vampire_vs_pope_army-0 fr-FR
+  translate xzero-3 fr-FR
 fi

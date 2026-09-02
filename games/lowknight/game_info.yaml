@@ -1,0 +1,9 @@
+name: Low Knight
+bbs_url: https://www.lexaloffle.com/bbs/?pid=73854#p
+itchio_url: https://krajzeg.itch.io/low-knight
+author: Jakub "krajzeg" Wasilewski
+bbs_author_id: 12861
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "lowknight-1.p8-fr-FR.p8.png" }

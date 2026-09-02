@@ -24,6 +24,10 @@ jobs:
           python-version: 3.14
       - name: Generate HTML website
         run: tools/build-website.sh
+      - name: Look for broken links
+        uses: JustinBeckwith/linkinator-action@v2
+        with:
+          paths: public/index.html
       - name: Install & run Prysk
         run: |
           tools/build-with-luapak.sh  # build pico-l10n

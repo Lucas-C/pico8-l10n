@@ -1,0 +1,10 @@
+name: A Hat on Time
+bbs_url: https://www.lexaloffle.com/bbs/?tid=31736
+itchio_url: https://eggnog.itch.io/a-hat-on-time
+author: eggnog
+bbs_author_id: 22245
+thumb_filename: pico55617.png
+
+# The following section must be manually initiated, but is automatically updated by `pico8-l10n check`
+translations:
+  fr-FR: { translated_percent: 0 } #, filename: "a_hat_on_time-0-fr-FR.p8.png" }

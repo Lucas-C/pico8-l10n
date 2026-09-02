@@ -28,6 +28,7 @@ if pico8.is_available() then
         -- Setup
         io2.copy("tests/circle.p8", "dummy.p8")
         p8c.p8_to_png("dummy.p8")
+        assert(os.remove("dummy.p8"))
         -- Act
         local p8_filepath, is_png = p8c.with_png_converted("dummy.p8.png")
         -- Assert
@@ -48,6 +49,7 @@ if pico8.is_available() then
         assert.True(io2.exists(js_filepath))
         assert(os.remove(html_filepath))
         assert(os.remove(js_filepath))
+        assert(os.remove("dummy.p8"))
       end)
     end)
   end)
